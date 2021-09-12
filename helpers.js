@@ -4,4 +4,8 @@ function formatDate(date) {
   return format(date, 'yyyy-MM-dd HH:mm:ss');
 }
 
-module.exports = { formatDate };
+function generateRandomValue(min, max) {
+  Math.floor(Math.random() * (max - min) + min);
+}
+
+module.exports = { formatDate, generateRandomValue };

@@ -1,7 +1,8 @@
 require('dotenv').config();
-
+const faker = require('faker');
 const getDB = require('./getDB.js');
 const { formatDate } = require('../helpers.js');
+const { lorem } = require('faker');
 
 async function main() {
   let connection;
@@ -9,9 +10,9 @@ async function main() {
     connection = await getDB();
     await connection.query('DROP TABLE IF EXISTS likes;');
     await connection.query('DROP TABLE IF EXISTS photos;');
+    await connection.query('DROP TABLE IF EXISTS comments;');
     await connection.query('DROP TABLE IF EXISTS posts;');
     await connection.query('DROP TABLE IF EXISTS users;');
-    await connection.query('DROP TABLE IF EXISTS comments;');
     console.log('Deleted tables');
 
     //Users table
@@ -21,7 +22,9 @@ async function main() {
             email VARCHAR(100) UNIQUE NOT NULL,
             password VARCHAR(512) NOT NULL,
             accName VARCHAR(100) DEFAULT "J.Doe",
-            userName VARCHAR(100) NOT NULL,
+            userName VARCHAR(100) NOT NULL UNIQUE,
+            avatar VARCHAR(100),
+            portrait VARCHAR(100),
             biography TEXT,
             active BOOLEAN DEFAULT false,
             deleted BOOLEAN DEFAULT false,
@@ -37,6 +40,7 @@ async function main() {
         CREATE TABLE posts (
             id INT PRIMARY KEY AUTO_INCREMENT,
             idUser INT NOT NULL,
+            FOREIGN KEY (idUser) REFERENCES users(id) ON DELETE CASCADE,
             place VARCHAR(100) NOT NULL,
             description TEXT,
             source VARCHAR(100) NOT NULL,
@@ -50,6 +54,7 @@ async function main() {
             id INT PRIMARY KEY AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
             idPost INT NOT NULL,
+            FOREIGN KEY (idPost) REFERENCES posts(id) ON DELETE CASCADE,
             createdAt DATETIME NOT NULL
         )
     `);
@@ -58,7 +63,9 @@ async function main() {
         CREATE TABLE likes (
             id INT PRIMARY KEY AUTO_INCREMENT,
             idUser INT NOT NULL,
-            idPost INT NOT NULL
+            FOREIGN KEY (idUser) REFERENCES users(id) ON DELETE CASCADE,
+            idPost INT NOT NULL,
+            FOREIGN KEY (idPost) REFERENCES posts(id) ON DELETE CASCADE
         )
     `);
     //Comments table
@@ -66,7 +73,9 @@ async function main() {
         CREATE TABLE comments (
             id INT PRIMARY KEY AUTO_INCREMENT,
             idUser INT NOT NULL,
+            FOREIGN KEY (idUser) REFERENCES users(id) ON DELETE CASCADE,
             idPost INT NOT NULL,
+            FOREIGN KEY (idPost) REFERENCES posts(id) ON DELETE CASCADE,
             content TEXT,
             createdAt DATETIME NOT NULL,
             modifiedAt DATETIME
@@ -86,6 +95,22 @@ async function main() {
         "admin",
         "${formatDate(new Date())}"
     )`);
+    //Creating random users
+    const USERS = 20;
+
+    for (let i = 0; i < USERS; i++) {
+      const email = faker.internet.email();
+      const password = faker.internet.password();
+      const userName = faker.internet.userName();
+      const biography = faker.lorem.paragraph();
+      await connection.query(
+        `
+      INSERT INTO users (email, password, userName, biography, active, createdAt)
+      VALUES (?, ?, ?, ?, true, ?)
+      `,
+        [email, password, userName, biography, formatDate(new Date())]
+      );
+    }
   } catch (error) {
     console.log(error.message);
     process.exit(0);
