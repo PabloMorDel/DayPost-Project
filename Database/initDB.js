@@ -77,7 +77,7 @@ async function main() {
             idPost INT NOT NULL,
             FOREIGN KEY (idPost) REFERENCES posts(id) ON DELETE CASCADE,
             content TEXT,
-            createdAt DATETIME NOT NULL,
+            createdAt DerExistsATETIME NOT NULL,
             modifiedAt DATETIME
         )
     `);

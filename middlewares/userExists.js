@@ -1,4 +1,4 @@
-const getDB = require('../../bbdd/getDB');
+const getDB = require('../Database/getDB');
 
 const userExists = async (req, res, next) => {
   let connection;

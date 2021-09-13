@@ -16,12 +16,24 @@ app.use(express.json());
 app.use(fileUpload());
 
 /*
+##############################
+#### ENDPOINTS USUARIOS ######
+##############################
+ */
+
+//Imports
+const { newUser } = require('./controllers/users');
+
+app.post('/users', newUser);
+
+/*
 #######################
 #### MIDDLEWARES ######
 #######################
  */
 
-const { userExists, postExists } = require('./middlewares');
+const userExists = require('./middlewares/userExists');
+const postExists = require('./middlewares/postExists');
 
 //Errors
 app.use((error, req, res, next) => {
