@@ -14,18 +14,6 @@ app.use(express.json());
 //Deserializer form-data
 
 app.use(fileUpload());
-
-/*
-##############################
-#### ENDPOINTS USUARIOS ######
-##############################
- */
-
-//Imports
-const { newUser } = require('./controllers/users');
-
-app.post('/users', newUser);
-
 /*
 #######################
 #### MIDDLEWARES ######
@@ -34,6 +22,25 @@ app.post('/users', newUser);
 
 const userExists = require('./middlewares/userExists');
 const postExists = require('./middlewares/postExists');
+const authorized = require('./middlewares/authorized');
+/*
+##############################
+#### ENDPOINTS USUARIOS ######
+##############################
+ */
+
+//Imports
+const {
+  newUser,
+  loginUser,
+  getUser,
+  deleteUser,
+} = require('./controllers/users');
+
+app.post('/users', newUser);
+app.post('/users/login', loginUser);
+app.get('/users/:idUser', authorized, userExists, getUser);
+app.delete('/users/:idUser', authorized, userExists, deleteUser);
 
 //Errors
 app.use((error, req, res, next) => {

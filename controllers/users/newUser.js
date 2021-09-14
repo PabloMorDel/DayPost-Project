@@ -48,4 +48,4 @@ const newUser = async (req, res, next) => {
   }
 };
 
-module.exports = { newUser };
+module.exports = newUser;
