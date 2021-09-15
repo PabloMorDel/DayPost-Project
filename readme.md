@@ -1,5 +1,10 @@
 Aqui va toda la info relativa al proyecto que sea de ayuda para cualquier participante
 
+//Endpoints básicos restantes:
+users -» editUserImages, editUserPassword, recoverUserPass, resetUserPass
+
+posts -» newPost, listPosts, getPost, editPost, deletePostPhoto, deletePost, addPostPhoro
+
 !!! Antes de iniciar la Database, tenemos que CREAR la database en workbench (o similares)
 Además, tenemos que rellenar el .env con los datos personales de cada uno de los integrantes.
 

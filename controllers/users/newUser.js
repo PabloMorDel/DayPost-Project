@@ -1,7 +1,7 @@
 const getDB = require('../../Database/getDB');
 const emailSchema = require('../../schemas/emailSchema');
 const passSchema = require('../../schemas/passSchema');
-const { validate } = require('../../helpers');
+const { validate, sendMail } = require('../../helpers');
 const userNameSchema = require('../../schemas/userNameSchema');
 
 const { formatDate, generateRandomString } = require('../../helpers');
@@ -36,10 +36,22 @@ const newUser = async (req, res, next) => {
     `,
       [email, password, userName, registrationCode, formatDate(new Date())]
     );
-    // !!!!!!! CAMBIAR MENSAJE PARA REFERIR LA VALIDACION DE EMAIL
+    const emailBody = `
+      Thank you for registering in DayPost!
+      Click this link to verify your account and start posting! ${process.env.PUBLIC_HOST}/users/validate/${registrationCode}
+    `;
+    try {
+      await sendMail({
+        to: email,
+        subject: `Validate your DayPost account`,
+        body: emailBody,
+      });
+    } catch (error) {
+      throw error;
+    }
     res.send({
       status: 'Ok',
-      message: 'User created',
+      message: 'User created, check your email to validate your account!',
     });
   } catch (error) {
     next(error);

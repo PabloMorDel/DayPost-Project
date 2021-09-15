@@ -35,12 +35,20 @@ const {
   loginUser,
   getUser,
   deleteUser,
+  validateUser,
+  editUserEmail,
+  editUserBiography,
+  editUserAccName,
 } = require('./controllers/users');
 
 app.post('/users', newUser);
 app.post('/users/login', loginUser);
 app.get('/users/:idUser', authorized, userExists, getUser);
 app.delete('/users/:idUser', authorized, userExists, deleteUser);
+app.get('/users/validate/:registrationCode', validateUser);
+app.put('/users/email/:idUser', authorized, userExists, editUserEmail);
+app.put('/users/biography/:idUser', authorized, userExists, editUserBiography);
+app.put('/users/accName/:idUser', authorized, userExists, editUserAccName);
 
 //Errors
 app.use((error, req, res, next) => {

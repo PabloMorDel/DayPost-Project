@@ -5,6 +5,8 @@ const { unlink } = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 const uploadsDir = path.join(__dirname, process.env.UPLOADS_DIRECTORY);
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 function formatDate(date) {
   return format(date, 'yyyy-MM-dd HH:mm:ss');
@@ -62,6 +64,22 @@ async function deletePhoto(imageName) {
   await unlink(imagePath);
 }
 
+async function sendMail({ to, subject, body }) {
+  const msg = {
+    to,
+    from: process.env.SENDGRID_FROM,
+    subject,
+    text: body,
+    html: `
+      <div>
+        <h1>${subject}</h1>
+        <p>${body}</p>
+      </div>
+    `,
+  };
+  await sgMail.send(msg);
+}
+
 module.exports = {
   formatDate,
   generateRandomValue,
@@ -69,4 +87,5 @@ module.exports = {
   generateRandomString,
   savePhoto,
   deletePhoto,
+  sendMail,
 };
