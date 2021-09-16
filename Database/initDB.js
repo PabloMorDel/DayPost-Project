@@ -87,7 +87,7 @@ async function main() {
     INSERT INTO users(email, password, active, accName, userName, biography, role, createdAt)
     VALUES (
         "pablomd137@gmail.com",
-        SHA2("12345", 512),
+        SHA2("123456789", 512),
         true,
         "GOD",
         "PabloAdmin",
