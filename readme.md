@@ -19,3 +19,5 @@ para lo cual, deberemos tener un user logeado (y creado), podéis crear vuestros
 11:13am -> Agregadas las funciones relativas a guardar y borrar fotos en helpers
 11:34am -> deleteUser -> Al borrar el usuario no borramos la password ni la reemplazamos por una random(recover de la cuenta??),
 el user admin puede borrar usuarios(CON MOTIVOS DE TESTING, PODEMOS QUITAR ESTA FUNCIONALIDAD LUEGO.)
+
+16/09: error en el validate de editUserPass, maybe el helper maybe el esquema, quien sabe tanto
