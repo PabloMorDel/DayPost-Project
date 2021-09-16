@@ -41,7 +41,7 @@ async function main() {
             id INT PRIMARY KEY AUTO_INCREMENT,
             idUser INT NOT NULL,
             FOREIGN KEY (idUser) REFERENCES users(id) ON DELETE CASCADE,
-            place VARCHAR(100) NOT NULL,
+            title VARCHAR(100) NOT NULL,
             description TEXT,
             source VARCHAR(100) NOT NULL,
             createdAt DATETIME NOT NULL,

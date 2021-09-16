@@ -55,7 +55,15 @@ app.put('/users/accName/:idUser', authorized, userExists, editUserAccName);
 app.put('/users/password/:idUser', authorized, editUserPass);
 app.put('/users/recover/password', recoverUserPass);
 app.put('/users/reset/password', resetUserPass);
+/*
+###########################
+#### ENDPOINTS POSTS ######
+###########################
+ */
 
+//Imports
+const { newPost } = require('./controllers/posts');
+app.post('/posts', authorized, newPost);
 //Errors
 app.use((error, req, res, next) => {
   console.log(error.message);
