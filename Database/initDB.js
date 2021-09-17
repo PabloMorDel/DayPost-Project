@@ -1,7 +1,7 @@
 require('dotenv').config();
 const faker = require('faker');
 const getDB = require('./getDB.js');
-const { formatDate } = require('../helpers.js');
+const { formatDate, generateRandomValue } = require('../helpers.js');
 const { lorem } = require('faker');
 
 async function main() {
@@ -109,6 +109,22 @@ async function main() {
       VALUES (?, ?, ?, ?, true, ?)
       `,
         [email, password, userName, biography, formatDate(new Date())]
+      );
+    }
+    const POSTS = 50;
+
+    for (let i = 0; i < POSTS; i++) {
+      const title = faker.lorem.words(5);
+      const source = faker.internet.url();
+      const description = faker.lorem.paragraph(5);
+      const createdAt = formatDate(new Date());
+      const idUser = generateRandomValue(1, USERS + 1);
+      await connection.query(
+        `
+        INSERT INTO posts (title, source, description, idUser, createdAt)
+        VALUES(?, ?, ?, ?, ?)
+      `,
+        [title, source, description, idUser, createdAt]
       );
     }
   } catch (error) {

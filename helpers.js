@@ -13,7 +13,7 @@ function formatDate(date) {
 }
 
 function generateRandomValue(min, max) {
-  Math.floor(Math.random() * (max - min) + min);
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 function generateRandomString(length) {

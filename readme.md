@@ -21,3 +21,7 @@ para lo cual, deberemos tener un user logeado (y creado), podéis crear vuestros
 el user admin puede borrar usuarios(CON MOTIVOS DE TESTING, PODEMOS QUITAR ESTA FUNCIONALIDAD LUEGO.)
 
 16/09: error en el validate de editUserPass, maybe el helper maybe el esquema, quien sabe tanto
+
+Diario de Bitácora. 17-09. 10.57 -» Añadidas entradas aleatorias a la database para probar endpoints.
+12.05 -» Creados los endpoints get, delete, edits de los posts. FALTA CREAR ESQUEMAS PARA SOURCE(POR EJEMPLO)
+CONTINUAR POR LAS FOTOS, AÑADIR/QUITAR

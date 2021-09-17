@@ -62,8 +62,26 @@ app.put('/users/reset/password', resetUserPass);
  */
 
 //Imports
-const { newPost } = require('./controllers/posts');
+const {
+  newPost,
+  getPost,
+  deletePost,
+  editPostTitle,
+  editPostDescription,
+  editPostSource,
+} = require('./controllers/posts');
 app.post('/posts', authorized, newPost);
+app.get('/posts/:idPost', authorized, postExists, getPost);
+app.delete('/posts/:idPost', authorized, postExists, deletePost);
+app.put('/posts/title/:idPost', authorized, postExists, editPostTitle);
+app.put(
+  '/posts/description/:idPost',
+  authorized,
+  postExists,
+  editPostDescription
+);
+app.put('/posts/source/:idPost', authorized, postExists, editPostSource);
+
 //Errors
 app.use((error, req, res, next) => {
   console.log(error.message);
