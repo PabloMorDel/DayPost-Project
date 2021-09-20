@@ -1,7 +1,7 @@
 const { format } = require('date-fns');
 const crypto = require('crypto');
 const { ensureDir } = require('fs-extra');
-const { unlink } = require('fs');
+const { unlink } = require('fs-extra');
 const path = require('path');
 const sharp = require('sharp');
 const uploadsDir = path.join(__dirname, process.env.UPLOADS_DIRECTORY);
@@ -59,9 +59,10 @@ async function savePhoto(image) {
   return imageName;
 }
 async function deletePhoto(imageName) {
-  await ensureDir(uploadsDir);
   const imagePath = path.join(uploadsDir, imageName);
-  await unlink(imagePath);
+  await unlink(imagePath, (err) => {
+    if (err) console.log(err);
+  });
 }
 
 async function sendMail({ to, subject, body }) {

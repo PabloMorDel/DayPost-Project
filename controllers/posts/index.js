@@ -1,8 +1,11 @@
+const addPostPhoto = require('./addPostPhoto');
 const deletePost = require('./deletePost');
+const deletePostPhoto = require('./deletePostPhoto');
 const editPostDescription = require('./editPostDescription');
 const editPostSource = require('./editPostSource');
 const editPostTitle = require('./editPostTitle');
 const getPost = require('./getPost');
+const getPostPhoto = require('./getPostPhoto');
 const newPost = require('./newPost');
 
 module.exports = {
@@ -12,4 +15,7 @@ module.exports = {
   editPostTitle,
   editPostDescription,
   editPostSource,
+  addPostPhoto,
+  getPostPhoto,
+  deletePostPhoto,
 };

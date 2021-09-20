@@ -69,6 +69,9 @@ const {
   editPostTitle,
   editPostDescription,
   editPostSource,
+  addPostPhoto,
+  getPostPhoto,
+  deletePostPhoto,
 } = require('./controllers/posts');
 app.post('/posts', authorized, newPost);
 app.get('/posts/:idPost', authorized, postExists, getPost);
@@ -81,7 +84,9 @@ app.put(
   editPostDescription
 );
 app.put('/posts/source/:idPost', authorized, postExists, editPostSource);
-
+app.post('/posts/images/:idPost', authorized, postExists, addPostPhoto);
+app.get('/posts/photo/:idPost', authorized, postExists, getPostPhoto);
+app.delete('/images/:idPost', authorized, postExists, deletePostPhoto);
 //Errors
 app.use((error, req, res, next) => {
   console.log(error.message);

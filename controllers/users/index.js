@@ -9,6 +9,7 @@ const editUserAccName = require('./editUserAccName');
 const editUserPass = require('./editUserPass');
 const recoverUserPass = require('./recoverUserPass');
 const resetUserPass = require('./resetUserPass');
+const getPostPhoto = require('../posts/getPostPhoto');
 
 module.exports = {
   newUser,
@@ -22,4 +23,5 @@ module.exports = {
   editUserPass,
   recoverUserPass,
   resetUserPass,
+  getPostPhoto,
 };
