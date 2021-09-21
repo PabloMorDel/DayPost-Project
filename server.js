@@ -31,17 +31,17 @@ const authorized = require('./middlewares/authorized');
 
 //Imports
 const {
-  newUser,
-  loginUser,
-  getUser,
-  deleteUser,
-  validateUser,
-  editUserEmail,
-  editUserBiography,
-  editUserAccName,
-  editUserPass,
-  recoverUserPass,
-  resetUserPass,
+    newUser,
+    loginUser,
+    getUser,
+    deleteUser,
+    validateUser,
+    editUserEmail,
+    editUserBiography,
+    editUserAccName,
+    editUserPass,
+    recoverUserPass,
+    resetUserPass,
 } = require('./controllers/users');
 
 app.post('/users', newUser);
@@ -63,47 +63,49 @@ app.put('/users/reset/password', resetUserPass);
 
 //Imports
 const {
-  newPost,
-  getPost,
-  deletePost,
-  editPostTitle,
-  editPostDescription,
-  editPostSource,
-  addPostPhoto,
-  getPostPhoto,
-  deletePostPhoto,
+    newPost,
+    getPost,
+    deletePost,
+    editPostTitle,
+    editPostDescription,
+    editPostSource,
+    addPostPhoto,
+    getPostPhoto,
+    deletePostPhoto,
+    listPosts,
 } = require('./controllers/posts');
 app.post('/posts', authorized, newPost);
 app.get('/posts/:idPost', authorized, postExists, getPost);
 app.delete('/posts/:idPost', authorized, postExists, deletePost);
 app.put('/posts/title/:idPost', authorized, postExists, editPostTitle);
 app.put(
-  '/posts/description/:idPost',
-  authorized,
-  postExists,
-  editPostDescription
+    '/posts/description/:idPost',
+    authorized,
+    postExists,
+    editPostDescription
 );
 app.put('/posts/source/:idPost', authorized, postExists, editPostSource);
 app.post('/posts/images/:idPost', authorized, postExists, addPostPhoto);
 app.get('/posts/photo/:idPost', authorized, postExists, getPostPhoto);
 app.delete('/images/:idPost', authorized, postExists, deletePostPhoto);
+app.get('/posts', listPosts);
 //Errors
 app.use((error, req, res, next) => {
-  console.log(error.message);
-  res.status(error.httpStatus || 500);
-  res.send({
-    status: 'error',
-    message: error.message,
-  });
+    console.log(error.message);
+    res.status(error.httpStatus || 500);
+    res.send({
+        status: 'error',
+        message: error.message,
+    });
 });
 app.use((req, res) => {
-  res.status(404);
-  res.send({
-    status: 'error',
-    message: error.message,
-  });
+    res.status(404);
+    res.send({
+        status: 'error',
+        message: error.message,
+    });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening at http://localhost:${PORT}`);
+    console.log(`Server listening at http://localhost:${PORT}`);
 });
