@@ -33,6 +33,8 @@ ACTUALIZAR TODO CODIGO QUE PUEDA REFERIRSE A LOS MISMOS. AÑADIR ENTRADAS DE LIK
 
 SE HA PEDIDO TUTORÍA, SE ACTUALIZARÁ ESTE MENSAJE CON FECHA Y HORA.
 
-Nos ha quedado un código muy chulo!
-
 Pablo espabila tio
+
+ACTUALIZACION 21-09: ESTRUCTURA BASICA TERMINADA LESTFCKINGGO
+
+Esperar feedback de David, proceder depuración + endpoints extras(AÑADIR editPostTopic???)
