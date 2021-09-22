@@ -32,7 +32,6 @@ const listPosts = async (req, res, next) => {
         [`%${topic}%`, `%${title}%`]
       );
     } else {
-      console.log('esta pasando');
       [posts] = await connection.query(
         `
         SELECT posts.id, posts.title, posts.description, posts.source, posts.topic, posts.idUser, COUNT(*) AS likes
@@ -43,7 +42,6 @@ const listPosts = async (req, res, next) => {
             `
       );
     }
-    console.log(req.query);
     res.send({
       status: 'ok',
       posts,
