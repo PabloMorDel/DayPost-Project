@@ -1,6 +1,6 @@
 node_modules
 .env
 static
-USEFULLTEMPLATES.js
-futureReminders.md
-template.js
+USEFULLTEMPLATES
+futureReminders
+template
