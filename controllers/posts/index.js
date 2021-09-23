@@ -8,16 +8,18 @@ const getPost = require('./getPost');
 const getPostPhoto = require('./getPostPhoto');
 const newPost = require('./newPost');
 const listPosts = require('./listPost');
+const likePost = require('./likePost');
 
 module.exports = {
-    newPost,
-    getPost,
-    deletePost,
-    editPostTitle,
-    editPostDescription,
-    editPostSource,
-    addPostPhoto,
-    getPostPhoto,
-    deletePostPhoto,
-    listPosts,
+  newPost,
+  getPost,
+  deletePost,
+  editPostTitle,
+  editPostDescription,
+  editPostSource,
+  addPostPhoto,
+  getPostPhoto,
+  deletePostPhoto,
+  listPosts,
+  likePost,
 };

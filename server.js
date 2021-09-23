@@ -42,6 +42,8 @@ const {
   editUserPass,
   recoverUserPass,
   resetUserPass,
+  editUserAvatar,
+  editUserPortrait,
 } = require('./controllers/users');
 
 app.post('/users', newUser);
@@ -55,6 +57,9 @@ app.put('/users/accName/:idUser', authorized, userExists, editUserAccName);
 app.put('/users/password/:idUser', authorized, editUserPass);
 app.put('/users/recover/password', recoverUserPass);
 app.put('/users/reset/password', resetUserPass);
+app.put('/users/avatar/:idUser', authorized, userExists, editUserAvatar);
+app.put('/users/portrait/:idUser', authorized, userExists, editUserPortrait);
+
 /*
 ###########################
 #### ENDPOINTS POSTS ######
@@ -73,6 +78,7 @@ const {
   getPostPhoto,
   deletePostPhoto,
   listPosts,
+  likePost,
 } = require('./controllers/posts');
 app.post('/posts', authorized, newPost);
 app.get('/posts/:idPost', authorized, postExists, getPost);
@@ -90,6 +96,7 @@ app.get('/posts/photo/:idPost', authorized, postExists, getPostPhoto);
 app.delete('/images/:idPost', authorized, postExists, deletePostPhoto);
 app.get('/posts', listPosts);
 app.get('/search/posts', listPosts);
+app.post('/posts/like/:idPost', authorized, postExists, likePost);
 //Errors
 app.use((error, req, res, next) => {
   console.log(error.message);

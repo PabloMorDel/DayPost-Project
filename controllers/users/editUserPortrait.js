@@ -1,7 +1,7 @@
 const getDB = require('../../Database/getDB');
 const { deletePhoto, savePhoto, formatDate } = require('../../helpers');
 
-const editUserAvatar = async (req, res, next) => {
+const editUserPortrait = async (req, res, next) => {
   let connection;
   try {
     connection = await getDB();
@@ -12,42 +12,42 @@ const editUserAvatar = async (req, res, next) => {
       error.httpStatus = 403;
       throw error;
     }
-    if (!req.files.avatar) {
-      const error = new Error('Mising avatar');
+    if (!req.files.portrait) {
+      const error = new Error('Mising portrait');
       error.httpStatus = 400;
       throw error;
     }
 
     const [user] = await connection.query(
-      `SELECT id, avatar FROM users WHERE id = ?`,
+      `SELECT id, portrait FROM users WHERE id = ?`,
       [idUser]
     );
 
     const modifiedAt = formatDate(new Date());
 
-    if (req.files && req.files.avatar) {
-      if (user[0].avatar) {
-        await deletePhoto(user[0].avatar);
+    if (req.files && req.files.portrait) {
+      if (user[0].portrait) {
+        await deletePhoto(user[0].portrait);
 
-        const avatarName = await savePhoto(req.files.avatar);
+        const portraitName = await savePhoto(req.files.portrait);
 
         await connection.query(
-          `UPDATE users SET avatar = ?, modifiedAt = ? WHERE id = ?`,
-          [avatarName, modifiedAt, idUser]
+          `UPDATE users SET portrait = ?, modifiedAt = ? WHERE id = ?`,
+          [portraitName, modifiedAt, idUser]
         );
       } else {
-        const avatarName = await savePhoto(req.files.avatar);
+        const portraitName = await savePhoto(req.files.portrait);
         await connection.query(
           `
-            UPDATE users SET avatar = ?, modifiedAt = ? WHERE id = ?
+            UPDATE users SET portrait = ?, modifiedAt = ? WHERE id = ?
         `,
-          [avatarName, modifiedAt, idUser]
+          [portraitName, modifiedAt, idUser]
         );
       }
     }
     res.send({
       status: 'ok',
-      message: 'Avatar updated!',
+      message: 'Portrait updated!',
     });
   } catch (error) {
     next(error);
@@ -56,4 +56,4 @@ const editUserAvatar = async (req, res, next) => {
   }
 };
 
-module.exports = editUserAvatar;
+module.exports = editUserPortrait;
