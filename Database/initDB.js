@@ -44,7 +44,7 @@ async function main() {
             title VARCHAR(100) NOT NULL,
             description TEXT,
             source VARCHAR(100) NOT NULL,
-            topic VARCHAR(50) NOT NULL,
+            topic ENUM("política", "deportes", "economía", "ciencia", "sociedad") DEFAULT "Uncategorized" NOT NULL,
             createdAt DATETIME NOT NULL,
             modifiedAt DATETIME
         )
