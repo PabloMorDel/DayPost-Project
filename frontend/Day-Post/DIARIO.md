@@ -1,5 +1,0 @@
--Estilar forms
--Estilar boton
--estilar sizes
--colorines
--Enganchar al backend
