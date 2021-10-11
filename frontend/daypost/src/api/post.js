@@ -1,15 +1,15 @@
 export async function post(
   url,
   body,
-  onSuccess,
   headers,
+  onSuccess,
   onError = defaultError,
   onConnectionError = defaultConectionError
 ) {
   try {
     const response = await fetch(url, {
       method: 'POST',
-      headers: headers,
+      headers,
       body: JSON.stringify(body),
     });
     if (response.ok) {

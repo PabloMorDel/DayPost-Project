@@ -21,9 +21,11 @@ function Login(props) {
     console.log(loggedUser);
     const url = 'http://localhost:4001/users/login';
     const onSuccess = (body) => {
-      setToken(body.accessToken);
+      setToken(body.token);
+      console.log(body);
       window.alert('Welcome!');
     };
+    // let headers= new Headers()
     post(url, userInfo, { 'Content-Type': 'application/json' }, onSuccess);
   }
   console.log('token', token);
@@ -45,13 +47,21 @@ function Login(props) {
           <h2>Login into Daypost!</h2>
         </div>
         <div className='formContainer'>
-          <LoginForm
-            submitHandler={submitLoginHandler}
-            onEmailChange={onEmailChange}
-            onPasswordChange={onPasswordChange}
-            email={email}
-            password={password}
-          />
+          <div className='forms'>
+            <form onSubmit={submitLoginHandler}>
+              <label htmlFor=''>
+                <input type='email' value={email} onChange={onEmailChange} />
+              </label>
+              <label htmlFor=''>
+                <input
+                  type='password'
+                  value={password}
+                  onChange={onPasswordChange}
+                />
+              </label>
+              <button type='submit'>Log In!</button>
+            </form>
+          </div>
         </div>
         <Utils />
       </div>

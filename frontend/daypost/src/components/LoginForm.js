@@ -14,7 +14,7 @@ function LoginForm({
         <label htmlFor=''>
           <input type='password' value={password} onChange={onPasswordChange} />
         </label>
-        <button>Log In!</button>
+        <button type='submit'>Log In!</button>
       </form>
     </div>
   );
