@@ -1,0 +1,4 @@
+-Mejorar enrutamiento(basado en posesion de token)
+-Pasar token a contexto
+-Registro
+-jsx homePage

@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const fileUpload = require('express-fileupload');
+const cors = require('cors');
 const app = express();
 const { PORT } = process.env;
 
@@ -14,6 +15,13 @@ app.use(express.json());
 //Deserializer form-data
 
 app.use(fileUpload());
+const corsOptions = {
+  origin: '*',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions)); // Use this after the variable declaration
 /*
 #######################
 #### MIDDLEWARES ######
