@@ -1,12 +1,20 @@
 import './App.css';
 
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { AuthContext } from '.';
 
 function App() {
+  const [token, setToken] = useContext(AuthContext);
   return (
     <Router>
       <nav>
@@ -25,8 +33,7 @@ function App() {
       <div className='App'>
         <Switch>
           <Route path='/login'>
-            {' '}
-            <Login />
+            {token ? <Redirect to='/home' /> : <Login></Login>}
           </Route>
           <Route path='/home'>
             {' '}

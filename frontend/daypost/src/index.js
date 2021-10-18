@@ -3,14 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import useLocalStorage from './hooks/useLocalStorage';
 
+export const AuthContext = React.createContext('');
+
+export function AuthProvider({ children }) {
+  const [token, setToken] = useLocalStorage(null, 'token');
+  return (
+    <AuthContext.Provider value={[token, setToken]}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
 
 ReactDOM.render(
-    <React.StrictMode>
-
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

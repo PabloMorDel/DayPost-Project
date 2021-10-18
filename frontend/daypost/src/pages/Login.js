@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '..';
 import { post } from '../api/post';
 import LoginForm from '../components/LoginForm';
 import MainTitle from '../components/MainTitle';
@@ -7,7 +8,7 @@ import Utils from '../components/Utils';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Login(props) {
-  const [token, setToken] = useLocalStorage({}, 'token');
+  const [token, setToken] = useContext(AuthContext);
   const [loggedUser, setLoggedUser] = useLocalStorage({}, 'loggedUser');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +26,7 @@ function Login(props) {
       console.log(body);
       window.alert('Welcome!');
     };
-    // let headers= new Headers()
+
     post(url, userInfo, { 'Content-Type': 'application/json' }, onSuccess);
   }
   console.log('token', token);
@@ -35,6 +36,7 @@ function Login(props) {
   const onPasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
   console.log(email, password, loggedUser);
   return (
     <div className='flex'>
