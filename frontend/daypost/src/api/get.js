@@ -1,4 +1,4 @@
-export async function get(
+async function get(
   url,
   onSuccess,
   token,
@@ -25,3 +25,5 @@ export async function get(
     onConnectionError(msg);
   }
 }
+
+export default get;

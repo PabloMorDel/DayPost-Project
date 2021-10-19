@@ -41,7 +41,16 @@ function Login(props) {
   return (
     <div className='flex'>
       <div className='aside'>
-        <MainTitle />
+        <div
+          style={{
+            width: '50%',
+            margin: '0 auto',
+            position: 'relative',
+            top: '40%',
+          }}
+        >
+          <MainTitle />
+        </div>
       </div>
       <div className='main'>
         <div className='text'>

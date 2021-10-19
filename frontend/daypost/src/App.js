@@ -12,9 +12,11 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthContext } from '.';
-
+import get from './api/get';
+get();
 function App() {
   const [token, setToken] = useContext(AuthContext);
+
   return (
     <Router>
       <nav>
@@ -36,7 +38,6 @@ function App() {
             {token ? <Redirect to='/home' /> : <Login></Login>}
           </Route>
           <Route path='/home'>
-            {' '}
             <Home />
           </Route>
           <Route path='/register'>

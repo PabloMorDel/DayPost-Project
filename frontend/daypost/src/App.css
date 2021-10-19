@@ -8,12 +8,12 @@
 .aside {
   width: 45vh;
 }
-.asideContent {
+/* .asideContent {
   width: 50%;
   margin: 0 auto;
   position: relative;
   top: 40%;
-}
+} */
 
 .bottom > footer {
   display: flex;
