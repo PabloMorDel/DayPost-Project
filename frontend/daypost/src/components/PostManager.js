@@ -3,6 +3,8 @@ import FeedPost from './FeedPost';
 import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '..';
 
+//se supone que sera el componente que regule el feed de las publicaciones
+
 function PostManager(imgSource) {
   //get posts
   const [postList, setPostList] = useState([]);
@@ -13,19 +15,20 @@ function PostManager(imgSource) {
 
     const interval = setInterval(
       get(url, (body) => setPostList(body), token),
-      10000000
+      10000
     );
     return () => clearInterval(interval);
-  }, [token]);
+  }, []);
   console.log('postlist', postList);
   const { posts } = postList;
   console.log(posts);
   return (
     <div className='.postManager'>
       <div className='feed'>
-        {posts.map((post) => {
+        {/* posts.length > 0 ?  {posts.map((post) => {
           return <div>{post.title}</div>;
-        })}
+        }) : 'No data'} */}
+        {/* LA IDEA ES QUE CADA MAP DEVUELVA UN FEEDPOST */}
       </div>
     </div>
   );

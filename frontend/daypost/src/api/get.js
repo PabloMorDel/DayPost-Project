@@ -1,7 +1,7 @@
 async function get(
   url,
   onSuccess,
-  token,
+  token = '',
   onError = (response) => {
     console.error('Request error', response.status, response.statusText);
   },

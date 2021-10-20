@@ -12,7 +12,6 @@ function Login(props) {
   const [loggedUser, setLoggedUser] = useLocalStorage({}, 'loggedUser');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [postList, setPostList] = useState([]);
   async function submitLoginHandler(e) {
     e.preventDefault();
     const userInfo = {
