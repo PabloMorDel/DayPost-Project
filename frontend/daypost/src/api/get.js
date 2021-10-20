@@ -9,7 +9,7 @@ async function get(
     console.error('ERROR', msg);
   }
 ) {
-  console.log('token', token);
+  // console.log('token', token);
   try {
     const response = await fetch(url, {
       method: 'GET',
@@ -17,6 +17,7 @@ async function get(
     });
     if (response.ok) {
       const body = await response.json();
+      console.log(body);
       onSuccess(body);
     } else {
       onError(response);

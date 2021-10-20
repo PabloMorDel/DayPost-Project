@@ -1,10 +1,13 @@
-import { React } from 'react';
+import { React, useState, useContext } from 'react';
+import { AuthContext } from '..';
 import NavigationBar from '../components/NavigationBar';
 import OutsideFooter from '../components/OutsideFooter';
 import PostManager from '../components/PostManager';
 import UserManager from '../components/UserManager';
 
 function Home(props) {
+  // const [postList, setPostList] = useState([]);
+  // const [token, setToken] = useContext(AuthContext);
   return (
     <div className='mainHomePage'>
       <div className='navigator'>
