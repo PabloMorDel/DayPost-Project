@@ -9,6 +9,25 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+function CustomMenu(props) {
+  return (
+    <Menu
+      elevation={0}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'right',
+      }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      {...props}
+    />
+  );
+}
 
 function UserMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,6 +51,24 @@ function UserMenu(props) {
         endIcon={<KeyboardArrowDownIcon />}
       >
         Profile
+        <CustomMenu
+          id='demo-customized-menu'
+          MenuListProps={{
+            'aria-labelledby': 'demo-customized-button',
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose} disableRipple>
+            <AccountCircleIcon />
+            Profile
+          </MenuItem>
+          <MenuItem onClick={handleClose} disableRipple>
+            <LogoutIcon />
+            Log Out
+          </MenuItem>
+        </CustomMenu>
       </Button>
     </div>
   );

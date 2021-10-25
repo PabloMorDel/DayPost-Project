@@ -23,11 +23,11 @@ export function PostProvider({ children }) {
   useEffect(() => {
     const url = 'http://localhost:4001/posts';
 
-    const interval = setInterval(
+    setInterval(
       get(url, (body) => setPostList(body), token),
       10000
     );
-    return () => clearInterval(interval);
+    return () => clearInterval();
   }, [token]);
   return (
     <PostsContext.Provider value={[postList, setPostList]}>

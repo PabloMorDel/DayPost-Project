@@ -16,7 +16,9 @@ function NavigationBar() {
             <a href='/'>Home</a>
           </li>
           <li>
-            <UserMenu></UserMenu>
+            <UserMenu>
+                
+            </UserMenu>
           </li>
           <li>
             <img src='' alt='' />
