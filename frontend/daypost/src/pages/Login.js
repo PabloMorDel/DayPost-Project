@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '..';
 import { post } from '../api/post';
-import LoginForm from '../components/LoginForm';
+// import LoginForm from '../components/LoginForm';
 import MainTitle from '../components/MainTitle';
 import OutsideFooter from '../components/OutsideFooter';
 import Utils from '../components/Utils';

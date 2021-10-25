@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import useLocalStorage from './hooks/useLocalStorage';
+import get from './api/get';
 
 export const AuthContext = React.createContext('');
 
@@ -15,11 +16,32 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
+export const PostsContext = React.createContext([]);
+export function PostProvider({ children }) {
+  const [postList, setPostList] = useState([]);
+  const [token] = useContext(AuthContext);
+  useEffect(() => {
+    const url = 'http://localhost:4001/posts';
+
+    const interval = setInterval(
+      get(url, (body) => setPostList(body), token),
+      10000
+    );
+    return () => clearInterval(interval);
+  }, [token]);
+  return (
+    <PostsContext.Provider value={[postList, setPostList]}>
+      {children}
+    </PostsContext.Provider>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <PostProvider>
+        <App />
+      </PostProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')

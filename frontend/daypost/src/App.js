@@ -39,6 +39,7 @@ function App() {
             {token ? <Redirect to='/home' /> : <Login></Login>}
           </Route>
           <Route path='/home'>
+          
             <Home />
           </Route>
           <Route path='/register'>
