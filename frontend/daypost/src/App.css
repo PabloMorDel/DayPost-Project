@@ -1,3 +1,5 @@
+@import url(./fonts/icons/style.css);
+
 .App {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -32,4 +34,39 @@
 
 #demo-customized-button {
   background-color: rebeccapurple;
+}
+
+/* ############################# */
+
+.mainHomePage {
+  margin: auto;
+  border: 1px solid silver;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.searchArea {
+  border: 1px solid silver;
+  display: flex;
+  /* grid-template-columns: 3fr 1fr; */
+  align-items: center;
+  justify-content: space-evenly;
+
+  border-radius: 30px;
+  background: plum;
+}
+
+.searchArea * {
+  padding: 0 15px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.asideContent img {
+  width: 20rem;
+}
+
+ul {
+  list-style-type: none;
 }

@@ -18,9 +18,9 @@ function Home(props) {
     <div className='mainHomePage'>
       <div className='navigator'>
         <NavigationBar></NavigationBar>
-      </div>
-      <div className='userManager'>
-        <UserManager></UserManager>
+        <div className='userManager'>
+          <UserManager></UserManager>
+        </div>
       </div>
       <div className='mainContent'>
         <Searcher></Searcher>
