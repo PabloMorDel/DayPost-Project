@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.banner {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.banner p {
+  flex-grow: 1;
+}
+
+.banner.error {
+  background-color: red;
+  color: white;
+}
+
+.banner.waiting {
+  background-color: yellow;
+}

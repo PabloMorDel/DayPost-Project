@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import useLocalStorage from './hooks/useLocalStorage';
-import get from './api/get';
+//import getPost from './api/getPost';
 
-export const AuthContext = React.createContext('');
+export const AuthContext = React.createContext();
 
-export function AuthProvider({ children }) {
+function AuthProvider({ children }) {
   const [token, setToken] = useLocalStorage(null, 'token');
   return (
     <AuthContext.Provider value={[token, setToken]}>
@@ -16,32 +16,26 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
-export const PostsContext = React.createContext([]);
-export function PostProvider({ children }) {
-  const [postList, setPostList] = useState([]);
-  const [token] = useContext(AuthContext);
-  useEffect(() => {
-    const url = 'http://localhost:4001/posts';
 
-    setInterval(
-      get(url, (body) => setPostList(body), token),
-      10000
-    );
-    return () => clearInterval();
-  }, [token]);
+export const StatusContext = React.createContext();
+
+function StatusProvider({ children }) {
+  const [error, setError] = useState(null);
+  const [waiting, setWaiting] = useState(true);
+
   return (
-    <PostsContext.Provider value={[postList, setPostList]}>
+    <StatusContext.Provider value={{ error, setError, waiting, setWaiting }}>
       {children}
-    </PostsContext.Provider>
+    </StatusContext.Provider>
   );
 }
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <PostProvider>
+      <StatusProvider>
         <App />
-      </PostProvider>
+      </StatusProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')

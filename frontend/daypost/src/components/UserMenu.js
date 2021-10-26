@@ -11,6 +11,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { AuthContext } from '..';
 
 function CustomMenu(props) {
   return (
@@ -30,6 +31,7 @@ function CustomMenu(props) {
 }
 
 function UserMenu(props) {
+  const [token, setToken] = React.useContext(AuthContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -38,6 +40,12 @@ function UserMenu(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const logOutOnClick = () => {
+    setAnchorEl(null);
+    setToken(null);
+  };
+
   return (
     <div>
       <Button
@@ -64,7 +72,7 @@ function UserMenu(props) {
             <AccountCircleIcon />
             Profile
           </MenuItem>
-          <MenuItem onClick={handleClose} disableRipple>
+          <MenuItem onClick={logOutOnClick} disableRipple>
             <LogoutIcon />
             Log Out
           </MenuItem>

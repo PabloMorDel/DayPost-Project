@@ -12,14 +12,15 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthContext } from '.';
-import get from './api/get';
+import { AppError, AppWaiting } from './components/Status';
 
 function App() {
-  const [token, setToken] = useContext(AuthContext);
-  
+  const [token] = useContext(AuthContext);
 
   return (
     <Router>
+      <AppError />
+      <AppWaiting />
       <nav>
         <ul>
           <li>
@@ -36,11 +37,10 @@ function App() {
       <div className='App'>
         <Switch>
           <Route path='/login'>
-            {token ? <Redirect to='/home' /> : <Login></Login>}
+            {token ? <Redirect to='/home' /> : <Login />}
           </Route>
-          <Route path='/home'>
-          
-            <Home />
+          <Route path='/home/:topic?'>
+            {!token ? <Redirect to='/login' /> : <Home />}
           </Route>
           <Route path='/register'>
             <Register />

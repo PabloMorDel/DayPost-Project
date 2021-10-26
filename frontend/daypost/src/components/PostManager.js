@@ -1,4 +1,3 @@
-import get from '../api/get';
 import FeedPost from './FeedPost';
 import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '..';
