@@ -45,6 +45,7 @@ function UserMenu(props) {
     setAnchorEl(null);
     setToken(null);
   };
+  // console.log(anchorEl);
 
   return (
     <div>

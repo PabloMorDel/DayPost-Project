@@ -16,12 +16,22 @@ function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
+export const UserIdContext = React.createContext();
+
+function IdProvider({ children }) {
+  const [loggedUserId, setLoggedUserId] = useLocalStorage(0, 'userID');
+  return (
+    <UserIdContext.Provider value={[loggedUserId, setLoggedUserId]}>
+      {children}
+    </UserIdContext.Provider>
+  );
+}
 
 export const StatusContext = React.createContext();
 
 function StatusProvider({ children }) {
   const [error, setError] = useState(null);
-  const [waiting, setWaiting] = useState(true);
+  const [waiting, setWaiting] = useState(false);
 
   return (
     <StatusContext.Provider value={{ error, setError, waiting, setWaiting }}>
@@ -33,9 +43,11 @@ function StatusProvider({ children }) {
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <StatusProvider>
-        <App />
-      </StatusProvider>
+      <IdProvider>
+        <StatusProvider>
+          <App />
+        </StatusProvider>
+      </IdProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')

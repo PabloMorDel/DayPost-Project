@@ -18,8 +18,6 @@ function Home(props) {
   const [posts, setPosts] = useState([]);
   //const [category, setCategory] = useState(null);
 
-  console.log(topic);
-
   useEffect(() => {
     const url = `http://localhost:4001/posts/${topic ? '?topic=' + topic : ''}`;
 
@@ -43,10 +41,16 @@ function Home(props) {
   return (
     <div className='mainHomePage'>
       <div className='navigator'>
+        {/* <<<<<<< HEAD */}
         <NavigationBar />
       </div>
       <div className='userManager'>
         <UserManager />
+        {/* ======= */}
+        <div className='userManager'>
+          <UserManager></UserManager>
+        </div>
+        {/* >>>>>>> dervys */}
       </div>
       <div className='mainContent'>
         <Searcher />

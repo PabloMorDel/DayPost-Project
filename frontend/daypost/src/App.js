@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthContext } from '.';
 import { AppError, AppWaiting } from './components/Status';
+import Account from './pages/Account';
 
 function App() {
   const [token] = useContext(AuthContext);
@@ -32,6 +33,9 @@ function App() {
           <li>
             <Link to='/register'>Register</Link>
           </li>
+          <li>
+            <Link to='/account'>Account</Link>
+          </li>
         </ul>
       </nav>
       <div className='App'>
@@ -44,6 +48,9 @@ function App() {
           </Route>
           <Route path='/register'>
             <Register />
+          </Route>
+          <Route path='/account'>
+            <Account />
           </Route>
         </Switch>
       </div>
