@@ -118,7 +118,7 @@ app.use((req, res) => {
   res.status(404);
   res.send({
     status: 'error',
-    message: error.message,
+    message: 'Ruta no encontrada',
   });
 });
 
