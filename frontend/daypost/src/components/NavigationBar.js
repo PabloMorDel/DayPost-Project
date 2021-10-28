@@ -13,8 +13,9 @@ function NavigationBar() {
             </Link>
           </li>
           <li>
-            <img src='' alt='' />
-            <a href='/'>Home</a>
+            <Link to='/home'>
+              <button>Home</button>
+            </Link>
           </li>
           <li>
             <UserMenu></UserMenu>

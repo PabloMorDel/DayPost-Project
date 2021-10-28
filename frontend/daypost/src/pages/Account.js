@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext, StatusContext, UserIdContext } from '..';
+import getPost from '../api/getPost';
 import getUser from '../api/getUser';
 import AccountCard from '../components/AccountCard';
+import FeedPost from '../components/FeedPost';
 import NavigationBar from '../components/NavigationBar';
 import OutsideFooter from '../components/OutsideFooter';
 import PostManager from '../components/PostManager';
@@ -10,23 +12,44 @@ import UserManager from '../components/UserManager';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Account() {
-  const [loggedUser] = useLocalStorage({}, 'loggedUser');
   const [token] = useContext(AuthContext);
   const [loggedUserId] = useContext(UserIdContext);
   const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
+  const { setWaiting, setError } = useContext(StatusContext);
+  const [posts, setPosts] = useState([]);
   // const { setWaiting, setError } = useContext(StatusContext);
   useEffect(() => {
-    const url = `http://localhost:4001/users/${loggedUserId}`;
+    const urlUser = `http://localhost:4001/users/${loggedUserId}`;
+    const urlPosts = `http://localhost:4001/posts`;
 
     getUser({
-      url,
+      url: urlUser,
       token,
       onSuccess: (body) => {
         setCurrentUser(body.message);
       },
     });
-  }, []);
+    getPost({
+      url: urlPosts,
+      token,
+      onSuccess: (body) => {
+        console.log(body);
+        setWaiting(false);
+        setPosts(body.posts);
+      },
+      onError: (error) => {
+        setWaiting(false);
+        setError(error);
+      },
+    });
+  }, [loggedUserId, setCurrentUser, token, setError, setWaiting]);
   console.log(currentUser);
+  // console.log(posts);
+
+  const userPosts = posts.filter(
+    (sameIdPost) => sameIdPost.idUser === loggedUserId
+  );
+  // console.log(userPosts);
 
   return (
     <div className='mainHomePage'>
@@ -48,18 +71,18 @@ function Account() {
       <div className='mainContent'>
         <AccountCard />
         <PostManager>
-          {/* {posts.length > 0
-          ? posts.map((post) => {
-              return (
-                <FeedPost
-                  key={post.id}
-                  topic={post.topic}
-                  title={post.title}
-                  likes={post.likes}
-                ></FeedPost>
-              );
-            })
-          : 'No data'} */}
+          {userPosts.length > 0
+            ? userPosts.map((post) => {
+                return (
+                  <FeedPost
+                    key={post.id}
+                    topic={post.topic}
+                    title={post.title}
+                    likes={post.likes}
+                  ></FeedPost>
+                );
+              })
+            : 'No data'}
         </PostManager>
       </div>
       <div className='aside'>
