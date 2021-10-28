@@ -69,6 +69,7 @@ const editUserEmail = async (req, res, next) => {
     res.send({
       status: 'ok',
       message: `Your new email is: ${email}`,
+      email,
     });
   } catch (error) {
     next(error);

@@ -9,20 +9,22 @@ const getUser = async (req, res, next) => {
     // console.log(idUser, idReqUser);
     const [user] = await connection.query(
       `
-        SELECT id, userName, accName, biography, avatar, portrait, createdAt, active FROM users WHERE id = ?
+        SELECT id, userName, accName, email, biography, avatar, portrait, createdAt, active FROM users WHERE id = ?
     `,
       [idUser]
     );
     let userInfo = {
-      name: user[0].userName,
-      account: user[0].accName,
+      userName: user[0].userName,
+      accName: user[0].accName,
       biography: user[0].biography,
       avatar: user[0].avatar,
       portrait: user[0].portrait,
+      email: user[0].email,
     };
     //idUser typeof === string, we have to force it being a number
     if (Number(idUser) === idReqUser) {
-      (userInfo.email = user[0].email),
+      (userInfo.accName = user[0].accName),
+        (userInfo.email = user[0].email),
         (userInfo.active = user[0].active),
         (userInfo.createdAt = user[0].createdAt);
     }

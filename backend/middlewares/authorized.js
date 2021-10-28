@@ -13,6 +13,7 @@ const authorized = async (req, res, next) => {
     try {
       tokenInfo = jwt.verify(authorization, process.env.SECRET);
     } catch (_) {
+      console.log(authorization);
       const error = new Error('Invalid token');
       error.httpStatus = 401;
       throw error;

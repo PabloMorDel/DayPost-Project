@@ -6,8 +6,8 @@ const editUserBiography = async (req, res, next) => {
     connection = await getDB();
     const { idUser } = req.params;
     const { biography } = req.body;
+    console.log(biography);
     const idReqUser = req.auth.id;
-    console.log(idUser, idReqUser);
     const [user] = await connection.query(
       `
         SELECT id, biography FROM users WHERE id =?
@@ -28,6 +28,7 @@ const editUserBiography = async (req, res, next) => {
     res.send({
       status: 'ok',
       message: 'Biography updated!',
+      biography,
     });
   } catch (error) {
     next(error);

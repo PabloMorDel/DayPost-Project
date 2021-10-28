@@ -22,6 +22,7 @@ const loginUser = async (req, res, next) => {
     `,
       [email, password]
     );
+    console.log([user]);
     if (user.length < 1) {
       const error = new Error(
         'User does not exist (invalid email or password)'
@@ -45,6 +46,7 @@ const loginUser = async (req, res, next) => {
       status: 'ok',
       message: 'Logged in!',
       token,
+      id: user[0].id,
     });
   } catch (error) {
     next(error);

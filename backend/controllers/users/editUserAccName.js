@@ -7,6 +7,7 @@ const editUserAccName = async (req, res, next) => {
     const { idUser } = req.params;
     const idReqUser = req.auth.id;
     const { accName } = req.body;
+    console.log(accName);
     const [user] = await connection.query(
       `
         SELECT id, accName FROM users WHERE id = ?
@@ -34,6 +35,7 @@ const editUserAccName = async (req, res, next) => {
     res.send({
       stauts: 'ok',
       message: `Account Name updated, hello there ${accName}!`,
+      accName,
     });
   } catch (error) {
     next(error);

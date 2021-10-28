@@ -37,6 +37,7 @@ const editUserPass = async (req, res, next) => {
     res.send({
       status: 'ok',
       message: 'Password updated succesfully.',
+      password,
     });
   } catch (error) {
     next(error);
