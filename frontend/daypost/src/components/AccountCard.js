@@ -4,6 +4,8 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import putSmth from '../api/putSmth';
 import { AuthContext } from '..';
+import Avatar from '@mui/material/Avatar';
+
 const modalBoxStyle = {
   position: 'absolute',
   top: '50%',
@@ -18,12 +20,13 @@ const modalBoxStyle = {
 };
 function AccountCard() {
   const [token] = useContext(AuthContext);
-  const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
+  const [currentUser] = useLocalStorage({}, 'currentUser');
   const [userId] = useLocalStorage('', 'userID');
   const [openSettingsModal, setOpenSettingsModal] = useState(false);
   const [newBio, setNewBio] = useState('');
   const [newAccName, setNewAccName] = useState('');
   const [newEmail, setNewEmail] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const handleModalOpen = () => {
     setOpenSettingsModal(true);
@@ -57,23 +60,54 @@ function AccountCard() {
       },
     });
   };
-  // const onEditEmailSubmit = (e) => {
-  //   e.preventDefault();
-  //   const url = `http://localhost:4001/users/biography/${currentUser.id}`
-  // };
-  // const onEditPasswordSubmit = (e) => {
-  //   e.preventDefault();
-  //   const url = `http://localhost:4001/users/biography/${currentUser.id}`
-  // };
+  const onEditEmailSubmit = (e) => {
+    e.preventDefault();
+    const url = `http://localhost:4001/users/email/${userId}`;
+    putSmth({
+      url,
+      info: { email: newEmail },
+      token,
+      onSuccess: (body) => {
+        currentUser.email = body.email;
+        console.log('funciona el email?', body);
+      },
+    });
+  };
+  const onEditPasswordSubmit = (e) => {
+    e.preventDefault();
+    const url = `http://localhost:4001/users/password/${userId}`;
+    putSmth({
+      url,
+      info: { currentPass: currentPassword, newPass: newPassword },
+      token,
+      onSucess: (body) => {
+        console.log(('funciona la password?', body));
+      },
+    });
+    //HAY QUE PASARLE LA PASS ACTUAL AL BODY // ENCRIPTAMIENTO>?????
+  };
+
+  let avatarPath = currentUser.avatar
+    ? currentUser.avatar
+    : 'https://i.pravatar.cc/150?img=8';
+  let portraitPath = currentUser.portrait
+    ? currentUser.portrait
+    : 'defaultBG.jpeg';
+
   return (
     <div className='accountCard'>
       <div className='accountInfo'>
         <div className='editableAccountInfo'>
-          <img
-            src='https://i.pravatar.cc/150?img=3'
-            alt='accountAvatar'
-            className='accountAvatar'
-          />
+          <div
+            className='bgPortrait'
+            style={{ backgroundImage: `url(${portraitPath})` }}
+          >
+            <Avatar
+              alt='avatarImg'
+              src={avatarPath}
+              sx={{ width: 80, height: 80 }}
+            />
+          </div>
           <p>
             <strong>{currentUser.accName}</strong>
           </p>
@@ -117,17 +151,37 @@ function AccountCard() {
                   onChange={(e) => setNewAccName(e.target.value)}
                 />
               </form>
-              <form action='' className='settings-modal-form'>
+              <form
+                className='settings-modal-form'
+                onSubmit={onEditEmailSubmit}
+              >
                 <p>Edit Email</p>
                 <input
                   type='email'
                   className='settings-modal-input'
                   placeholder={currentUser.email}
+                  onChange={(e) => setNewEmail(e.target.value)}
                 />
               </form>
-              <form action='' className='settings-modal-form'>
+              <form
+                className='settings-modal-form'
+                onSubmit={onEditPasswordSubmit}
+              >
                 <p>Edit Password</p>
-                <input type='password' className='settings-modal-input' />
+
+                <p>Type your current password</p>
+                <input
+                  type='password'
+                  className='settings-modal-input'
+                  onChange={(e) => setCurrentPassword(e.target.value)}
+                />
+                <p>Type your new password</p>
+                <input
+                  type='password'
+                  className='settings-modal-input'
+                  onChange={(e) => setNewPassword(e.target.value)}
+                />
+                <button type='submit'>Submit changes</button>
               </form>
             </div>
           </Box>

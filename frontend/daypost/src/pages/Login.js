@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { AuthContext, UserIdContext } from '..';
 import { post } from '../api/post';
 // import LoginForm from '../components/LoginForm';
@@ -8,9 +8,9 @@ import Utils from '../components/Utils';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Login(props) {
-  const [token, setToken] = useContext(AuthContext);
-  const [loggedUser, setLoggedUser] = useLocalStorage({}, 'loggedUser');
-  const [loggedUserId, setLoggedUserId] = useContext(UserIdContext);
+  const [setToken] = useContext(AuthContext);
+  const [setLoggedUser] = useLocalStorage({}, 'loggedUser');
+  const [setLoggedUserId] = useContext(UserIdContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
