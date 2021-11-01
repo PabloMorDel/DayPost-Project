@@ -8,9 +8,9 @@ import Utils from '../components/Utils';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Login(props) {
-  const [setToken] = useContext(AuthContext);
-  const [setLoggedUser] = useLocalStorage({}, 'loggedUser');
-  const [setLoggedUserId] = useContext(UserIdContext);
+  const [token, setToken] = useContext(AuthContext);
+  const [loggedUser, setLoggedUser] = useLocalStorage({}, 'loggedUser');
+  const [loggedUserId, setLoggedUserId] = useContext(UserIdContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
