@@ -1,15 +1,17 @@
 # Welcome to DayPost!
 
-    -It's a collaborative platform for news
-    -Has a social media style, where users can follow other users, like and comment their posts.
-    -Posts consist on:
-        -Title
-        -Description
-        -Source
-        -Topic
-        -Image(optional)
+## What is DayPost?
 
-# Database structure
+- It's a collaborative platform for news
+- Has a social media style, where users can follow other users, like and comment their posts.
+- Posts consist on:
+  - Title
+  - Description
+  - Source
+  - Topic
+  - Image(optional)
+
+## Database structure
 
 _Users table:_
 
@@ -62,7 +64,7 @@ _Comments table:_
 - createdAt
 - modifiedAt
 
-# Endpoints
+# API 
 
 ## User endpoints
 
