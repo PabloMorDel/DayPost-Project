@@ -1,19 +1,18 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import EditIcon from '@mui/icons-material/Edit';
-import Divider from '@mui/material/Divider';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import LogoutIcon from '@mui/icons-material/Logout';
 import { AuthContext } from '..';
+import { Avatar, Link } from '@mui/material';
 
 function CustomMenu(props) {
+  //TODO ESTO ES UNA MIERDA
+
   return (
     <Menu
       elevation={0}
@@ -37,7 +36,8 @@ function UserMenu(props) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (e) => {
+    e.preventDefault();
     setAnchorEl(null);
   };
 
@@ -70,8 +70,10 @@ function UserMenu(props) {
           onClose={handleClose}
         >
           <MenuItem onClick={handleClose} disableRipple>
-            <AccountCircleIcon />
-            Profile
+            <Button>
+              <Avatar></Avatar>
+              <Link to='/account'> Profile</Link>
+            </Button>
           </MenuItem>
           <MenuItem onClick={logOutOnClick} disableRipple>
             <LogoutIcon />

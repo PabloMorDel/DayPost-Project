@@ -22,13 +22,16 @@ function Account() {
     const urlUser = `http://localhost:4001/users/${loggedUserId}`;
     const urlPosts = `http://localhost:4001/posts`;
 
-    getUser({
-      url: urlUser,
-      token,
-      onSuccess: (body) => {
-        setCurrentUser(body.message);
+    getUser(
+      {
+        url: urlUser,
+        token,
+        onSuccess: (body) => {
+          setCurrentUser(body.message);
+        },
       },
-    });
+      [setWaiting, setError]
+    );
     getPost({
       url: urlPosts,
       token,

@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import putSmth from '../api/putSmth';
-import { AuthContext } from '..';
+import { AuthContext, StatusContext } from '..';
 import Avatar from '@mui/material/Avatar';
-import { Button, IconButton, Input } from '@mui/material';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import { Button } from '@mui/material';
 import putImg from '../api/putImg';
+import getUser from '../api/getUser';
 
 const modalBoxStyle = {
   position: 'absolute',
@@ -23,7 +23,7 @@ const modalBoxStyle = {
 };
 function AccountCard() {
   const [token] = useContext(AuthContext);
-  const [currentUser] = useLocalStorage({}, 'currentUser');
+  const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
   const [userId] = useLocalStorage('', 'userID');
   const [openSettingsModal, setOpenSettingsModal] = useState(false);
   const [newBio, setNewBio] = useState('');
@@ -31,8 +31,22 @@ function AccountCard() {
   const [newEmail, setNewEmail] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
-  const [avatarFile, setAvatarFile] = useState({});
-  const [portraitFile, setPortraitFile] = useState({});
+  const [avatarFile, setAvatarFile] = useState();
+  const [portraitFile, setPortraitFile] = useState();
+  const { waiting, setWaiting } = useContext(StatusContext);
+
+  useEffect(() => {
+    const urlUser = `http://localhost:4001/users/${userId}`;
+
+    getUser({
+      url: urlUser,
+      token,
+      onSuccess: (body) => {
+        setCurrentUser(body.message);
+      },
+    });
+  }, [waiting]);
+
   const handleModalOpen = () => {
     setOpenSettingsModal(true);
   };
@@ -41,6 +55,7 @@ function AccountCard() {
   };
   const onEditBioSubmit = (e) => {
     e.preventDefault();
+    setWaiting(true);
     const url = `http://localhost:4001/users/biography/${userId}`;
     putSmth({
       url,
@@ -48,6 +63,7 @@ function AccountCard() {
       token,
       onSuccess: (body) => {
         currentUser.biography = body.biography;
+        setWaiting(false);
         console.log('funciona?', body);
       },
     });
@@ -55,18 +71,21 @@ function AccountCard() {
   const onEditAccNameSubmit = (e) => {
     e.preventDefault();
     const url = `http://localhost:4001/users/accName/${userId}`;
+    setWaiting(true);
     putSmth({
       url,
       info: { accName: newAccName },
       token,
       onSuccess: (body) => {
         currentUser.accName = body.accName;
+        setWaiting(false);
         console.log('funciona?2', body);
       },
     });
   };
   const onEditEmailSubmit = (e) => {
     e.preventDefault();
+    setWaiting(true);
     const url = `http://localhost:4001/users/email/${userId}`;
     putSmth({
       url,
@@ -74,6 +93,7 @@ function AccountCard() {
       token,
       onSuccess: (body) => {
         currentUser.email = body.email;
+        setWaiting(false);
         console.log('funciona el email?', body);
       },
     });
@@ -94,6 +114,7 @@ function AccountCard() {
   const onEditAvatarSubmit = (e) => {
     e.preventDefault();
     const url = `http://localhost:4001/users/avatar/${userId}`;
+    setWaiting(true);
     putImg({
       url,
       file: avatarFile,
@@ -101,7 +122,9 @@ function AccountCard() {
       token,
       onSucess: (body) => {
         console.log(body);
+        setWaiting(false);
         setAvatarFile(body.filename);
+        currentUser.avatar = body.filename;
         console.log(avatarFile);
       },
     });
@@ -109,17 +132,20 @@ function AccountCard() {
   const onEditPortraitSubmit = (e) => {
     e.preventDefault();
     const url = `http://localhost:4001/users/portrait/${userId}`;
+    setWaiting(true);
+    const onSuccess = (body) => {
+      console.log('hola?');
+      console.log(body);
+      setPortraitFile(body.filename);
+      setWaiting(false);
+      console.log(portraitFile);
+    };
     putImg({
       url,
       file: portraitFile,
       fileType: 'portrait',
       token,
-      onSucess: (body) => {
-        console.log('hola?');
-        console.log(body);
-        setPortraitFile(body.filename);
-        console.log(portraitFile);
-      },
+      onSuccess,
     });
   };
 
@@ -174,68 +200,47 @@ function AccountCard() {
                 justifyContent: 'space-between',
               }}
             >
+              <Avatar
+                alt='avatarImg'
+                src={avatarPath}
+                sx={{ width: 80, height: 80 }}
+              ></Avatar>
+            </div>
+            <div className='imgInputs' style={{ display: 'flex' }}>
               <div
                 className='avatarSettings'
                 style={{ display: 'flex', flexDirection: 'column' }}
               >
-                <Avatar
-                  alt='avatarImg'
-                  src={avatarPath}
-                  sx={{ width: 80, height: 80 }}
-                ></Avatar>
                 <form onSubmit={onEditAvatarSubmit}>
                   <input
-                    accept='image/*'
-                    // className={classes.input}
-                    id='icon-button-file'
                     type='file'
-                    style={{ display: 'none' }}
+                    id='portraitChange'
                     onChange={(e) => {
                       setAvatarFile(e.target.files[0]);
                       console.log(avatarFile);
                     }}
                   />
-                  <label htmlFor='icon-button-file'>
-                    <IconButton
-                      color='primary'
-                      // className={classes.button}
-                      component='span'
-                    >
-                      <PhotoCamera />
-                    </IconButton>
-                  </label>
+
                   <Button type='submit'>Change Avatar</Button>
                 </form>
               </div>
-              <div
-                className='portraitSettings'
-                style={{ display: 'flex', flexDirection: 'column' }}
-              >
+
+              <div className='editPortraitSettings'>
                 <form onSubmit={onEditPortraitSubmit}>
                   <input
-                    accept='image/*'
-                    // className={classes.input}
-                    id='icon-button-file'
                     type='file'
-                    style={{ display: 'none' }}
+                    id='portraitChange'
                     onChange={(e) => {
                       setPortraitFile(e.target.files[0]);
                       console.log(portraitFile);
                     }}
                   />
-                  <label htmlFor='icon-button-file'>
-                    <IconButton
-                      color='primary'
-                      // className={classes.button}
-                      component='span'
-                    >
-                      <PhotoCamera />
-                    </IconButton>
-                  </label>
+
                   <Button type='submit'>Change Portrait</Button>
                 </form>
               </div>
             </div>
+
             <div className='settings-modal-form-container'>
               <form className='settings-modal-form' onSubmit={onEditBioSubmit}>
                 <p>Edit Biography</p>
@@ -299,118 +304,3 @@ function AccountCard() {
 }
 
 export default AccountCard;
-
-// {/* <form onSubmit={onEditAvatarSubmit}>
-//                 <label
-//                   htmlFor='icon-button-file'
-//                   onChange={(e) => {
-//                     console.log(e.target.files[0]);
-//                     setAvatarFile(e.target.files[0]);
-//                     console.log(avatarFile);
-//                   }}
-//                 >
-//                   <div
-//                     className='avatarLabelStyle'
-//                     style={{ display: 'flex', flexDirection: 'column' }}
-//                   >
-//                     <IconButton
-//                       color='primary'
-//                       aria-label='upload picture'
-//                       component='span'
-//                       type='submit'
-//                     >
-//                       <Input
-//                         key='1'
-//                         accept='image/*'
-//                         id='icon-button-file'
-//                         type='file'
-//                         style={{
-//                           display: 'none',
-//                           backgroundImage: `url(${portraitPath})`,
-//                           border: '1px solid #ccc',
-//                           padding: '6px 12p',
-//                           cursor: 'pointer',
-//                         }}
-//                       />
-//                       <PhotoCamera
-//                         style={{
-//                           position: 'relative',
-//                           color: 'rebeccapurple',
-//                           bottom: '80%',
-//                           left: '80%',
-//                           zIndex: 1,
-//                         }}
-//                       />
-//                       <Avatar
-//                         alt='avatarImg'
-//                         src={avatarPath}
-//                         sx={{ width: 80, height: 80 }}
-//                       ></Avatar>
-//                     </IconButton>
-//                     <Button type='submit' style={{ color: 'rebeccapurple' }}>
-//                       Submit Avatar Change
-//                     </Button>
-//                   </div>
-//                 </label>
-//               </form> */}
-//               <div class='image-upload'>
-//                 <form onSubmit={onEditAvatarSubmit}>
-//                   <label htmlFor='file-input'>
-//                     <img
-//                       src={portraitPath}
-//                       alt='portraitImg'
-//                       style={{ width: 80, height: 80 }}
-//                     />
-//                   </label>
-
-//                   <input
-//                     id='file-input'
-//                     type='file'
-//                     onChange={(e) => {
-//                       setAvatarFile(e.target.files[0]);
-//                     }}
-//                   />
-//                   <button type='submit'>submit avatar</button>
-//                 </form>
-//               </div>
-//               <form onSubmit={onEditPortraitSubmit}>
-//                 <label htmlFor='icon-button-file'>
-//                   <div>
-//                     <IconButton
-//                       color='primary'
-//                       aria-label='upload picture'
-//                       component='span'
-//                       type='submit'
-//                     >
-//                       <Input
-//                         key='2'
-//                         accept='image/*'
-//                         id='icon-button-file'
-//                         type='file'
-//                         style={{
-//                           display: 'none',
-//                           padding: '6px 12p',
-//                           cursor: 'pointer',
-//                         }}
-//                         onChange={(e) => {
-//                           console.log(e.target.files);
-//                           setPortraitFile(e.target.files[0]);
-//                           console.log(portraitFile);
-//                         }}
-//                       />
-//                       <PhotoCamera
-//                         style={{
-//                           position: 'relative',
-//                           color: 'rebeccapurple',
-//                           bottom: '80%',
-//                           left: '80%',
-//                           zIndex: 1,
-//                         }}
-//                       />
-//                     </IconButton>
-//                     <Button type='submit' style={{ color: 'rebeccapurple' }}>
-//                       Submit Portrait Change
-//                     </Button>
-//                   </div>
-//                 </label>
-//               </form>
