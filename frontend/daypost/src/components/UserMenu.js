@@ -11,78 +11,76 @@ import { AuthContext } from '..';
 import { Avatar, Link } from '@mui/material';
 
 function CustomMenu(props) {
-  //TODO ESTO ES UNA MIERDA
+    //TODO ESTO ES UNA MIERDA
 
-  return (
-    <Menu
-      elevation={0}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'right',
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      {...props}
-    />
-  );
+    return (
+        <Menu
+            elevation={0}
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+            }}
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            {...props}
+        />
+    );
 }
-
 function UserMenu(props) {
-  const [token, setToken] = React.useContext(AuthContext);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = (e) => {
-    e.preventDefault();
-    setAnchorEl(null);
-  };
+    const [token, setToken] = React.useContext(AuthContext);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = (e) => {
+        e.preventDefault();
+        setAnchorEl(null);
+    };
 
-  const logOutOnClick = () => {
-    setAnchorEl(null);
-    setToken(null);
-  };
-  // console.log(anchorEl);
+    const logOutOnClick = () => {
+        setAnchorEl(null);
+        setToken(null);
+    };
+    // console.log('Anchor', anchorEl);
 
-  return (
-    <div>
-      <Button
-        id='demo-customized-button'
-        aria-controls='demo-customized-menu'
-        aria-haspopup='true'
-        aria-expanded={open ? 'true' : undefined}
-        variant='contained'
-        disableElevation
-        onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
-      >
-        Profile
-        <CustomMenu
-          id='demo-customized-menu'
-          MenuListProps={{
-            'aria-labelledby': 'demo-customized-button',
-          }}
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={handleClose} disableRipple>
-            <Button>
-              <Avatar></Avatar>
-              <Link to='/account'> Profile</Link>
+    return (
+        <div>
+            <Button
+                id='demo-customized-button'
+                aria-controls='demo-customized-menu'
+                aria-haspopup='true'
+                aria-expanded={open ? 'true' : undefined}
+                variant='contained'
+                disableElevation
+                onClick={handleClick}
+                endIcon={<KeyboardArrowDownIcon />}
+            >
+                Options
             </Button>
-          </MenuItem>
-          <MenuItem onClick={logOutOnClick} disableRipple>
-            <LogoutIcon />
-            Log Out
-          </MenuItem>
-        </CustomMenu>
-      </Button>
-    </div>
-  );
+
+            <CustomMenu
+                id='demo-customized-menu'
+                MenuListProps={{
+                    'aria-labelledby': 'demo-customized-button',
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+            >
+                <MenuItem onClick={handleClose} disableRipple>
+                    <Avatar />
+                    <Link to='/account'> Profile</Link>
+                </MenuItem>
+                <MenuItem onClick={logOutOnClick} disableRipple>
+                    <LogoutIcon />
+                    Log Out
+                </MenuItem>
+            </CustomMenu>
+        </div>
+    );
 }
 
 export default UserMenu;
