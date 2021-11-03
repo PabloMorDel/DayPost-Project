@@ -1,6 +1,17 @@
-function FeedPost({ imgSource, topic, title, likes }) {
+import { Button, Link } from '@mui/material';
+import { useHistory } from 'react-router-dom';
+
+function FeedPost({ imgSource, topic, title, likes, id }) {
+  const history = useHistory();
+  const routeChanger = () => {
+    const path = `/posts/${id}`;
+    history.push(path);
+  };
   return (
     <div className='post'>
+      <div>
+        <button onClick={routeChanger}>See Post</button>
+      </div>
       <div>
         <p>{topic}</p>
       </div>
