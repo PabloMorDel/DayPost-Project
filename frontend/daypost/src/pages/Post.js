@@ -9,10 +9,23 @@ import UserManager from '../components/UserManager';
 import getPost from '../api/getPost';
 import getUser from '../api/getUser';
 import { Avatar } from '@mui/material';
+import { format } from 'date-fns';
+import { post } from '../api/post';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
-function SinglePost({ idOwner, title, description, photo, source, createdAt }) {
+function SinglePost({
+  idOwner,
+  title,
+  description,
+  photo,
+  source,
+  date,
+  likes,
+  id,
+}) {
   const [token] = useContext(AuthContext);
   const [postOwner, setPostOwner] = useState({});
+  const [like, setLike] = useState(false);
   console.log(postOwner);
   useEffect(() => {
     getUser({
@@ -23,6 +36,25 @@ function SinglePost({ idOwner, title, description, photo, source, createdAt }) {
       },
     });
   }, []);
+  const formatDate = (date) => {
+    let time = new Date(date);
+    let formattedDate = format(time, 'mm-dd-yyyy');
+    return formattedDate;
+  };
+  const onLikeButtonClick = (e) => {
+    const url = `http://localhost:4001/posts/like/${id}`;
+    e.preventDefault();
+    const onSuccess = () => {
+      setLike(true);
+    };
+    post(
+      url,
+      {},
+      { Authorization: token, 'Content-type': 'application/json' },
+      onSuccess
+    );
+  };
+  console.log(like);
   return (
     <div className='singlePost'>
       <div className='fullUserInfo'>
@@ -45,6 +77,10 @@ function SinglePost({ idOwner, title, description, photo, source, createdAt }) {
           <div className='postText'>
             <div>
               <p>{source}</p>
+              <p>
+                Created:
+                {formatDate(date)}
+              </p>
             </div>
             <div>
               <p>{title}</p>
@@ -54,6 +90,14 @@ function SinglePost({ idOwner, title, description, photo, source, createdAt }) {
             </div>
           </div>
           <div className='postImg'></div>
+        </div>
+        <div className='likesANDcomments' onClick={onLikeButtonClick}>
+          {like ? (
+            <FavoriteIcon style={{ color: 'red' }}></FavoriteIcon>
+          ) : (
+            <FavoriteIcon style={{ color: 'black' }}></FavoriteIcon>
+          )}
+          <div>{likes}</div>
         </div>
       </div>
     </div>
@@ -109,6 +153,9 @@ function Post() {
             source={post.source}
             description={post.description}
             title={post.title}
+            date={post.createdAt}
+            id={idPost}
+            likes={post.likes}
           />
         ) : (
           'No Data'

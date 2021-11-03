@@ -27,6 +27,8 @@ const getUser = async (req, res, next) => {
         (userInfo.email = user[0].email),
         (userInfo.active = user[0].active),
         (userInfo.createdAt = user[0].createdAt);
+      userInfo.userName = user[0].userName;
+      userInfo.avatar = user[0].avatar;
     }
     res.send({
       status: 'ok',

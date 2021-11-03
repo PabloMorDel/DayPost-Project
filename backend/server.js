@@ -89,7 +89,7 @@ const {
   likePost,
 } = require('./controllers/posts');
 app.post('/posts', authorized, newPost);
-app.get('/posts/:idPost', authorized, postExists, getPost);
+app.get('/posts/:idPost', postExists, getPost);
 app.delete('/posts/:idPost', authorized, postExists, deletePost);
 app.put('/posts/title/:idPost', authorized, postExists, editPostTitle);
 app.put(

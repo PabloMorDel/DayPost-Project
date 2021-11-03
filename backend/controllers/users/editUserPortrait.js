@@ -22,13 +22,14 @@ const editUserPortrait = async (req, res, next) => {
       `SELECT id, portrait FROM users WHERE id = ?`,
       [idUser]
     );
-
+    console.log(1);
     const modifiedAt = formatDate(new Date());
 
     if (req.files && req.files.portrait) {
+      console.log(2);
       if (user[0].portrait) {
         await deletePhoto(user[0].portrait);
-
+        console.log(3);
         const portraitName = await savePhoto(req.files.portrait);
 
         await connection.query(
@@ -36,11 +37,12 @@ const editUserPortrait = async (req, res, next) => {
           [portraitName, modifiedAt, idUser]
         );
       } else {
+        console.log(4);
         const portraitName = await savePhoto(req.files.portrait);
         await connection.query(
           `
-            UPDATE users SET portrait = ?, modifiedAt = ? WHERE id = ?
-        `,
+          UPDATE users SET portrait = ?, modifiedAt = ? WHERE id = ?
+          `,
           [portraitName, modifiedAt, idUser]
         );
       }
