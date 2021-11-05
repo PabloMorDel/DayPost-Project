@@ -7,7 +7,7 @@ import Utils from '../components/Utils';
 
 //Usar materialUI titles? div.text
 
-function Register(pros) {
+function Register(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -44,7 +44,7 @@ function Register(pros) {
         <div className='text'>
           <h1>Economy, Politics, Cryptocurrencies, Sports, Actuality</h1>
 
-          <h2>Login into Daypost!</h2>
+          <h2>Become a Dayposter!</h2>
         </div>
         <div className='formContainer'>
           <div>
@@ -53,6 +53,7 @@ function Register(pros) {
                 <input
                   type='text'
                   value={accName}
+                  placeholder='Account Name'
                   onChange={(e) => {
                     setAccName(e.target.value);
                   }}
@@ -62,6 +63,7 @@ function Register(pros) {
                 <input
                   type='text'
                   value={userName}
+                  placeholder='Username'
                   onChange={(e) => {
                     setUserName(e.target.value);
                   }}
@@ -71,6 +73,7 @@ function Register(pros) {
                 <input
                   type='text'
                   value={email}
+                  placeholder='Email Address'
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -80,6 +83,7 @@ function Register(pros) {
                 <input
                   type='password'
                   value={password}
+                  placeholder='Password'
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
@@ -89,12 +93,15 @@ function Register(pros) {
                 <input
                   type='password'
                   value={repeatPassword}
+                  placeholder='Repeat Password'
                   onChange={(e) => {
                     setRepeatPassword(e.target.value);
                   }}
                 />
               </label>
-              <button type='submit'>Register!</button>
+              <button className='buttonRegister' type='submit'>
+                Register!
+              </button>
             </form>
           </div>
         </div>

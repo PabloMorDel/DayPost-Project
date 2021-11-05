@@ -6,6 +6,7 @@
 
 .flex {
   display: flex;
+  flex-direction: column;
 }
 .aside {
   width: 45vh;
@@ -69,4 +70,47 @@
 
 ul {
   list-style-type: none;
+}
+
+/* ######## MOVILES ######### */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .asideContent img {
+    width: 8rem;
+  }
+
+  .aside {
+    align-items: center;
+  }
+
+  .formContainer * {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    align-items: initial;
+  }
+
+  label {
+    padding: 10px;
+  }
+
+  .text {
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  .buttonRegister {
+    width: 180px;
+    height: 35px;
+    background-color: rebeccapurple;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    padding-top: 8px;
+  }
+}
+
+/* ######## TABLES HORIZONTAL ######### */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: horizontal) {
 }
