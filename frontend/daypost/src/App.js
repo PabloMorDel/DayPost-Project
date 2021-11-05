@@ -14,9 +14,11 @@ import Register from './pages/Register';
 import { AuthContext } from '.';
 import { AppError, AppWaiting } from './components/Status';
 import Account from './pages/Account';
+import Post from './pages/Post';
 
 function App() {
   const [token] = useContext(AuthContext);
+
 
   return (
     <Router>
@@ -51,6 +53,9 @@ function App() {
           </Route>
           <Route path='/account'>
             <Account />
+          </Route>
+          <Route path='/posts/:idPost?'>
+            <Post />
           </Route>
         </Switch>
       </div>

@@ -22,9 +22,9 @@ async function putImg({
     const body = await response.json();
 
     if (response.ok) {
-      
+
       onSuccess(body);
-      
+
     } else {
       throw new Error(body.message);
     }

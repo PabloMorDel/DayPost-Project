@@ -109,7 +109,7 @@ function AccountCard() {
         console.log(('funciona la password?', body));
       },
     });
-    //HAY QUE PASARLE LA PASS ACTUAL AL BODY // ENCRIPTAMIENTO>?????
+    //HAY QUE PASARLE LA PASS ACTUAL AL BODY // ENCRIPTAMIENTO>?????//
   };
   const onEditAvatarSubmit = (e) => {
     e.preventDefault();

@@ -10,6 +10,7 @@ import Searcher from '../components/Searcher';
 import UserManager from '../components/UserManager';
 import getPost from '../api/getPost';
 import { PostCategories } from '../components/PostsCategories';
+import { Link } from '@mui/material';
 
 function Home(props) {
   const { topic } = useParams();
@@ -64,6 +65,7 @@ function Home(props) {
                 return (
                   <FeedPost
                     key={post.id}
+                    id={post.id}
                     topic={post.topic}
                     title={post.title}
                     likes={post.likes}

@@ -4,6 +4,7 @@ const authorized = async (req, res, next) => {
   let connection;
   try {
     const { authorization } = req.headers;
+    console.log(req.headers);
     if (!authorization) {
       const error = new Error('Missing authorization header');
       error.httpStatus = 401;

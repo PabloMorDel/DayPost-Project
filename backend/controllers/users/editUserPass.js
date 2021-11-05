@@ -21,6 +21,7 @@ const editUserPass = async (req, res, next) => {
     `,
       [idUser, currentPass]
     );
+    console.log(idUser, currentPass);
 
     if (user.length < 1) {
       const error = new Error('Invalid password');
