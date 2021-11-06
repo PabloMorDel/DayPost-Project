@@ -1,7 +1,7 @@
 function MainTitle(props) {
   return (
     <div className='asideContent'>
-      <img className='logo' src='/daypost_logo.png' />
+      <img src='/images/white_logo_transparent_background.png'></img>
     </div>
   );
 }

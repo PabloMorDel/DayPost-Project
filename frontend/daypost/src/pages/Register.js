@@ -99,9 +99,7 @@ function Register(props) {
                   }}
                 />
               </label>
-              <button className='buttonRegister' type='submit'>
-                Register!
-              </button>
+              <button type='submit'>Register!</button>
             </form>
           </div>
         </div>
