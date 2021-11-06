@@ -8,7 +8,7 @@ function FeedPost({ imgSource, topic, title, likes, id }) {
     history.push(path);
   };
   return (
-    <div className='post'>
+    <div className='post' onClick={routeChanger} style={{ cursor: 'pointer' }}>
       <div>
         <button onClick={routeChanger}>See Post</button>
       </div>
