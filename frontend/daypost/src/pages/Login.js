@@ -41,16 +41,16 @@ function Login(props) {
   return (
     <div className='flex'>
       <div className='aside'>
-        <div
+        {/* <div
           style={{
             width: '50%',
             margin: '0 auto',
             position: 'relative',
             top: '40%',
           }}
-        >
-          <MainTitle />
-        </div>
+        > */}
+        <MainTitle />
+        {/* </div> */}
       </div>
       <div className='main'>
         <div className='text'>
@@ -61,11 +61,17 @@ function Login(props) {
           <div className='forms'>
             <form onSubmit={submitLoginHandler}>
               <label htmlFor=''>
-                <input type='email' value={email} onChange={onEmailChange} />
+                <input
+                  type='email'
+                  placeholder='Email Address'
+                  value={email}
+                  onChange={onEmailChange}
+                />
               </label>
               <label htmlFor=''>
                 <input
                   type='password'
+                  placeholder='Password'
                   value={password}
                   onChange={onPasswordChange}
                 />

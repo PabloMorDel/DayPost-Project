@@ -4,12 +4,14 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.flex {
+/* .flex {
   display: flex;
-}
-.aside {
+  flex-direction: column;
+} */
+
+/* .aside {
   width: 45vh;
-}
+} */
 /* .asideContent {
   width: 50%;
   margin: 0 auto;
@@ -17,10 +19,10 @@
   top: 40%;
 } */
 
-.bottom > footer {
+/* .bottom > footer {
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .forms {
   display: flex;
@@ -70,3 +72,127 @@
 ul {
   list-style-type: none;
 }
+
+button {
+  width: 180px;
+  height: 40px;
+  background-color: rebeccapurple;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  padding-top: 8px;
+}
+
+button:hover {
+  background-color: rgb(187, 133, 241);
+}
+
+/* ######## MOVILES ######### */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .aside {
+    height: 150px;
+    background: url(./images/short_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .asideContent {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .asideContent img {
+    align-self: baseline;
+    margin-top: 20px;
+  }
+
+  .formContainer * {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    align-items: initial;
+  }
+
+  label {
+    padding: 10px;
+  }
+
+  .text {
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  button {
+    width: 180px;
+    height: 40px;
+    background-color: rebeccapurple;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    padding-top: 8px;
+  }
+
+  button:hover {
+    background-color: rgb(187, 133, 241);
+  }
+
+  .utils {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  a {
+    text-decoration: none;
+    border: 1px solid gray;
+    width: max-content;
+    padding: 4px 9px;
+    border-radius: 10px;
+    background-color: rgb(120, 54, 167);
+    color: white;
+  }
+
+  nav {
+    display: flex;
+
+    margin: auto;
+    margin-top: 15px;
+    justify-content: space-around;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 12px;
+    padding: 0%;
+
+    align-self: center;
+  }
+
+  .bottom footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    padding-bottom: 3px;
+  }
+
+  .bottom a {
+    text-decoration: none;
+    color: rgb(114, 112, 112);
+    border: none;
+    background: none;
+  }
+}
+
+/* ######## TABLES HORIZONTAL ######### */
+/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: horizontal) {
+} */
+
+/* ######## TABLES HORIZONTAL ######### */
+/* @media (min-width: 1025px) and (max-width: 1280px) {
+  
+  //CSS
+  
+} */
