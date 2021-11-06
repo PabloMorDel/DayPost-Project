@@ -58,7 +58,10 @@ function Account() {
     <div className='mainHomePage'>
       <div className='navigator'>
         {/* <<<<<<< HEAD */}
-        <NavigationBar />
+        <NavigationBar
+          avatar={currentUser.avatar}
+          userName={currentUser.userName}
+        />
       </div>
       <div className='userManager'>
         <UserManager />

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import MainTitle from './MainTitle';
 import UserMenu from './UserMenu';
 
-function NavigationBar() {
+function NavigationBar({ avatar, userName }) {
   return (
     <header>
       <nav id='navigator'>
@@ -18,7 +18,7 @@ function NavigationBar() {
             </Link>
           </li>
           <li>
-            <UserMenu></UserMenu>
+            <UserMenu avatar={avatar} userName={userName} />
           </li>
           <li>
             <img src='' alt='' />
