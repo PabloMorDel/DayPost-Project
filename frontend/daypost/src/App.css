@@ -1,7 +1,8 @@
 @import url(./fonts/icons/style.css);
 
 .App {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
 }
 
 /* .flex {
@@ -25,108 +26,55 @@
 } */
 
 .forms {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .utils {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
 #demo-customized-button {
-  background-color: rebeccapurple;
+    background-color: rebeccapurple;
 }
 
 /* ############################# */
 
 .mainHomePage {
-  margin: auto;
-  border: 1px solid silver;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+    margin: auto;
+    border: 1px solid silver;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr; */
 }
 
 .searchArea {
-  border: 1px solid silver;
-  display: flex;
-  /* grid-template-columns: 3fr 1fr; */
-  align-items: center;
-  justify-content: space-evenly;
+    border: 1px solid silver;
+    display: flex;
+    /* grid-template-columns: 3fr 1fr; */
+    align-items: center;
+    justify-content: space-evenly;
 
-  border-radius: 30px;
-  background: plum;
+    border-radius: 30px;
+    background: plum;
 }
 
 .searchArea * {
-  padding: 0 15px;
-  border: none;
-  background: none;
-  outline: none;
+    padding: 0 15px;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 .asideContent img {
-  width: 20rem;
+    width: 20rem;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 button {
-  width: 180px;
-  height: 40px;
-  background-color: rebeccapurple;
-  border-radius: 50px;
-  color: white;
-  font-weight: bold;
-  padding-top: 8px;
-}
-
-button:hover {
-  background-color: rgb(187, 133, 241);
-}
-
-/* ######## MOVILES ######### */
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .aside {
-    height: 150px;
-    background: url(./images/short_bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-
-  .asideContent {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .asideContent img {
-    align-self: baseline;
-    margin-top: 20px;
-  }
-
-  .formContainer * {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: auto;
-    align-items: initial;
-  }
-
-  label {
-    padding: 10px;
-  }
-
-  .text {
-    text-align: center;
-    text-shadow: 1px 1px 3px black;
-  }
-
-  button {
     width: 180px;
     height: 40px;
     background-color: rebeccapurple;
@@ -134,65 +82,241 @@ button:hover {
     color: white;
     font-weight: bold;
     padding-top: 8px;
-  }
-
-  button:hover {
-    background-color: rgb(187, 133, 241);
-  }
-
-  .utils {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  a {
-    text-decoration: none;
-    border: 1px solid gray;
-    width: max-content;
-    padding: 4px 9px;
-    border-radius: 10px;
-    background-color: rgb(120, 54, 167);
-    color: white;
-  }
-
-  nav {
-    display: flex;
-
-    margin: auto;
-    margin-top: 15px;
-    justify-content: space-around;
-  }
-
-  nav ul {
-    display: flex;
-    gap: 12px;
-    padding: 0%;
-
-    align-self: center;
-  }
-
-  .bottom footer {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px 0;
-    padding-bottom: 3px;
-  }
-
-  .bottom a {
-    text-decoration: none;
-    color: rgb(114, 112, 112);
-    border: none;
-    background: none;
-  }
 }
 
-/* ######## TABLES HORIZONTAL ######### */
-/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: horizontal) {
-} */
+button:hover {
+    background-color: rgb(187, 133, 241);
+}
 
+/* ######## MOVILES ######### */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    nav * {
+        display: none;
+    }
+    .registeraside {
+        height: 150px;
+        background: url(./images/short_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .asideContent img {
+        align-self: baseline;
+        margin-top: 20px;
+    }
+
+    .formContainer * {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        align-items: initial;
+    }
+
+    label {
+        padding: 10px;
+    }
+
+    .text {
+        text-align: center;
+        text-shadow: 1px 1px 3px black;
+    }
+
+    button {
+        width: 180px;
+        height: 40px;
+        background-color: rebeccapurple;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        padding-top: 8px;
+    }
+
+    button:hover {
+        background-color: rgb(187, 133, 241);
+    }
+
+    .utils {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    a {
+        text-decoration: none;
+        border: 1px solid gray;
+        width: max-content;
+        padding: 4px 9px;
+        border-radius: 10px;
+        background-color: rgb(120, 54, 167);
+        color: white;
+    }
+
+    nav {
+        display: flex;
+
+        margin: auto;
+        margin-top: 15px;
+        justify-content: space-around;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 12px;
+        padding: 0%;
+
+        align-self: center;
+    }
+
+    .bottom footer {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 50px 0;
+        padding-bottom: 3px;
+    }
+
+    .bottom a {
+        text-decoration: none;
+        color: rgb(114, 112, 112);
+        border: none;
+        background: none;
+    }
+}
+
+/* ######## TABLES VERTICAL ######### */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    nav {
+        display: none;
+    }
+    #root {
+        margin-top: 30%;
+    }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url(./images/Login.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
 /* ######## TABLES HORIZONTAL ######### */
-/* @media (min-width: 1025px) and (max-width: 1280px) {
-  
-  //CSS
-  
-} */
+@media (min-width: 1024px) and (max-width: 1380px) {
+    nav {
+        display: none;
+    }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url(./images/Login.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
