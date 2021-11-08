@@ -3,6 +3,7 @@
 .App {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
+    min-height: 100vh;
 }
 
 /* .flex {
@@ -91,10 +92,10 @@ button:hover {
 /* ######## MOVILES ######### */
 
 @media (min-width: 320px) and (max-width: 480px) {
-    nav * {
+    nav {
         display: none;
     }
-    .registeraside {
+    .aside {
         height: 150px;
         background: url(./images/short_bg.png);
         background-size: cover;
@@ -148,7 +149,7 @@ button:hover {
         display: flex;
         justify-content: space-around;
     }
-
+    /* 
     a {
         text-decoration: none;
         border: 1px solid gray;
@@ -157,23 +158,23 @@ button:hover {
         border-radius: 10px;
         background-color: rgb(120, 54, 167);
         color: white;
-    }
+    } */
 
-    nav {
+    /* nav {
         display: flex;
 
         margin: auto;
         margin-top: 15px;
         justify-content: space-around;
-    }
+    } */
 
-    nav ul {
+    /* nav ul {
         display: flex;
         gap: 12px;
         padding: 0%;
 
         align-self: center;
-    }
+    } */
 
     .bottom footer {
         display: flex;
@@ -190,17 +191,17 @@ button:hover {
     }
 }
 
-/* ######## TABLES VERTICAL ######### */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+/* ######## TABLETS VERTICAL ######### */
+@media only screen and (min-width: 768px) {
     nav {
         display: none;
     }
-    #root {
-        margin-top: 30%;
-    }
+
     .flex {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        min-height: 100vh;
     }
     .main {
         background-color: rgb(219, 218, 218);
@@ -217,9 +218,10 @@ button:hover {
     .aside {
         padding: none;
         margin: none;
-        background: url(./images/Login.png);
+        background: url(./images/Login.png), linear-gradient(black, purple);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
+        background-position: center;
     }
     button {
         width: 100%;
@@ -256,7 +258,7 @@ button:hover {
         width: 100%;
     }
 }
-/* ######## TABLES HORIZONTAL ######### */
+/* ######## TABLES HORIZONTAL #########
 @media (min-width: 1024px) and (max-width: 1380px) {
     nav {
         display: none;
@@ -319,4 +321,4 @@ button:hover {
         justify-content: space-evenly;
         width: 100%;
     }
-}
+} */
