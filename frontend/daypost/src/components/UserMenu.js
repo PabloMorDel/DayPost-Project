@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import { AuthContext } from '..';
-import { Avatar, Link } from '@mui/material';
+import { Avatar } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
 function CustomMenu(props) {

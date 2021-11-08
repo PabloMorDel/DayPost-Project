@@ -5,7 +5,7 @@ const newPost = async (req, res, next) => {
   let connection;
   try {
     connection = await getDB();
-    const { source, title, description } = req.body;
+    const { source, title, description, topic } = req.body;
 
     const idReqUser = req.auth.id;
 
@@ -19,17 +19,17 @@ const newPost = async (req, res, next) => {
     const [newPost] = await connection.query(
       `
 
-            INSERT INTO posts (title, source, description, idUser, createdAt)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO posts (title, source, topic, description, idUser, createdAt)
+            VALUES (?, ?, ?, ?, ?, ?)
 
         `,
-      [title, source, description, idReqUser, createdAt]
+      [title, source, topic, description, idReqUser, createdAt]
     );
 
     console.log(newPost);
     const idPost = Object.values(newPost)[2];
 
-    if (req.files || req.files.photo) {
+    if (req.files && req.files.photo) {
       const objects = Object.values(req.files);
       if (objects.length < 2) {
         const imageName = await savePhoto(req.files.photo);

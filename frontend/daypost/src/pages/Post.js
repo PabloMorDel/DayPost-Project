@@ -118,6 +118,10 @@ function Post() {
   const { setWaiting, setError } = useContext(StatusContext);
   const [post, setPost] = useState({});
   const [like, setLike] = useState(false);
+  const unParsedCurrentUser = localStorage.getItem('currentUser');
+  const currentUser = JSON.parse(unParsedCurrentUser);
+  console.log('currentUserPostPage', currentUser);
+  console.log('post', post);
   // const [postOwner, setPostOwner] = useState({});
 
   useEffect(() => {
@@ -135,20 +139,18 @@ function Post() {
       },
     });
   }, [like]);
-
-  console.log(post);
+  console.log('postIdUser', post.idUser);
 
   return (
     <div className='mainHomePage'>
       <div className='navigator'>
-        <NavigationBar />
+        <NavigationBar
+          avatar={currentUser.avatar}
+          userName={currentUser.userName}
+        />
       </div>
       <div className='userManager'>
         <UserManager />
-
-        <div className='userManager'>
-          <UserManager></UserManager>
-        </div>
       </div>
       <div className='mainContent'>
         <Searcher />

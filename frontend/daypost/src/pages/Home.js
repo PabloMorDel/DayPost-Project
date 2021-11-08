@@ -11,6 +11,7 @@ import UserManager from '../components/UserManager';
 import getPost from '../api/getPost';
 import { PostCategories } from '../components/PostsCategories';
 import { Link } from '@mui/material';
+import CreatePost from '../components/CreatePost';
 
 function Home(props) {
   const { topic } = useParams();
@@ -20,7 +21,6 @@ function Home(props) {
 
   const unParsedCurrentUser = localStorage.getItem('currentUser');
   const currentUser = JSON.parse(unParsedCurrentUser);
-  console.log(currentUser);
 
   //const [category, setCategory] = useState(null);
 
@@ -33,7 +33,7 @@ function Home(props) {
       url,
       token,
       onSuccess: (body) => {
-        console.log(body);
+        console.log('bodyGet', body);
         setWaiting(false);
         setPosts(body.posts);
       },
@@ -58,6 +58,7 @@ function Home(props) {
       </div>
       <div className='mainContent'>
         <Searcher />
+        <CreatePost></CreatePost>
         <div className='contentHeader'></div>
         <div className='postsNavBar'>
           <PostCategories />
