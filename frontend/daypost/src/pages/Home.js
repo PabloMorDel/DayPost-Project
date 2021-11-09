@@ -14,6 +14,7 @@ import { Link } from '@mui/material';
 import CreatePost from '../components/CreatePost';
 import getUser from '../api/getUser';
 import useLocalStorage from '../hooks/useLocalStorage';
+import PostCardChanger from '../components/PostCardChanger';
 
 function Home(props) {
   const { topic } = useParams();
@@ -22,6 +23,7 @@ function Home(props) {
   const [posts, setPosts] = useState([]);
   const [loggedUserId] = useContext(UserIdContext);
   const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
+  const [creatingPost, setCreatingPost] = useState(false);
 
   //const [category, setCategory] = useState(null);
 
@@ -59,6 +61,16 @@ function Home(props) {
         <NavigationBar
           avatar={parsedCurrentUser.avatar}
           userName={parsedCurrentUser.userName}
+          createPostOnClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            setCreatingPost(true);
+          }}
+          homeButtonOnClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            setCreatingPost(false);
+          }}
         />
       </div>
       <div className='userManager'>
@@ -66,7 +78,7 @@ function Home(props) {
       </div>
       <div className='mainContent'>
         <Searcher />
-        <CreatePost></CreatePost>
+        {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />}
         <div className='contentHeader'></div>
         <div className='postsNavBar'>
           <PostCategories />
