@@ -2,6 +2,7 @@
 
 .App {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  min-height: 100vh;
 }
 
 /* .flex {
@@ -43,8 +44,8 @@
 .mainHomePage {
   margin: auto;
   border: 1px solid silver;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr; */
 }
 
 .searchArea {
@@ -90,6 +91,9 @@ button:hover {
 /* ######## MOVILES ######### */
 
 @media (min-width: 320px) and (max-width: 480px) {
+  nav {
+    display: none;
+  }
   .aside {
     height: 150px;
     background: url(./images/short_bg.png);
@@ -144,32 +148,30 @@ button:hover {
     display: flex;
     justify-content: space-around;
   }
+  /* 
+    a {
+        text-decoration: none;
+        border: 1px solid gray;
+        width: max-content;
+        padding: 4px 9px;
+        border-radius: 10px;
+        background-color: rgb(120, 54, 167);
+        color: white;
+    } */
 
-  a {
-    text-decoration: none;
-    border: 1px solid gray;
-    width: max-content;
-    padding: 4px 9px;
-    border-radius: 10px;
-    background-color: rgb(120, 54, 167);
-    color: white;
-  }
+  /* nav {
+        display: flex;
+        margin: auto;
+        margin-top: 15px;
+        justify-content: space-around;
+    } */
 
-  nav {
-    display: flex;
-
-    margin: auto;
-    margin-top: 15px;
-    justify-content: space-around;
-  }
-
-  nav ul {
-    display: flex;
-    gap: 12px;
-    padding: 0%;
-
-    align-self: center;
-  }
+  /* nav ul {
+        display: flex;
+        gap: 12px;
+        padding: 0%;
+        align-self: center;
+    } */
 
   .bottom footer {
     display: flex;
@@ -186,6 +188,73 @@ button:hover {
   }
 }
 
+/* ######## TABLETS VERTICAL ######### */
+@media only screen and (min-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+  }
+  .main {
+    background-color: rgb(219, 218, 218);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  .text {
+    margin: auto;
+  }
+  .asideContent {
+    display: none;
+  }
+  .aside {
+    padding: none;
+    margin: none;
+    background: url('./images/Login.png'), linear-gradient(black, purple);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  button {
+    width: 100%;
+  }
+  .formContainer {
+    margin: 0;
+  }
+  .forms {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .forms form {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    border-radius: 5px;
+    border: none;
+    margin: 10px 3px;
+    width: 90%;
+    padding: 10px;
+    height: 40px;
+  }
+  .bottom {
+    grid-column-start: 1;
+    grid-column-end: span col3-start;
+    grid-row-start: 2;
+  }
+  .bottom footer {
+    background-color: rgb(241, 235, 235);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
 /* ######## TABLES HORIZONTAL #########
 @media (min-width: 1024px) and (max-width: 1380px) {
     nav {
