@@ -1,5 +1,5 @@
 import { React, useState, useContext, useEffect } from 'react';
-import { AuthContext, StatusContext } from '..';
+import { AuthContext, StatusContext, UserIdContext } from '..';
 import { useParams } from 'react-router';
 
 import FeedPost from '../components/FeedPost';
@@ -12,15 +12,16 @@ import getPost from '../api/getPost';
 import { PostCategories } from '../components/PostsCategories';
 import { Link } from '@mui/material';
 import CreatePost from '../components/CreatePost';
+import getUser from '../api/getUser';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 function Home(props) {
   const { topic } = useParams();
   const [token] = useContext(AuthContext);
   const { setWaiting, setError } = useContext(StatusContext);
   const [posts, setPosts] = useState([]);
-
-  const unParsedCurrentUser = localStorage.getItem('currentUser');
-  const currentUser = JSON.parse(unParsedCurrentUser);
+  const [loggedUserId] = useContext(UserIdContext);
+  const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
 
   //const [category, setCategory] = useState(null);
 
@@ -28,7 +29,13 @@ function Home(props) {
     const url = `http://localhost:4001/posts/${topic ? '?topic=' + topic : ''}`;
 
     setWaiting(true);
-
+    getUser({
+      url: `http://localhost:4001/users/${loggedUserId}`,
+      token,
+      onSuccess: (getBody) => {
+        setCurrentUser(getBody.message);
+      },
+    });
     getPost({
       url,
       token,
@@ -43,14 +50,15 @@ function Home(props) {
       },
     });
   }, [token, setError, setWaiting, topic]);
-
+  const unParsedCurrentUser = localStorage.getItem('currentUser');
+  const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
   return (
     <div className='mainHomePage'>
       <div className='navigator'>
         {/* <<<<<<< HEAD */}
         <NavigationBar
-          avatar={currentUser.avatar}
-          userName={currentUser.userName}
+          avatar={parsedCurrentUser.avatar}
+          userName={parsedCurrentUser.userName}
         />
       </div>
       <div className='userManager'>

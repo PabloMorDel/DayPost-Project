@@ -32,7 +32,6 @@ function UserMenu({ avatar, userName }) {
   const [token, setToken] = React.useContext(AuthContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  console.log(avatar, userName);
   const history = useHistory();
   const routeChanger = () => {
     const path = token ? `/account` : `/register`;
