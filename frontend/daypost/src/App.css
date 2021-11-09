@@ -186,13 +186,67 @@ button:hover {
   }
 }
 
-/* ######## TABLES HORIZONTAL ######### */
-/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: horizontal) {
-} */
-
-/* ######## TABLES HORIZONTAL ######### */
-/* @media (min-width: 1025px) and (max-width: 1280px) {
-  
-  //CSS
-  
+/* ######## TABLES HORIZONTAL #########
+@media (min-width: 1024px) and (max-width: 1380px) {
+    nav {
+        display: none;
+    }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url(./images/Login.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 } */
