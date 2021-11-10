@@ -57,8 +57,8 @@ function Home(props) {
     const unParsedCurrentUser = localStorage.getItem('currentUser');
     const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
     return (
-        <div className='mainHomePage'>
-            <div className='navigator'>
+        <div className='home-mainHomePage'>
+            <div className='home-navigator'>
                 {/* <<<<<<< HEAD */}
                 <NavigationBar
                     avatar={parsedCurrentUser.avatar}
@@ -75,18 +75,18 @@ function Home(props) {
                     }}
                 />
             </div>
-            <div className='userManager'>
+            <div className='home-userManager'>
                 <UserManager />
             </div>
-            <div className='mainContent'>
+            <div className='home-mainContent'>
                 <Searcher postArray={posts} />
                 {creatingPost ? (
                     <CreatePost />
                 ) : (
                     <PostCardChanger postArray={posts} />
                 )}
-                <div className='contentHeader'></div>
-                <div className='postsNavBar'>
+                <div className='home-contentHeader'></div>
+                <div className='home-postsNavBar'>
                     <PostCategories />
                 </div>
                 <PostManager>
@@ -105,10 +105,10 @@ function Home(props) {
                         : 'No data'}
                 </PostManager>
             </div>
-            <div className='asidasde'>
-                <div className='spotlightAccs'></div>
-                <div className='FAQ'></div>
-                <footer className='privacy'>
+            <div className='home-aside'>
+                <div className='home-spotlightAccs'></div>
+                <div className='home-FAQ'></div>
+                <footer className='home-privacy'>
                     <OutsideFooter />
                 </footer>
             </div>
