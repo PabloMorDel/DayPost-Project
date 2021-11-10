@@ -11,7 +11,8 @@ const getPost = async (req, res, next) => {
       `
         SELECT posts.id, posts.title, posts.description, posts.source, posts.topic, posts.idUser, posts.createdAt, COUNT(*) AS likes
         FROM posts
-        LEFT JOIN likes ON (likes.idPost = posts.id) WHERE posts.id = ?
+        LEFT JOIN likes ON (likes.idPost = posts.id)
+        WHERE posts.id = ?
         GROUP BY posts.id
     `,
       [idPost]
@@ -22,6 +23,13 @@ const getPost = async (req, res, next) => {
       error.httpStatus = 404;
       throw error;
     }
+    const [postPhoto] = await connection.query(
+      `
+        SELECT * FROM photos WHERE idPost = ?
+      `,
+      [post[0].id]
+    );
+    console.log(postPhoto);
     const postBody = {
       title: post[0].title,
       source: post[0].source,
@@ -29,6 +37,7 @@ const getPost = async (req, res, next) => {
       idUser: post[0].idUser,
       createdAt: post[0].createdAt,
       likes: post[0].likes,
+      photo: postPhoto,
     };
     res.send({
       status: 'ok',
