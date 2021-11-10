@@ -26,6 +26,7 @@ function SinglePost({
     const [token] = useContext(AuthContext);
     const [postOwner, setPostOwner] = useState({});
     const [like, setLike] = useState(false);
+
     console.log(postOwner);
     useEffect(() => {
         getUser({
@@ -43,7 +44,6 @@ function SinglePost({
     };
     const onLikeButtonClick = (e) => {
         const url = `http://localhost:4001/posts/like/${id}`;
-        e.preventDefault();
         const onSuccess = () => {
             setLike(true);
         };
@@ -76,7 +76,11 @@ function SinglePost({
                 <div className='postInfo'>
                     <div className='postText'>
                         <div>
-                            <p>{source}</p>
+                            <p>
+                                Source:
+                                <a href={source}>{source}</a>
+                                {}
+                            </p>
                             <p>
                                 Created:
                                 {formatDate(date)}
@@ -93,9 +97,13 @@ function SinglePost({
                 </div>
                 <div className='likesANDcomments' onClick={onLikeButtonClick}>
                     {like ? (
-                        <FavoriteIcon style={{ color: 'red' }}></FavoriteIcon>
+                        <FavoriteIcon
+                            style={{ color: 'red', cursor: 'pointer' }}
+                        ></FavoriteIcon>
                     ) : (
-                        <FavoriteIcon style={{ color: 'black' }}></FavoriteIcon>
+                        <FavoriteIcon
+                            style={{ color: 'black', cursor: 'pointer' }}
+                        ></FavoriteIcon>
                     )}
                     <div>{likes}</div>
                 </div>
@@ -109,6 +117,11 @@ function Post() {
     const { idPost } = useParams();
     const { setWaiting, setError } = useContext(StatusContext);
     const [post, setPost] = useState({});
+    const [like, setLike] = useState(false);
+    const unParsedCurrentUser = localStorage.getItem('currentUser');
+    const currentUser = JSON.parse(unParsedCurrentUser);
+    console.log('currentUserPostPage', currentUser);
+    console.log('post', post);
     // const [postOwner, setPostOwner] = useState({});
 
     useEffect(() => {
@@ -125,21 +138,19 @@ function Post() {
                 setError(error);
             },
         });
-    }, []);
-
-    console.log(post);
+    }, [like]);
+    console.log('postIdUser', post.idUser);
 
     return (
         <div className='mainHomePage'>
             <div className='navigator'>
-                <NavigationBar />
+                <NavigationBar
+                    avatar={currentUser.avatar}
+                    userName={currentUser.userName}
+                />
             </div>
             <div className='userManager'>
                 <UserManager />
-
-                <div className='userManager'>
-                    <UserManager></UserManager>
-                </div>
             </div>
             <div className='mainContent'>
                 <Searcher />

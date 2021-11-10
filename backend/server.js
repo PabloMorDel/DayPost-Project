@@ -88,7 +88,7 @@ const {
   listPosts,
   likePost,
 } = require('./controllers/posts');
-app.post('/posts', authorized, newPost);
+app.post('/posts/new', authorized, newPost);
 app.get('/posts/:idPost', postExists, getPost);
 app.delete('/posts/:idPost', authorized, postExists, deletePost);
 app.put('/posts/title/:idPost', authorized, postExists, editPostTitle);

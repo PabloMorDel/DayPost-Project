@@ -1,5 +1,5 @@
 import { React, useState, useContext, useEffect } from 'react';
-import { AuthContext, StatusContext } from '..';
+import { AuthContext, StatusContext, UserIdContext } from '..';
 import { useParams } from 'react-router';
 
 import FeedPost from '../components/FeedPost';
@@ -11,12 +11,18 @@ import UserManager from '../components/UserManager';
 import getPost from '../api/getPost';
 import { PostCategories } from '../components/PostsCategories';
 import { Link } from '@mui/material';
+import CreatePost from '../components/CreatePost';
+import getUser from '../api/getUser';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 function Home(props) {
     const { topic } = useParams();
     const [token] = useContext(AuthContext);
     const { setWaiting, setError } = useContext(StatusContext);
     const [posts, setPosts] = useState([]);
+    const [loggedUserId] = useContext(UserIdContext);
+    const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
+
     //const [category, setCategory] = useState(null);
 
     useEffect(() => {
@@ -25,12 +31,18 @@ function Home(props) {
         }`;
 
         setWaiting(true);
-
+        getUser({
+            url: `http://localhost:4001/users/${loggedUserId}`,
+            token,
+            onSuccess: (getBody) => {
+                setCurrentUser(getBody.message);
+            },
+        });
         getPost({
             url,
             token,
             onSuccess: (body) => {
-                console.log(body);
+                console.log('bodyGet', body);
                 setWaiting(false);
                 setPosts(body.posts);
             },
@@ -40,23 +52,23 @@ function Home(props) {
             },
         });
     }, [token, setError, setWaiting, topic]);
-
+    const unParsedCurrentUser = localStorage.getItem('currentUser');
+    const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
     return (
         <div className='mainHomePage'>
             <div className='navigator'>
                 {/* <<<<<<< HEAD */}
-                <NavigationBar />
+                <NavigationBar
+                    avatar={parsedCurrentUser.avatar}
+                    userName={parsedCurrentUser.userName}
+                />
             </div>
             <div className='userManager'>
                 <UserManager />
-                {/* ======= */}
-                <div className='userManager'>
-                    <UserManager></UserManager>
-                </div>
-                {/* >>>>>>> dervys */}
             </div>
             <div className='mainContent'>
                 <Searcher />
+                <CreatePost></CreatePost>
                 <div className='contentHeader'></div>
                 <div className='postsNavBar'>
                     <PostCategories />
