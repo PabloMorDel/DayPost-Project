@@ -36,7 +36,7 @@ function CreatePost() {
 
   return (
     <div>
-      <form onSubmit={onPostFormSubmit}>
+      <form className='createPostForm' onSubmit={onPostFormSubmit}>
         <label htmlFor='titleInput' onChange={(e) => setTitle(e.target.value)}>
           <input
             type='text'

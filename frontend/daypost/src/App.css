@@ -89,9 +89,10 @@ button:hover {
     background-color: rgb(187, 133, 241);
 }
 
-/* ######## MOVILES ######### */
+/* ######## MOVILES VERTICAL ######### */
 
 @media (min-width: 320px) and (max-width: 480px) {
+    /* <<<<<<< HEAD  */
     nav {
         display: none;
     }
@@ -108,10 +109,41 @@ button:hover {
         align-content: center;
         justify-content: center;
     }
+    /* =======  */
+    nav {
+        display: none;
+    }
 
-    .asideContent img {
+    .searchArea {
+        height: 30px;
+        width: 30vh;
+    }
+    .aside {
+        height: 150px;
+        background: url(./images/short_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    /* >>>>>>> */
+    master .asideContent img {
         align-self: baseline;
         margin-top: 20px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
     }
 
     .formContainer * {
@@ -122,6 +154,31 @@ button:hover {
         align-items: initial;
     }
 
+    .createPostForm {
+        border: 1px solid rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .createPostForm input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 50vh;
+
+        height: 15px;
+    }
+
+    #descriptionInput {
+        resize: none;
+        border-radius: 5px;
+        border: 1px solid silver;
+        width: 50vh;
+        height: 6em;
+        padding: 10px;
+    }
+
     label {
         padding: 10px;
     }
@@ -129,6 +186,12 @@ button:hover {
     .text {
         text-align: center;
         text-shadow: 1px 1px 3px black;
+        margin: none;
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 0;
     }
 
     button {
@@ -149,7 +212,8 @@ button:hover {
         display: flex;
         justify-content: space-around;
     }
-    /* 
+
+    /*
     a {
         text-decoration: none;
         border: 1px solid gray;
@@ -162,7 +226,6 @@ button:hover {
 
     /* nav {
         display: flex;
-
         margin: auto;
         margin-top: 15px;
         justify-content: space-around;
@@ -172,15 +235,14 @@ button:hover {
         display: flex;
         gap: 12px;
         padding: 0%;
-
         align-self: center;
     } */
 
     .bottom footer {
+        background-color: rgb(241, 235, 235);
         display: flex;
         justify-content: space-evenly;
-        padding: 50px 0;
-        padding-bottom: 3px;
+        width: 100%;
     }
 
     .bottom a {
@@ -189,13 +251,102 @@ button:hover {
         border: none;
         background: none;
     }
+
+    .extraMessage {
+        margin: 0 20px;
+    }
+
+    .extraMessage a {
+        text-decoration: none;
+        color: rgb(100, 168, 247);
+    }
+
+    .extraMessage p {
+        margin: 0 0;
+        padding-bottom: 15px;
+        padding-top: 10px;
+    }
+
+    .main {
+        background-color: rgb(219, 218, 218);
+    }
+}
+
+/* ######## MOVILES HORIZONTAL ######### */
+@media (min-width: 481px) and (max-width: 767px) {
+    nav {
+        display: none;
+    }
+
+    .App {
+        max-height: 100vh;
+    }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 100vh;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url('./images/Login.png'), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 }
 
 /* ######## TABLETS VERTICAL ######### */
 @media only screen and (min-width: 768px) {
-    nav {
-        display: none;
-    }
+    /* nav {
+    display: none;
+  } */
 
     .flex {
         display: grid;
@@ -218,7 +369,7 @@ button:hover {
     .aside {
         padding: none;
         margin: none;
-        background: url(./images/Login.png), linear-gradient(black, purple);
+        background: url('./images/Login.png'), linear-gradient(black, black);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
@@ -258,7 +409,7 @@ button:hover {
         width: 100%;
     }
 }
-/* ######## TABLES HORIZONTAL #########
+/* ######## TABLES HORIZONTAL ######### */
 @media (min-width: 1024px) and (max-width: 1380px) {
     nav {
         display: none;
@@ -283,9 +434,10 @@ button:hover {
     .aside {
         padding: none;
         margin: none;
-        background: url(./images/Login.png);
+        background: url(./images/Login.png) linear-gradient(black, black);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
+        background-position: center;
     }
     button {
         width: 100%;
@@ -321,4 +473,4 @@ button:hover {
         justify-content: space-evenly;
         width: 100%;
     }
-} */
+}

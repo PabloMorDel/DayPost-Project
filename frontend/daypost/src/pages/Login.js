@@ -14,7 +14,6 @@ function Login(props) {
     const [loggedUserId, setLoggedUserId] = useContext(UserIdContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
 
     async function submitLoginHandler(e) {
         e.preventDefault();
@@ -28,10 +27,20 @@ function Login(props) {
             setToken(body.token);
             console.log(body);
             setLoggedUserId(body.id);
+            // localStorage.setItem('currentUser', body);
             window.alert('Welcome!');
         };
 
         post(url, userInfo, { 'Content-Type': 'application/json' }, onSuccess);
+        // setTimeout(() => {
+        //   getUser({
+        //     url: `http://localhost:4001/users/${loggedUserId}`,
+        //     token,
+        //     onSuccess: (getBody) => {
+        //       setCurrentUser(getBody);
+        //     },
+        //   });
+        // }, 100);
     }
     const onEmailChange = (e) => {
         setEmail(e.target.value);

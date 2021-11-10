@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom';
 import MainTitle from './MainTitle';
 import UserMenu from './UserMenu';
 
-function NavigationBar({ avatar, userName }) {
+function NavigationBar({
+  avatar,
+  userName,
+  createPostOnClick,
+  homeButtonOnClick,
+}) {
   return (
     <header>
       <nav id='navigator'>
@@ -14,7 +19,7 @@ function NavigationBar({ avatar, userName }) {
           </li>
           <li>
             <Link to='/home'>
-              <button>Home</button>
+              <button onClick={homeButtonOnClick}>Home</button>
             </Link>
           </li>
           <li>
@@ -25,7 +30,9 @@ function NavigationBar({ avatar, userName }) {
             <a href='/'>Trends</a>
           </li>
           <li>
-            <button className='Create-button'>¡Create a Post!</button>
+            <button className='Create-button' onClick={createPostOnClick}>
+              ¡Create a Post!
+            </button>
           </li>
         </ul>
       </nav>
