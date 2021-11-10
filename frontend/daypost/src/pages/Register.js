@@ -103,7 +103,30 @@ function Register(props) {
             </form>
           </div>
         </div>
-        <Utils />
+        <div className='extraMessage'>
+          <p>
+            At Register, You agree with the &nbsp;
+            <span>
+              <a href='/home'>Terms of Services</a>
+            </span>
+            &nbsp; and &nbsp;
+            <span>
+              <a href='/home'>Privacy Policy</a>
+            </span>
+            , including
+            <span>
+              &nbsp;
+              <a href='/home'>Use of Cookies</a>
+            </span>
+          </p>
+
+          <p>
+            Already have an account?{' '}
+            <span>
+              <a href='/login'>Log In!</a>
+            </span>
+          </p>
+        </div>
       </div>
       <OutsideFooter />
     </div>

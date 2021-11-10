@@ -99,7 +99,7 @@ function Home(props) {
             : 'No data'}
         </PostManager>
       </div>
-      <div className='aside'>
+      <div className='asidasde'>
         <div className='spotlightAccs'></div>
         <div className='FAQ'></div>
         <footer className='privacy'>

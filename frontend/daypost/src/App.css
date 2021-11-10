@@ -88,11 +88,16 @@ button:hover {
   background-color: rgb(187, 133, 241);
 }
 
-/* ######## MOVILES ######### */
+/* ######## MOVILES VERTICAL ######### */
 
 @media (min-width: 320px) and (max-width: 480px) {
   nav {
     display: none;
+  }
+
+  .searchArea {
+    height: 30px;
+    width: 30vh;
   }
   .aside {
     height: 150px;
@@ -113,12 +118,46 @@ button:hover {
     margin-top: 20px;
   }
 
+  input {
+    border-radius: 5px;
+    border: 1px solid silver;
+    margin: 10px 3px;
+    width: 90%;
+    padding: 10px;
+    height: 40px;
+  }
+
   .formContainer * {
     display: flex;
     flex-direction: column;
     width: 90%;
     margin: auto;
     align-items: initial;
+  }
+
+  .createPostForm {
+    border: 1px solid rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .createPostForm input {
+    border-radius: 5px;
+    border: 1px solid silver;
+    margin: 10px 3px;
+    width: 50vh;
+
+    height: 15px;
+  }
+
+  #descriptionInput {
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid silver;
+    width: 50vh;
+    height: 6em;
+    padding: 10px;
   }
 
   label {
@@ -128,6 +167,12 @@ button:hover {
   .text {
     text-align: center;
     text-shadow: 1px 1px 3px black;
+    margin: none;
+    padding: 10px;
+  }
+
+  h1 {
+    margin: 0;
   }
 
   button {
@@ -148,6 +193,7 @@ button:hover {
     display: flex;
     justify-content: space-around;
   }
+
   /* 
     a {
         text-decoration: none;
@@ -174,10 +220,10 @@ button:hover {
     } */
 
   .bottom footer {
+    background-color: rgb(241, 235, 235);
     display: flex;
     justify-content: space-evenly;
-    padding: 50px 0;
-    padding-bottom: 3px;
+    width: 100%;
   }
 
   .bottom a {
@@ -185,6 +231,95 @@ button:hover {
     color: rgb(114, 112, 112);
     border: none;
     background: none;
+  }
+
+  .extraMessage {
+    margin: 0 20px;
+  }
+
+  .extraMessage a {
+    text-decoration: none;
+    color: rgb(100, 168, 247);
+  }
+
+  .extraMessage p {
+    margin: 0 0;
+    padding-bottom: 15px;
+    padding-top: 10px;
+  }
+
+  .main {
+    background-color: rgb(219, 218, 218);
+  }
+}
+
+/* ######## MOVILES HORIZONTAL ######### */
+@media (min-width: 481px) and (max-width: 767px) {
+  nav {
+    display: none;
+  }
+
+  .App {
+    max-height: 100vh;
+  }
+  .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 100vh;
+  }
+  .main {
+    background-color: rgb(219, 218, 218);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  .text {
+    margin: auto;
+  }
+  .asideContent {
+    display: none;
+  }
+  .aside {
+    padding: none;
+    margin: none;
+    background: url('./images/Login.png'), linear-gradient(black, black);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+  }
+  button {
+    width: 100%;
+  }
+  .formContainer {
+    margin: 0;
+  }
+  .forms {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .forms form {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    border-radius: 5px;
+    border: none;
+    margin: 10px 3px;
+    width: 90%;
+    padding: 10px;
+    height: 40px;
+  }
+  .bottom {
+    grid-column-start: 1;
+    grid-column-end: span col3-start;
+    grid-row-start: 2;
+  }
+  .bottom footer {
+    background-color: rgb(241, 235, 235);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
   }
 }
 
@@ -215,7 +350,7 @@ button:hover {
   .aside {
     padding: none;
     margin: none;
-    background: url('./images/Login.png'), linear-gradient(black, purple);
+    background: url('./images/Login.png'), linear-gradient(black, black);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -255,67 +390,68 @@ button:hover {
     width: 100%;
   }
 }
-/* ######## TABLES HORIZONTAL #########
+/* ######## TABLES HORIZONTAL ######### */
 @media (min-width: 1024px) and (max-width: 1380px) {
-    nav {
-        display: none;
-    }
-    .flex {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: 100%;
-    }
-    .main {
-        background-color: rgb(219, 218, 218);
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-    }
-    .text {
-        margin: auto;
-    }
-    .asideContent {
-        display: none;
-    }
-    .aside {
-        padding: none;
-        margin: none;
-        background: url(./images/Login.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    button {
-        width: 100%;
-    }
-    .formContainer {
-        margin: 0;
-    }
-    .forms {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-    }
-    .forms form {
-        display: flex;
-        flex-direction: column;
-    }
-    input {
-        border-radius: 5px;
-        border: none;
-        margin: 10px 3px;
-        width: 90%;
-        padding: 10px;
-        height: 40px;
-    }
-    .bottom {
-        grid-column-start: 1;
-        grid-column-end: span col3-start;
-        grid-row-start: 2;
-    }
-    .bottom footer {
-        background-color: rgb(241, 235, 235);
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-} */
+  nav {
+    display: none;
+  }
+  .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+  }
+  .main {
+    background-color: rgb(219, 218, 218);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  .text {
+    margin: auto;
+  }
+  .asideContent {
+    display: none;
+  }
+  .aside {
+    padding: none;
+    margin: none;
+    background: url(./images/Login.png) linear-gradient(black, black);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  button {
+    width: 100%;
+  }
+  .formContainer {
+    margin: 0;
+  }
+  .forms {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .forms form {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    border-radius: 5px;
+    border: none;
+    margin: 10px 3px;
+    width: 90%;
+    padding: 10px;
+    height: 40px;
+  }
+  .bottom {
+    grid-column-start: 1;
+    grid-column-end: span col3-start;
+    grid-row-start: 2;
+  }
+  .bottom footer {
+    background-color: rgb(241, 235, 235);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
