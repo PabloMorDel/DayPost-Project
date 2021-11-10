@@ -119,8 +119,8 @@ function Post() {
   const [post, setPost] = useState({});
   const [like, setLike] = useState(false);
   const unParsedCurrentUser = localStorage.getItem('currentUser');
-  const currentUser = JSON.parse(unParsedCurrentUser);
-  console.log('currentUserPostPage', currentUser);
+  const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
+  console.log(parsedCurrentUser.avatar);
   console.log('post', post);
   // const [postOwner, setPostOwner] = useState({});
 
@@ -145,8 +145,8 @@ function Post() {
     <div className='mainHomePage'>
       <div className='navigator'>
         <NavigationBar
-          avatar={currentUser.avatar}
-          userName={currentUser.userName}
+          avatar={parsedCurrentUser.avatar}
+          userName={parsedCurrentUser.userName}
         />
       </div>
       <div className='userManager'>

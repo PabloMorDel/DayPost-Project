@@ -77,7 +77,7 @@ function Home(props) {
         <UserManager />
       </div>
       <div className='mainContent'>
-        <Searcher />
+        <Searcher postArray={posts} />
         {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />}
         <div className='contentHeader'></div>
         <div className='postsNavBar'>
