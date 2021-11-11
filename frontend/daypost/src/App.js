@@ -19,7 +19,6 @@ import Post from './pages/Post';
 function App() {
   const [token] = useContext(AuthContext);
 
-
   return (
     <Router>
       <AppError />
@@ -45,8 +44,13 @@ function App() {
           <Route path='/login'>
             {token ? <Redirect to='/home' /> : <Login />}
           </Route>
-          <Route path='/home/:topic?'>
+          {/* <Route path='/'>
             {!token ? <Redirect to='/login' /> : <Home />}
+            <Home />
+          </Route> */}
+          <Route path='/home/:topic?'>
+            {/* {!token ? <Redirect to='/login' /> : <Home />} */}
+            <Home />
           </Route>
           <Route path='/register'>
             <Register />
