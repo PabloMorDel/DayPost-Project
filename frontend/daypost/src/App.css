@@ -5,6 +5,9 @@
         sans-serif;
     min-height: 100vh;
 }
+#root > nav {
+    display: none;
+}
 
 /* .flex {
   display: flex;
@@ -37,7 +40,13 @@
 }
 
 #demo-customized-button {
-    background-color: rebeccapurple;
+    background-color: none;
+    color: black;
+}
+#demo-customized-button:hover {
+    background: none;
+    color: rebeccapurple;
+    font-weight: bold;
 }
 
 /* ############################# */
@@ -93,9 +102,9 @@ button:hover {
 
 @media (min-width: 320px) and (max-width: 480px) {
     /* <<<<<<< HEAD  */
-    nav {
+    /* nav {
         display: none;
-    }
+    } */
     .aside {
         height: 150px;
         background: url(./images/short_bg.png);
@@ -110,9 +119,9 @@ button:hover {
         justify-content: center;
     }
     /* =======  */
-    nav {
+    /* nav {
         display: none;
-    }
+    } */
 
     .searchArea {
         height: 30px;
@@ -194,7 +203,7 @@ button:hover {
         margin: 0;
     }
 
-    button {
+    /* button {
         width: 180px;
         height: 40px;
         background-color: rebeccapurple;
@@ -202,7 +211,7 @@ button:hover {
         color: white;
         font-weight: bold;
         padding-top: 8px;
-    }
+    } */
 
     button:hover {
         background-color: rgb(187, 133, 241);
@@ -274,10 +283,6 @@ button:hover {
 
 /* ######## MOVILES HORIZONTAL ######### */
 @media (min-width: 481px) and (max-width: 767px) {
-    nav {
-        display: none;
-    }
-
     .App {
         max-height: 100vh;
     }
@@ -344,10 +349,6 @@ button:hover {
 
 /* ######## TABLETS VERTICAL ######### */
 @media only screen and (min-width: 768px) {
-    /* nav {
-    display: none;
-  } */
-
     .flex {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -411,9 +412,6 @@ button:hover {
 }
 /* ######## TABLES HORIZONTAL ######### */
 @media (min-width: 1024px) and (max-width: 1380px) {
-    nav {
-        display: none;
-    }
     .flex {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -473,4 +471,54 @@ button:hover {
         justify-content: space-evenly;
         width: 100%;
     }
+}
+
+/* ################### HOME ####################  */
+
+.home-mainHomePage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#navigator {
+    display: inline-block;
+}
+
+.asideContent {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.home-button {
+    background: none;
+    color: black;
+    padding: 10px;
+    border: none;
+    font-size: x-large;
+}
+
+.trends-button {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+
+.home-button::before,
+.trends-button::before {
+    margin-right: 20px;
+}
+
+.home-button:hover,
+.trends-button:hover {
+    background: none;
+    color: rebeccapurple;
+}
+
+.trends-li {
+    text-align: center;
+}
+.user-menu > button {
+    background: none;
+}
+.create-button {
 }
