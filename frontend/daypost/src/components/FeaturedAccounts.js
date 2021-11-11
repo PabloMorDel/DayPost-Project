@@ -23,6 +23,11 @@ function FeaturedAccounts({ postArray }) {
       });
     }
   }
+  const wtf = bestProfiles.map((prof) => {
+    return prof.accName;
+  });
+  console.log(bestProfiles);
+  console.log(wtf);
 
   return (
     <div>
