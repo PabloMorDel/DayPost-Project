@@ -74,9 +74,9 @@ function Home(props) {
           }}
         />
       </div>
-      <div className='home-userManager'>
+      {/* <div className='home-userManager'>
         <UserManager />
-      </div>
+      </div> */}
       <div className='home-mainContent'>
         <Searcher postArray={posts} />
         {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />}

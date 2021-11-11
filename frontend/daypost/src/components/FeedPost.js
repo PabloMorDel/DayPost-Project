@@ -10,9 +10,6 @@ function FeedPost({ imgSource, topic, title, likes, id }) {
   return (
     <div className='post' onClick={routeChanger} style={{ cursor: 'pointer' }}>
       <div>
-        <button onClick={routeChanger}>See Post</button>
-      </div>
-      <div>
         <p>{topic}</p>
       </div>
       <div>
@@ -22,6 +19,9 @@ function FeedPost({ imgSource, topic, title, likes, id }) {
         <img src={'/memeholder.jpg'} alt='PostImage' />
       </div>
       <div>{likes}</div>
+      <div>
+        <button onClick={routeChanger}>See Post</button>
+      </div>
     </div>
   );
 }
