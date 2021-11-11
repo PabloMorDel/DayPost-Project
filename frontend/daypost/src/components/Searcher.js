@@ -40,6 +40,7 @@ function Searcher({ postArray }) {
     <div className='searchArea'>
       <form onSubmit={onSearcherSubmit}>
         <input
+          className='search-input'
           placeholder='Search in DayPost'
           type='text'
           onChange={(e) => onSearcherChange(e.target.value)}
@@ -51,7 +52,9 @@ function Searcher({ postArray }) {
           }}
         />
 
-        <button type='submit'>Search</button>
+        <button className='search-button' type='submit'>
+          Search
+        </button>
       </form>
       {suggestions &&
         suggestions.map((suggestion, i) => {
