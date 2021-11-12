@@ -28,24 +28,14 @@
   justify-content: space-evenly;
 } */
 
-.forms {
+/* .forms {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .utils {
   display: flex;
   justify-content: space-around;
-}
-
-#demo-customized-button {
-  background-color: none;
-  color: black;
-}
-#demo-customized-button:hover {
-  background: none;
-  color: rebeccapurple;
-  font-weight: bold;
 }
 
 /* ############################# */
@@ -135,7 +125,7 @@ button:hover {
         display: none;
     } */
   .aside {
-    height: 150px;
+    min-height: 150px;
     background: url(./images/short_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -156,24 +146,12 @@ button:hover {
     height: 30px;
     width: 30vh;
   }
-  .aside {
-    height: 150px;
-    background: url(./images/short_bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
 
-  .asideContent {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-  }
   /* >>>>>>> */
-  master .asideContent img {
+  /* master .asideContent img {
     align-self: baseline;
     margin-top: 20px;
-  }
+  } */
 
   input {
     border-radius: 5px;
@@ -242,7 +220,16 @@ button:hover {
         padding-top: 8px;
     } */
 
-  button:hover {
+  .button {
+    width: 180px;
+    height: 40px;
+    background-color: rgb(74, 11, 136);
+    border-radius: 50px;
+    color: rgb(102, 13, 13);
+    font-weight: bold;
+  }
+
+  .button:hover {
     background-color: rgb(187, 133, 241);
   }
 
@@ -313,7 +300,7 @@ button:hover {
 /* ######## MOVILES HORIZONTAL ######### */
 @media (min-width: 481px) {
   .App {
-    max-height: 100vh;
+    min-height: 100vh;
   }
   .flex {
     display: grid;
@@ -339,6 +326,7 @@ button:hover {
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
+    min-height: 100vh;
   }
   button {
     width: 100%;
@@ -373,6 +361,15 @@ button:hover {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+  }
+  #demo-customized-button {
+    background-color: none;
+    color: black;
+  }
+  #demo-customized-button:hover {
+    background: none;
+    color: rebeccapurple;
+    font-weight: bold;
   }
 }
 
@@ -437,6 +434,16 @@ button:hover {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+  }
+
+  #demo-customized-button {
+    background-color: none;
+    color: black;
+  }
+  #demo-customized-button:hover {
+    background: none;
+    color: rebeccapurple;
+    font-weight: bold;
   }
 }
 /* ######## ESCRITORIO ######### */
@@ -607,4 +614,14 @@ button:hover {
     color: red;
     margin: 0 9px 0 5px;
   }
+}
+
+#demo-customized-button {
+  background-color: none;
+  color: black;
+}
+#demo-customized-button:hover {
+  background: none;
+  color: rebeccapurple;
+  font-weight: bold;
 }
