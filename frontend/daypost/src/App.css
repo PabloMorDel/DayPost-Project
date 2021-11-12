@@ -57,15 +57,26 @@
     grid-template-columns: 1fr 2fr 1fr; */
 }
 
+.home-mainContent {
+  margin: 10px;
+  padding-top: 10px;
+  border: 1px solid silver;
+}
+
 .searchArea {
   border: 1px solid silver;
   display: flex;
-  /* grid-template-columns: 3fr 1fr; */
+
   align-items: center;
-  justify-content: space-evenly;
 
   border-radius: 30px;
-  background: plum;
+  margin: 0 0 0 0;
+  min-width: fit-content;
+}
+
+.searcherSuggestions {
+  color: green;
+  position: relative;
 }
 
 .searchArea * {
@@ -73,6 +84,7 @@
   border: none;
   background: none;
   outline: none;
+  margin: 0;
 }
 
 .asideContent img {
@@ -86,10 +98,29 @@ ul {
 button {
   width: 180px;
   height: 40px;
-  background-color: rebeccapurple;
+  background-color: rgb(74, 11, 136);
   border-radius: 50px;
   color: white;
   font-weight: bold;
+}
+
+.see-post {
+  background: none;
+  color: rgb(74, 11, 136);
+  max-width: fit-content;
+  max-height: fit-content;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: x-large;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+}
+
+.see-post:hover {
+  background: none;
+  color: rgb(187, 133, 241);
 }
 
 button:hover {
@@ -531,15 +562,49 @@ button:hover {
 
   .search-button {
     color: black;
+    width: fit-content;
   }
 
   .searchArea {
     margin: 0;
+  }
+  .search-area form {
+    display: flex;
   }
 
   .create-button {
     padding: 0 30px;
     border: none;
     box-shadow: 1px 5px 4px rgb(151, 150, 150);
+  }
+
+  .post {
+    border: 1px solid silver;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .post-category p {
+    color: rgb(114, 112, 112);
+    font-size: small;
+    margin: 5px 0;
+  }
+
+  .post-title {
+    color: black;
+    font-size: small;
+  }
+
+  .post-image img {
+    margin: 9px 0;
+    border-radius: 20px;
+    max-width: 80%;
+  }
+
+  .icon-heart {
+    color: red;
+    margin: 0 9px 0 5px;
   }
 }
