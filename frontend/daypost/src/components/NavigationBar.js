@@ -12,12 +12,12 @@ function NavigationBar({
         <header>
             <nav id='navigator'>
                 <ul id='navigator-list'>
-                    <li>
+                    <li className='logo-li'>
                         <Link to='/home'>
                             <MainTitle />
                         </Link>
                     </li>
-                    <li>
+                    <li className='home-li'>
                         <Link to='/home'>
                             <button
                                 className='home-button icon icon-home3'
@@ -33,7 +33,7 @@ function NavigationBar({
                             Trends
                         </a>
                     </li>
-                    <li>
+                    <li className='post-li'>
                         <button
                             className='create-button'
                             onClick={createPostOnClick}
