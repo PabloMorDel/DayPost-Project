@@ -12,7 +12,7 @@ function PostCardChanger({ postArray }) {
   // console.log(topPostsTitles, topPostsPhotos);
 
   return (
-    <div>
+    <div className='carrusel'>
       <div>
         <p>Title</p>
       </div>
