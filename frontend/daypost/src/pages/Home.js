@@ -55,6 +55,7 @@ function Home(props) {
   }, [token, setError, setWaiting, topic]);
   const unParsedCurrentUser = localStorage.getItem('currentUser');
   const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
+
   return (
     <div className='home-mainHomePage'>
       <div className='home-navigator'>

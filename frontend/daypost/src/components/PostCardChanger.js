@@ -9,7 +9,7 @@ function PostCardChanger({ postArray }) {
     }
   }
 
-  console.log(topPostsTitles, topPostsPhotos);
+  // console.log(topPostsTitles, topPostsPhotos);
 
   return (
     <div>
