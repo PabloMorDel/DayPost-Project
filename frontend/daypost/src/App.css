@@ -1,11 +1,12 @@
 @import url(./fonts/icons/style.css);
 
 .App {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  min-height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    min-height: 100vh;
 }
 #root > nav {
-  display: none;
+    display: none;
 }
 
 /* .flex {
@@ -28,72 +29,93 @@
   justify-content: space-evenly;
 } */
 
+<<<<<<< HEAD
 /* .forms {
   display: flex;
   flex-direction: column;
 } */
+=======
+.forms {
+    display: flex;
+    flex-direction: column;
+}
+>>>>>>> origin/robredo
 
 .utils {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
+<<<<<<< HEAD
+=======
+#demo-customized-button {
+    background-color: none;
+    color: black;
+}
+#demo-customized-button:hover {
+    background: none;
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+>>>>>>> origin/robredo
 /* ############################# */
 
 .mainHomePage {
-  margin: auto;
-  border: 1px solid silver;
-  /* display: grid;
+    margin: auto;
+    border: 1px solid silver;
+    /* display: grid;
     grid-template-columns: 1fr 2fr 1fr; */
 }
 
 .home-mainContent {
-  margin: 10px;
-  padding-top: 10px;
-  border: 1px solid silver;
+    margin: 10px;
+    padding-top: 10px;
+    border: 1px solid silver;
 }
 
 .searchArea {
-  border: 1px solid silver;
-  display: flex;
+    border: 1px solid silver;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  border-radius: 30px;
-  margin: 0 0 0 0;
-  min-width: fit-content;
+    border-radius: 30px;
+    margin: 0 0 0 0;
+    min-width: fit-content;
 }
 
 .searcherSuggestions {
-  color: green;
-  position: relative;
+    color: green;
+    position: relative;
 }
 
 .searchArea * {
-  padding: 0 15px;
-  border: none;
-  background: none;
-  outline: none;
-  margin: 0;
+    padding: 0 15px;
+    border: none;
+    background: none;
+    outline: none;
+    margin: 0;
 }
 
 .asideContent img {
-  width: 20rem;
+    width: 20rem;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 button {
-  width: 180px;
-  height: 40px;
-  background-color: rgb(74, 11, 136);
-  border-radius: 50px;
-  color: white;
-  font-weight: bold;
+    width: 180px;
+    height: 40px;
+    background-color: rgb(74, 11, 136);
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
 }
 
+<<<<<<< HEAD
 /* ######## MOVILES VERTICAL ######### */
 
 @media (min-width: 320px) {
@@ -148,32 +170,137 @@ button {
 
     height: 15px;
   }
-
-  #descriptionInput {
-    resize: none;
-    border-radius: 5px;
-    border: 1px solid silver;
-    width: 50vh;
-    height: 6em;
-    padding: 10px;
-  }
-
-  label {
-    padding: 10px;
-  }
-
-  .text {
-    text-align: center;
-    text-shadow: 1px 1px 3px black;
-    margin: none;
-    padding: 10px;
-  }
-
-  h1 {
+=======
+.see-post {
+    background: none;
+    color: rgb(74, 11, 136);
+    max-width: fit-content;
+    max-height: fit-content;
+    border: none;
+    padding: 0;
     margin: 0;
-  }
+    font-size: x-large;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+}
 
-  /* button {
+.see-post:hover {
+    background: none;
+    color: rgb(187, 133, 241);
+}
+
+button:hover {
+    background-color: rgb(187, 133, 241);
+}
+
+/* ######## MOVILES VERTICAL ######### */
+
+@media (min-width: 320px) {
+    /* <<<<<<< HEAD  */
+    /* nav {
+        display: none;
+    } */
+    .aside {
+        height: 150px;
+        background: url(./images/short_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    /* =======  */
+    /* nav {
+        display: none;
+    } */
+
+    .searchArea {
+        height: 30px;
+        width: 30vh;
+    }
+    .aside {
+        height: 150px;
+        background: url(./images/short_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    /* >>>>>>> */
+    master .asideContent img {
+        align-self: baseline;
+        margin-top: 20px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+>>>>>>> origin/robredo
+
+    .formContainer * {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        align-items: initial;
+    }
+
+    .createPostForm {
+        border: 1px solid rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .createPostForm input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 50vh;
+
+        height: 15px;
+    }
+
+    #descriptionInput {
+        resize: none;
+        border-radius: 5px;
+        border: 1px solid silver;
+        width: 50vh;
+        height: 6em;
+        padding: 10px;
+    }
+
+    label {
+        padding: 10px;
+    }
+
+    .text {
+        text-align: center;
+        text-shadow: 1px 1px 3px black;
+        margin: none;
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    /* button {
         width: 180px;
         height: 40px;
         background-color: rebeccapurple;
@@ -183,6 +310,7 @@ button {
         padding-top: 8px;
     } */
 
+<<<<<<< HEAD
   .button {
     width: 180px;
     height: 40px;
@@ -195,13 +323,18 @@ button {
   .button:hover {
     background-color: rgb(187, 133, 241);
   }
+=======
+    button:hover {
+        background-color: rgb(187, 133, 241);
+    }
+>>>>>>> origin/robredo
 
-  .utils {
-    display: flex;
-    justify-content: space-around;
-  }
+    .utils {
+        display: flex;
+        justify-content: space-around;
+    }
 
-  /*
+    /*
     a {
         text-decoration: none;
         border: 1px solid gray;
@@ -212,56 +345,57 @@ button {
         color: white;
     } */
 
-  /* nav {
+    /* nav {
         display: flex;
         margin: auto;
         margin-top: 15px;
         justify-content: space-around;
     } */
 
-  /* nav ul {
+    /* nav ul {
         display: flex;
         gap: 12px;
         padding: 0%;
         align-self: center;
     } */
 
-  .bottom footer {
-    background-color: rgb(241, 235, 235);
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-  }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 
-  .bottom a {
-    text-decoration: none;
-    color: rgb(114, 112, 112);
-    border: none;
-    background: none;
-  }
+    .bottom a {
+        text-decoration: none;
+        color: rgb(114, 112, 112);
+        border: none;
+        background: none;
+    }
 
-  .extraMessage {
-    margin: 0 20px;
-  }
+    .extraMessage {
+        margin: 0 20px;
+    }
 
-  .extraMessage a {
-    text-decoration: none;
-    color: rgb(100, 168, 247);
-  }
+    .extraMessage a {
+        text-decoration: none;
+        color: rgb(100, 168, 247);
+    }
 
-  .extraMessage p {
-    margin: 0 0;
-    padding-bottom: 15px;
-    padding-top: 10px;
-  }
+    .extraMessage p {
+        margin: 0 0;
+        padding-bottom: 15px;
+        padding-top: 10px;
+    }
 
-  .main {
-    background-color: rgb(219, 218, 218);
-  }
+    .main {
+        background-color: rgb(219, 218, 218);
+    }
 }
 
 /* ######## MOVILES HORIZONTAL ######### */
 @media (min-width: 481px) {
+<<<<<<< HEAD
   .App {
     min-height: 100vh;
   }
@@ -334,10 +468,75 @@ button {
     color: rebeccapurple;
     font-weight: bold;
   }
+=======
+    .App {
+        max-height: 100vh;
+    }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 100vh;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url('./images/Login.png'), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+>>>>>>> origin/robredo
 }
 
 /* ######## TABLETS VERTICAL ######### */
 @media (min-width: 768px) {
+<<<<<<< HEAD
   .flex {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -408,9 +607,159 @@ button {
     color: rebeccapurple;
     font-weight: bold;
   }
+=======
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        min-height: 100vh;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url('./images/Login.png'), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    /* ######### HOME ######### */
+    #navigator-list {
+        height: 70px;
+        background-color: rgb(74, 11, 136);
+        margin: 0;
+        /* position: fixed; */
+    }
+    #navigator-list > ul {
+        display: flex;
+    }
+    #navigator-list a,
+    #navigator-list button {
+        display: none;
+    }
+    .carrusel {
+        background: url('./images/cacharro-que-da-vueltas.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 250px;
+    }
+    .home-postsNavBar {
+        border: 1px solid silver;
+    }
+    .home-postsNavBar > ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .home-postsNavBar a {
+        color: black;
+        text-decoration: none;
+    }
+    .post {
+        border: 1px solid silver;
+        padding: 10px 10px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .post-category,
+    .post-title,
+    .post-image {
+        margin: 0 0 0 15px;
+    }
+    .post-category p {
+        color: rgb(114, 112, 112);
+        font-size: small;
+        margin: 4px 0;
+    }
+    .see-post {
+        background: none;
+        color: rgb(74, 11, 136);
+        max-width: fit-content;
+        max-height: fit-content;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: x-large;
+        position: absolute;
+        top: 50%;
+        left: 87%;
+    }
+    .post-image > img {
+        max-width: 50vh;
+        margin: 8px 0 15px 0;
+        border-radius: 20px;
+    }
+    .post-like {
+        margin: 0 0 7px 15px;
+    }
+    .icon-heart {
+        color: red;
+        margin: 0 6px 0 5px;
+    }
+    .bottom footer {
+        background-color: rgb(74, 11, 136);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    div > h3 {
+        display: none;
+    }
+    .bottom > footer * {
+        color: white;
+    }
+>>>>>>> origin/robredo
 }
+
 /* ######## ESCRITORIO ######### */
 @media (min-width: 1024px) {
+<<<<<<< HEAD
   #navigator {
     display: inline-block;
     position: fixed;
@@ -543,36 +892,174 @@ button {
     border: none;
     box-shadow: 1px 5px 4px rgb(151, 150, 150);
   }
+=======
+    #navigator {
+        display: inline-block;
+        position: fixed;
+        margin-right: 10px;
+    }
+>>>>>>> origin/robredo
 
-  .post {
-    border: 1px solid silver;
-    padding: 10px 10px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
+    #navigator-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
 
-  .post-category p {
-    color: rgb(114, 112, 112);
-    font-size: small;
-    margin: 5px 0;
-  }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        min-height: 100vh;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url(./images/Login.png) linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
 
-  .post-title {
-    color: black;
-    font-size: small;
-  }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 
-  .post-image img {
-    margin: 9px 0;
-    border-radius: 20px;
-    max-width: 80%;
-  }
+    /* ###### HOME ###########  */
 
-  .icon-heart {
-    color: red;
-    margin: 0 9px 0 5px;
-  }
+    .home-mainHomePage {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+    }
+
+    .asideContent {
+        display: inline-block;
+        margin-top: 0%;
+    }
+
+    .home-button {
+        background: none;
+        color: black;
+        padding: 10px;
+        border: none;
+        font-size: x-large;
+    }
+
+    .trends-button {
+        text-decoration: none;
+        color: black;
+        font-size: x-large;
+    }
+
+    .home-button::before,
+    .trends-button::before {
+        margin-right: 20px;
+    }
+
+    .home-button:hover,
+    .trends-button:hover {
+        background: none;
+        color: rebeccapurple;
+    }
+
+    .trends-li {
+        text-align: center;
+    }
+    .user-menu > button {
+        background: none;
+    }
+
+    .search-button {
+        color: black;
+        width: fit-content;
+    }
+
+    .searchArea {
+        margin: 0;
+    }
+    .search-area form {
+        display: flex;
+    }
+
+    .create-button {
+        padding: 0 30px;
+        border: none;
+        box-shadow: 1px 5px 4px rgb(151, 150, 150);
+    }
+
+    .post {
+        border: 1px solid silver;
+        padding: 10px 10px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .post-category p {
+        color: rgb(114, 112, 112);
+        font-size: small;
+        margin: 5px 0;
+    }
+
+    .post-title {
+        color: black;
+        font-size: small;
+    }
+
+    .post-image img {
+        margin: 9px 0;
+        border-radius: 20px;
+        max-width: 80%;
+    }
+
+    .icon-heart {
+        color: red;
+        margin: 0 9px 0 5px;
+    }
 }
 
 .see-post {
