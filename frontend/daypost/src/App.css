@@ -170,7 +170,8 @@ button:hover {
     justify-content: center;
   }
   /* >>>>>>> */
-  master .asideContent img {
+  /* master  */
+  .asideContent img {
     align-self: baseline;
     margin-top: 20px;
   }
