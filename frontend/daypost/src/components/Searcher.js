@@ -52,9 +52,10 @@ function Searcher({ postArray }) {
           }}
         />
 
-        <button className='search-button' type='submit'>
-          Search
-        </button>
+        <button
+          className='search-button icon icon-search'
+          type='submit'
+        ></button>
       </form>
       {suggestions &&
         suggestions.map((suggestion, i) => {
