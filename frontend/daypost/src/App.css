@@ -171,14 +171,11 @@ button:hover {
     justify-content: center;
   }
   /* >>>>>>> */
-  /* .asideContent img {
-    position: absolute;
-    src: url('./images/black_logo_transparent.png');
-    top: 1px;
-    left: 2%;
-    width: 100px;
-    align-self: flex-start;
-  } */
+  /* master  */
+  .asideContent img {
+    align-self: baseline;
+    margin-top: 20px;
+  }
 
   input {
     border-radius: 5px;

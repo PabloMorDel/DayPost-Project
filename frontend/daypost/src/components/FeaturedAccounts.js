@@ -12,23 +12,23 @@ function FeaturedAccounts({ postArray }) {
   let profiles = [];
   let successfulPostArray = postArray.splice(0, 4);
 
-  for (const post of successfulPostArray) {
-    getUser({
-      url: `http://localhost:4001/users/${post.idUser}`,
-      token,
-      onSuccess: (body) => {
-        let bbody = {};
-        bbody = body.message;
-        profiles.push(bbody);
-      },
-    });
-  }
+  // for (const post of successfulPostArray) {
+  //   getUser({
+  //     url: `http://localhost:4001/users/${post.idUser}`,
+  //     token,
+  //     onSuccess: (body) => {
+  //       let bbody = {};
+  //       bbody = body.message;
+  //       profiles.push(bbody);
+  //     },
+  //   });
+  // }
 
-  useEffect(() => {
-    setBestProfiles();
-  }, []);
-  console.log('profiles', profiles, typeof profiles);
-  console.log('log', bestProfiles);
+  // useEffect(() => {
+  //   setBestProfiles();
+  // }, []);
+  // console.log('profiles', profiles, typeof profiles);
+  // console.log('log', bestProfiles);
   return (
     <div>
       <div>
