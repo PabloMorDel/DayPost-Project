@@ -80,10 +80,18 @@ function UserMenu({ avatar, userName }) {
           <div
             style={{
               display: 'flex',
+
               alignItems: 'center',
             }}
           >
-            <Avatar src={avatar} style={{ height: '40px', width: '40px' }} />
+            <Avatar
+              src={avatar}
+              style={{
+                height: '40px',
+                width: '40px',
+                marginRight: '.5rem',
+              }}
+            />
             {userName}
           </div>
         ) : (

@@ -1,0 +1,556 @@
+/* ######## MOVILES VERTICAL ######### */
+
+@media (min-width: 320px) {
+    .account-navigator,
+    .account-pageSearcher {
+        display: none;
+    }
+    .searchArea {
+        height: 30px;
+        width: 30vh;
+    }
+    .aside {
+        height: 150px;
+        background: url(./images/short_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .asideContent img {
+        align-self: baseline;
+        margin-top: 20px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+
+    .formContainer * {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        align-items: initial;
+    }
+
+    .createPostForm {
+        border: 1px solid rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .searchArea {
+        height: 30px;
+        width: 30vh;
+    }
+    .aside {
+        height: 150px;
+        background: url(./images/short_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    master .asideContent img {
+        align-self: baseline;
+        margin-top: 20px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+
+    .formContainer * {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        align-items: initial;
+    }
+
+    .createPostForm {
+        border: 1px solid rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .createPostForm input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 50vh;
+
+        height: 15px;
+    }
+
+    #descriptionInput {
+        resize: none;
+        border-radius: 5px;
+        border: 1px solid silver;
+        width: 50vh;
+        height: 6em;
+        padding: 10px;
+    }
+
+    label {
+        padding: 10px;
+    }
+
+    .text {
+        text-align: center;
+        text-shadow: 1px 1px 3px black;
+        margin: none;
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    /* button {
+        width: 180px;
+        height: 40px;
+        background-color: rebeccapurple;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        padding-top: 8px;
+    } */
+
+    button:hover {
+        background-color: rgb(187, 133, 241);
+    }
+
+    .utils {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /*
+    a {
+        text-decoration: none;
+        border: 1px solid gray;
+        width: max-content;
+        padding: 4px 9px;
+        border-radius: 10px;
+        background-color: rgb(120, 54, 167);
+        color: white;
+    } */
+
+    /* nav {
+        display: flex;
+        margin: auto;
+        margin-top: 15px;
+        justify-content: space-around;
+    } */
+
+    /* nav ul {
+        display: flex;
+        gap: 12px;
+        padding: 0%;
+        align-self: center;
+    } */
+
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .bottom a {
+        text-decoration: none;
+        color: rgb(114, 112, 112);
+        border: none;
+        background: none;
+    }
+
+    .extraMessage {
+        margin: 0 20px;
+    }
+
+    .extraMessage a {
+        text-decoration: none;
+        color: rgb(100, 168, 247);
+    }
+
+    .extraMessage p {
+        margin: 0 0;
+        padding-bottom: 15px;
+        padding-top: 10px;
+    }
+
+    .main {
+        background-color: rgb(219, 218, 218);
+    }
+    /* ######### HOME ######### */
+    #navigator-list {
+        height: 70px;
+        background-color: rgb(74, 11, 136);
+        margin: 0;
+        /* position: fixed; */
+    }
+    #navigator-list > ul {
+        display: flex;
+    }
+    #navigator-list button {
+        position: absolute;
+        left: 50%;
+        top: 15px;
+    }
+    #navigator-list .home-li,
+    .trends-li,
+    .post-li {
+        display: none;
+    }
+    .home-mainContent .search-button {
+        color: black;
+        width: fit-content;
+    }
+    .home-mainContent form {
+        display: flex;
+        width: 180px;
+    }
+    .home-mainContent .searchArea {
+        margin: 0 auto;
+        display: flex;
+        position: absolute;
+        left: 22%;
+        top: 15px;
+        width: fit-content;
+        background: rgb(234, 213, 255);
+    }
+
+    .carrusel {
+        height: 250px;
+    }
+    .home-postsNavBar {
+        border: 1px solid silver;
+    }
+    .home-postsNavBar > ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .home-postsNavBar a {
+        color: black;
+        text-decoration: none;
+    }
+    .post {
+        border: 1px solid silver;
+        padding: 10px 10px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .post-category,
+    .post-title,
+    .post-image {
+        margin: 0 0 0 15px;
+    }
+    .post-category p {
+        color: rgb(114, 112, 112);
+        font-size: smaller;
+        margin: 4px 0;
+    }
+    .post-title {
+        font: smaller;
+    }
+    .see-post {
+        background: none;
+        color: rgb(74, 11, 136);
+        max-width: fit-content;
+        max-height: fit-content;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: x-large;
+        position: absolute;
+        top: 50%;
+        left: 87%;
+    }
+    .post-image > img {
+        max-width: 30vh;
+        margin: 8px 0 15px 0;
+        border-radius: 20px;
+    }
+    .post-like {
+        margin: 0 0 7px 15px;
+    }
+    .icon-heart {
+        color: red;
+        margin: 0 6px 0 5px;
+    }
+    .bottom footer {
+        background-color: rgb(74, 11, 136);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    div > h3 {
+        display: none;
+    }
+    .bottom > footer * {
+        color: white;
+    }
+}
+
+/* ######## MOVILES HORIZONTAL ######### */
+@media (min-width: 481px) {
+    .account-navigator,
+    .account-pageSearcher {
+        display: none;
+    }
+    .App {
+        max-height: 100vh;
+    }
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 100vh;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: auto;
+    }
+    .asideContent {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url('./images/Login.png'), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        min-height: 100vh;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+
+/* ######## TABLETS VERTICAL ######### */
+@media (min-width: 768px) {
+    .account-navigator,
+    .account-pageSearcher {
+        display: none;
+    }
+    .flex {
+        background-color: rgb(219, 218, 218);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        min-height: 100vh;
+    }
+    .main {
+        background-color: rgb(219, 218, 218);
+        padding: 25px;
+        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .text {
+        margin: 0 0 0 0;
+    }
+    .asideContent img {
+        display: none;
+    }
+    .aside {
+        padding: none;
+        margin: none;
+        background: url('./images/Login.png'), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+    }
+    button {
+        width: 100%;
+    }
+    .formContainer {
+        margin: 0;
+    }
+    .forms {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .forms form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+    .bottom {
+        grid-column-start: 1;
+        grid-column-end: span col3-start;
+        grid-row-start: 2;
+    }
+    .bottom footer {
+        background-color: rgb(241, 235, 235);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    /* ######### HOME ######### */
+    #navigator-list {
+        height: 70px;
+        background-color: rgb(74, 11, 136);
+        margin: 0;
+        /* position: fixed; */
+    }
+    #navigator-list > ul {
+        display: flex;
+    }
+    /* #navigator-list a,
+    #navigator-list button {
+        display: none;
+    } */
+    .carrusel {
+        background: url('./images/cacharro-que-da-vueltas.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 250px;
+    }
+    .home-postsNavBar {
+        border: 1px solid silver;
+    }
+    .home-postsNavBar > ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .home-postsNavBar a {
+        color: black;
+        text-decoration: none;
+    }
+    .post {
+        border: 1px solid silver;
+        padding: 10px 10px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .post-category,
+    .post-title,
+    .post-image {
+        margin: 0 0 0 15px;
+    }
+    .post-category p {
+        color: rgb(114, 112, 112);
+        font-size: small;
+        margin: 4px 0;
+    }
+    .see-post {
+        background: none;
+        color: rgb(74, 11, 136);
+        max-width: fit-content;
+        max-height: fit-content;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: x-large;
+        position: absolute;
+        top: 50%;
+        left: 87%;
+    }
+    .post-image > img {
+        max-width: 50vh;
+        margin: 8px 0 15px 0;
+        border-radius: 20px;
+    }
+    .post-like {
+        margin: 0 0 7px 15px;
+    }
+    .icon-heart {
+        color: red;
+        margin: 0 6px 0 5px;
+    }
+    .bottom footer {
+        background-color: rgb(74, 11, 136);
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    div > h3 {
+        display: none;
+    }
+    .bottom > footer * {
+        color: white;
+    }
+}
+
+/* ######## ESCRITORIO ######### */
+@media (min-width: 1024px) {
+}

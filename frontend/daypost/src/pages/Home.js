@@ -18,99 +18,98 @@ import PostCardChanger from '../components/PostCardChanger';
 import FeaturedAccounts from '../components/FeaturedAccounts';
 
 function Home(props) {
-  const { topic } = useParams();
-  const [token] = useContext(AuthContext);
-  const { setWaiting, setError } = useContext(StatusContext);
-  const [posts, setPosts] = useState([]);
-  const [loggedUserId] = useContext(UserIdContext);
-  const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
-  const [creatingPost, setCreatingPost] = useState(false);
+    const { topic } = useParams();
+    const [token] = useContext(AuthContext);
+    const { setWaiting, setError } = useContext(StatusContext);
+    const [posts, setPosts] = useState([]);
+    const [loggedUserId] = useContext(UserIdContext);
+    const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
+    const [creatingPost, setCreatingPost] = useState(false);
 
-  //const [category, setCategory] = useState(null);
+    //const [category, setCategory] = useState(null);
 
-  useEffect(() => {
-    const url = `http://localhost:4001/posts/${topic ? '?topic=' + topic : ''}`;
+    useEffect(() => {
+        const url = `http://localhost:4001/posts/${
+            topic ? '?topic=' + topic : ''
+        }`;
 
-    setWaiting(true);
-    getUser({
-      url: `http://localhost:4001/users/${loggedUserId}`,
-      token,
-      onSuccess: (getBody) => {
-        setCurrentUser(getBody.message);
-      },
-    });
-    getPost({
-      url,
-      token,
-      onSuccess: (body) => {
-        console.log('bodyGet', body);
-        setWaiting(false);
-        setPosts(body.posts);
-      },
-      onError: (error) => {
-        setWaiting(false);
-        setError(error);
-      },
-    });
-  }, [token, setError, setWaiting, topic]);
-  const unParsedCurrentUser = localStorage.getItem('currentUser');
-  const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
+        setWaiting(true);
+        getUser({
+            url: `http://localhost:4001/users/${loggedUserId}`,
+            token,
+            onSuccess: (getBody) => {
+                setCurrentUser(getBody.message);
+            },
+        });
+        getPost({
+            url,
+            token,
+            onSuccess: (body) => {
+                console.log('bodyGet', body);
+                setWaiting(false);
+                setPosts(body.posts);
+            },
+            onError: (error) => {
+                setWaiting(false);
+                setError(error);
+            },
+        });
+    }, [token, setError, setWaiting, topic]);
+    const unParsedCurrentUser = localStorage.getItem('currentUser');
+    const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
 
-  return (
-    <div className='home-mainHomePage'>
-      <div className='home-navigator'>
-        {/* <<<<<<< HEAD */}
-        <NavigationBar
-          avatar={parsedCurrentUser.avatar}
-          userName={parsedCurrentUser.userName}
-          createPostOnClick={(e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            setCreatingPost(true);
-          }}
-          homeButtonOnClick={(e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            setCreatingPost(false);
-          }}
-        />
-      </div>
-      {/* <div className='home-userManager'>
-        <UserManager />
-      </div> */}
-      <div className='home-mainContent'>
-        <Searcher postArray={posts} />
-        {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />}
-        <div className='home-contentHeader'></div>
-        <div className='home-postsNavBar'>
-          <PostCategories />
+    return (
+        <div className='home-mainHomePage'>
+            <header className='home-navigator'>
+                <NavigationBar
+                    avatar={parsedCurrentUser.avatar}
+                    userName={parsedCurrentUser.userName}
+                    createPostOnClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        setCreatingPost(true);
+                    }}
+                    homeButtonOnClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        setCreatingPost(false);
+                    }}
+                />
+            </header>
+
+            <div className='home-mainContent'>
+                <Searcher postArray={posts} />
+                {/* {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />} */}
+
+                <div className='home-postsNavBar'>
+                    <PostCategories />
+                </div>
+                <PostManager>
+                    {posts.length > 0
+                        ? posts.map((post) => {
+                              return (
+                                  <FeedPost
+                                      key={post.id}
+                                      id={post.id}
+                                      topic={post.topic}
+                                      title={post.title}
+                                      likes={post.likes}
+                                  ></FeedPost>
+                              );
+                          })
+                        : 'No data'}
+                </PostManager>
+            </div>
+            <div className='home-aside'>
+                <div className='home-spotlightAccs'>
+                    <FeaturedAccounts postArray={posts} />
+                </div>
+                <div className='home-FAQ'></div>
+                <footer className='home-privacy'>
+                    <OutsideFooter />
+                </footer>
+            </div>
         </div>
-        <PostManager>
-          {posts.length > 0
-            ? posts.map((post) => {
-                return (
-                  <FeedPost
-                    key={post.id}
-                    id={post.id}
-                    topic={post.topic}
-                    title={post.title}
-                    likes={post.likes}
-                  ></FeedPost>
-                );
-              })
-            : 'No data'}
-        </PostManager>
-      </div>
-      <div className='home-aside'>
-        <div className='home-spotlightAccs'>
-          <FeaturedAccounts postArray={posts} />
-        </div>
-        <div className='home-FAQ'></div>
-        <footer className='home-privacy'>
-          <OutsideFooter />
-        </footer>
-      </div>
-    </div>
-  );
+    );
 }
 export default Home;
