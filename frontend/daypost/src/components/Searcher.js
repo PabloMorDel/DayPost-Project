@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Searcher({ postArray }) {
   const [text, setText] = useState('');
@@ -35,7 +35,6 @@ function Searcher({ postArray }) {
     routeChanger(matchedId[0].id);
   };
 
-  console.log('searcher posts', postArray);
   return (
     <div className='searchArea'>
       <form onSubmit={onSearcherSubmit}>

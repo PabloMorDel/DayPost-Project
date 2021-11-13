@@ -140,12 +140,52 @@ button:hover {
         display: none;
     } */
 
+    .searchArea {
+        height: 30px;
+        width: 30vh;
+    }
     .aside {
         height: 150px;
         background: url(./images/short_bg.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+    }
+
+    .asideContent {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    /* >>>>>>> */
+    /* master  */
+    .asideContent img {
+        align-self: baseline;
+        margin-top: 20px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid silver;
+        margin: 10px 3px;
+        width: 90%;
+        padding: 10px;
+        height: 40px;
+    }
+
+    .formContainer * {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        align-items: initial;
+    }
+
+    .createPostForm {
+        border: 1px solid rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .asideContent {
