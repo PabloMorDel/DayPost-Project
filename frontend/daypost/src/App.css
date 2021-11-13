@@ -83,8 +83,14 @@
 ul {
     list-style-type: none;
 }
-
-button {
+.home-li button {
+    font-size: x-large;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.post-li button,
+.formContainer button {
     width: 180px;
     height: 40px;
     background-color: rgb(74, 11, 136);
@@ -92,7 +98,20 @@ button {
     color: white;
     font-weight: bold;
 }
-
+.formContainer button {
+    width: 100%;
+    margin: 1rem auto;
+}
+.extraMessage p {
+    margin: 0.75rem 0;
+}
+.extraMessage a {
+    text-decoration: none;
+    color: rgb(74, 11, 136);
+}
+.formContainer input {
+    width: 100%;
+}
 .see-post {
     background: none;
     color: rgb(74, 11, 136);
@@ -137,26 +156,26 @@ button:hover {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
+    background-color: rgb(219, 218, 218);
+}
+.flex .asideContent {
+    display: none;
+}
+.flex .aside {
+    background: url(/src/images/Login.png), linear-gradient(black, black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .main {
     background-color: rgb(219, 218, 218);
+    margin: auto 0;
     padding: 25px;
     display: flex;
     flex-direction: column;
 }
-.text {
-    margin: auto;
-}
-.asideContent {
-    display: none;
-}
-.aside {
-    padding: none;
-    margin: none;
-    background: url(./images/Login.png) linear-gradient(black, black);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+.main .text h2 {
+    margin: 1rem 0;
 }
 
 .formContainer {
@@ -188,7 +207,9 @@ input {
     background-color: rgb(241, 235, 235);
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
+    height: 3rem;
 }
 
 /* ###### HOME ###########  */

@@ -5,11 +5,6 @@
     .account-pageSearcher {
         display: none;
     }
-    /* <<<<<<< HEAD  */
-    /* nav {
-        display: none;
-    } */
-
     .searchArea {
         height: 30px;
         width: 30vh;
@@ -27,8 +22,6 @@
         align-content: center;
         justify-content: center;
     }
-    /* >>>>>>> */
-    /* master  */
     .asideContent img {
         align-self: baseline;
         margin-top: 20px;
@@ -63,10 +56,6 @@
         align-content: center;
         justify-content: center;
     }
-    /* =======  */
-    /* nav {
-        display: none;
-    } */
 
     .searchArea {
         height: 30px;
@@ -85,7 +74,6 @@
         align-content: center;
         justify-content: center;
     }
-    /* >>>>>>> */
     master .asideContent img {
         align-self: baseline;
         margin-top: 20px;
