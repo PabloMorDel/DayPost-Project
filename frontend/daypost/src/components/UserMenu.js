@@ -77,7 +77,14 @@ function UserMenu({ avatar, userName }) {
                 endIcon={<KeyboardArrowDownIcon />}
             >
                 {token ? (
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div
+                        className='icon icon-user'
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
                         <Avatar
                             src={avatar}
                             style={{ height: '40px', width: '40px' }}
