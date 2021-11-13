@@ -78,16 +78,19 @@ function UserMenu({ avatar, userName }) {
             >
                 {token ? (
                     <div
-                        className='icon icon-user'
                         style={{
                             display: 'flex',
-                            flexDirection: 'column',
+
                             alignItems: 'center',
                         }}
                     >
                         <Avatar
                             src={avatar}
-                            style={{ height: '40px', width: '40px' }}
+                            style={{
+                                height: '40px',
+                                width: '40px',
+                                marginRight: '.5rem',
+                            }}
                         />
                         {userName}
                     </div>
