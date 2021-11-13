@@ -142,20 +142,20 @@ function Post() {
     console.log('postIdUser', post.idUser);
 
     return (
-        <div className='mainHomePage'>
-            <div className='navigator'>
+        <div className='post-mainHomePage'>
+            <div className='post-navigator'>
                 <NavigationBar
                     avatar={parsedCurrentUser.avatar}
                     userName={parsedCurrentUser.userName}
                 />
             </div>
-            <div className='userManager'>
+            {/* <div className='userManager'>
                 <UserManager />
-            </div>
-            <div className='mainContent'>
+            </div> */}
+            <div className='post-mainContent'>
                 <Searcher />
-                <div className='contentHeader'></div>
-                <div className='postsNavBar'>
+                <div className='post-contentHeader'></div>
+                <div className='post-postsNavBar'>
                     <PostCategories />
                 </div>
                 {post.idUser ? (
@@ -172,7 +172,7 @@ function Post() {
                     'No Data'
                 )}
             </div>
-            <div className='aside'>
+            <div className='post-aside'>
                 <div className='spotlightAccs'></div>
                 <div className='FAQ'></div>
                 <footer className='privacy'>
