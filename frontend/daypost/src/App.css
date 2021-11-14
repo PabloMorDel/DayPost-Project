@@ -14,26 +14,6 @@
   display: none;
 }
 
-/* .flex {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .aside {
-  width: 45vh;
-} */
-/* .asideContent {
-  width: 50%;
-  margin: 0 auto;
-  position: relative;
-  top: 40%;
-} */
-
-/* .bottom > footer {
-  display: flex;
-  justify-content: space-evenly;
-} */
-
 .forms {
   display: flex;
   flex-direction: column;
@@ -43,7 +23,10 @@
   display: flex;
   justify-content: space-around;
 }
-
+.utils * {
+  text-decoration: none;
+  color: rgb(74, 11, 136);
+}
 #demo-customized-button {
   background-color: none;
   color: black;
@@ -130,7 +113,7 @@ button:hover {
   flex-direction: column;
   justify-content: space-around;
   min-height: 100vh;
-  margin: 0;
+  margin: 0 0;
   padding: 0;
   align-items: center;
 }
@@ -142,9 +125,9 @@ button:hover {
   min-height: 100vh;
   background-color: rgb(219, 218, 218);
 }
-.flex .asideContent {
-  display: none;
-}
+/* .flex .asideContent {
+    display: none;
+} */
 .flex .aside {
   background: url(/src/images/Login.png), linear-gradient(black, black);
   background-repeat: no-repeat;
@@ -182,12 +165,14 @@ input {
   padding: 10px;
   height: 40px;
 }
-.bottom {
+.login-footer,
+.register-footer {
   grid-column-start: 1;
   grid-column-end: span col3-start;
   grid-row-start: 2;
 }
-.bottom footer {
+.login-footer div,
+.register-footer div {
   background-color: rgb(241, 235, 235);
   display: flex;
   justify-content: space-evenly;
@@ -203,11 +188,7 @@ input {
   grid-template-columns: 0.75fr 1.5fr 0.5fr;
 }
 
-.asideContent {
-  display: inline-block;
-  margin-top: 0%;
-}
-.home-button {
+.na .home-button {
   background: none;
   color: black;
   padding: 10px;
@@ -501,15 +482,7 @@ button:hover {
   font-weight: bold;
 }
 
-.asideContent img {
-  display: inline;
-}
-
 /* Carrusel */
-
-.slide {
-  display: none;
-}
 
 .active-slide {
   display: block;
@@ -570,4 +543,121 @@ button:hover {
 .post-categories li a:hover {
   color: white;
   background-color: rebeccapurple;
+}
+.featuredAccounts {
+  background-color: rgb(216, 201, 228);
+  text-align: center;
+  margin: 3rem 2.5rem;
+  border-radius: 1rem;
+  padding: 2rem 1rem 15rem 1rem;
+}
+.featuredAccounts h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.home-aside {
+  margin: 5rem 0 0 0;
+}
+.home-footer {
+  margin: 5rem 0 0 0;
+  text-align: center;
+  color: rgb(153, 165, 175);
+}
+.daypost-company {
+  margin: 1rem 0;
+}
+
+/* ############# POST #############  */
+
+.post-mainHomePage {
+  display: grid;
+  grid-template-columns: 0.75fr 1.5fr 0.5fr;
+}
+.post-mainContent {
+  border: 1px solid silver;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+}
+.post-navigator #navigator-list {
+  background-color: white;
+  width: 70%;
+  margin: auto;
+}
+
+.post-navigator #navigator-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  margin: 0 0;
+  padding: 0;
+  align-items: center;
+}
+.user-menu > button {
+  background: none;
+}
+.post-avatar {
+  margin: 4rem 0 1rem 0;
+}
+.postText div {
+  margin: 1rem 0;
+}
+.likesANDcomments {
+  display: flex;
+}
+.likesANDcomments svg {
+  margin-right: 5px;
+}
+
+.post-aside {
+  margin: 5rem 0 0 0;
+}
+.post-aside .bottom {
+  margin: rem 0 0 0;
+  text-align: center;
+  color: rgb(153, 165, 175);
+}
+.daypost-company {
+  margin: 1rem 0;
+}
+/* ############# ACCOUNT ############# */
+
+.account-mainHomePage {
+  display: grid;
+  grid-template-columns: 0.75fr 1.5fr 0.5fr;
+}
+.accountCard div {
+  margin: 1rem 0;
+}
+
+.account-navigator #navigator-list {
+  background-color: white;
+  width: 70%;
+  margin: auto;
+}
+
+.account-navigator #navigator-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  margin: 0 0;
+  padding: 0;
+  align-items: center;
+}
+.user-menu > button {
+  background: none;
+}
+
+.pri {
+  margin: 5rem 0 0 0;
+}
+.privacy .bottom {
+  margin: rem 0 0 0;
+  text-align: center;
+  color: rgb(153, 165, 175);
+}
+.daypost-company {
+  margin: 1rem 0;
 }

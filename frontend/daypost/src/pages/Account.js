@@ -67,6 +67,9 @@ function Account() {
       {/* <div className='account-pageSearcher'>
         <Searcher />
       </div> */}
+      {/* <div className='account-pageSearcher'>
+                <Searcher />
+            </div> */}
       <div className='account-mainContent'>
         <AccountCard />
         <PostManager>

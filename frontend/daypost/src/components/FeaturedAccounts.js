@@ -7,35 +7,35 @@ import getPost from '../api/getPost';
 import getUser from '../api/getUser';
 
 function FeaturedAccounts({ postArray }) {
-  const [token] = useContext(AuthContext);
-  const [bestProfiles, setBestProfiles] = useState([]);
-  let profiles = [];
-  let successfulPostArray = postArray.splice(0, 4);
+    const [token] = useContext(AuthContext);
+    const [bestProfiles, setBestProfiles] = useState([]);
+    let profiles = [];
+    let successfulPostArray = postArray.splice(0, 4);
 
-  // for (const post of successfulPostArray) {
-  //   getUser({
-  //     url: `http://localhost:4001/users/${post.idUser}`,
-  //     token,
-  //     onSuccess: (body) => {
-  //       let bbody = {};
-  //       bbody = body.message;
-  //       profiles.push(bbody);
-  //     },
-  //   });
-  // }
+    // for (const post of successfulPostArray) {
+    //   getUser({
+    //     url: `http://localhost:4001/users/${post.idUser}`,
+    //     token,
+    //     onSuccess: (body) => {
+    //       let bbody = {};
+    //       bbody = body.message;
+    //       profiles.push(bbody);
+    //     },
+    //   });
+    // }
 
-  // useEffect(() => {
-  //   setBestProfiles();
-  // }, []);
-  // console.log('profiles', profiles, typeof profiles);
-  // console.log('log', bestProfiles);
-  return (
-    <div>
-      <div>
-        <h3>Highlighted Accounts</h3>
-      </div>
-      <div>
-        {/* {bestProfiles.map((profile) => {
+    // useEffect(() => {
+    //   setBestProfiles();
+    // }, []);
+    // console.log('profiles', profiles, typeof profiles);
+    // console.log('log', bestProfiles);
+    return (
+        <div className='featuredAccounts'>
+            <div>
+                <h3>Highlighted Accounts</h3>
+            </div>
+            <div>
+                {/* {bestProfiles.map((profile) => {
           return (
             <li>
               <div>
@@ -48,9 +48,9 @@ function FeaturedAccounts({ postArray }) {
             </li>
           );
         })} */}
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 }
 
 export default FeaturedAccounts;

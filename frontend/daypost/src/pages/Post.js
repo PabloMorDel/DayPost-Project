@@ -59,6 +59,7 @@ function SinglePost({
         <div className='singlePost'>
             <div className='fullUserInfo'>
                 <Avatar
+                    className='post-avatar'
                     alt='userOwnerAvatar'
                     src={postOwner.avatar}
                     sx={{ width: 80, height: 80 }}
@@ -173,8 +174,6 @@ function Post() {
                 )}
             </div>
             <div className='post-aside'>
-                <div className='spotlightAccs'></div>
-                <div className='FAQ'></div>
                 <footer className='privacy'>
                     <OutsideFooter />
                 </footer>

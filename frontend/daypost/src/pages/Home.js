@@ -79,8 +79,34 @@ function Home(props) {
         <Searcher postArray={posts} />
         {/* {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />} */}
 
-        <div className='home-postsNavBar'>
-          <PostCategories />
+                <div className='home-postsNavBar'>
+                    <PostCategories />
+                </div>
+                <PostManager>
+                    {posts.length > 0
+                        ? posts.map((post) => {
+                              return (
+                                  <FeedPost
+                                      key={post.id}
+                                      id={post.id}
+                                      topic={post.topic}
+                                      title={post.title}
+                                      likes={post.likes}
+                                  ></FeedPost>
+                              );
+                          })
+                        : 'No data'}
+                </PostManager>
+            </div>
+            <div className='home-aside'>
+                <div className='home-spotlightAccs'>
+                    <FeaturedAccounts postArray={posts} />
+                </div>
+                <div className='home-FAQ'></div>
+                <footer className='home-footer'>
+                    <OutsideFooter />
+                </footer>
+            </div>
         </div>
         <PostManager>
           {posts.length > 0
