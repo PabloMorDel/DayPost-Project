@@ -59,6 +59,7 @@ function SinglePost({
         <div className='singlePost'>
             <div className='fullUserInfo'>
                 <Avatar
+                    className='post-avatar'
                     alt='userOwnerAvatar'
                     src={postOwner.avatar}
                     sx={{ width: 80, height: 80 }}

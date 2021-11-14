@@ -15,26 +15,6 @@
     display: none;
 }
 
-/* .flex {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .aside {
-  width: 45vh;
-} */
-/* .asideContent {
-  width: 50%;
-  margin: 0 auto;
-  position: relative;
-  top: 40%;
-} */
-
-/* .bottom > footer {
-  display: flex;
-  justify-content: space-evenly;
-} */
-
 .forms {
     display: flex;
     flex-direction: column;
@@ -161,9 +141,9 @@ button:hover {
     min-height: 100vh;
     background-color: rgb(219, 218, 218);
 }
-.flex .asideContent {
+/* .flex .asideContent {
     display: none;
-}
+} */
 .flex .aside {
     background: url(/src/images/Login.png), linear-gradient(black, black);
     background-repeat: no-repeat;
@@ -224,10 +204,6 @@ input {
     grid-template-columns: 0.75fr 1.5fr 0.5fr;
 }
 
-.asideContent {
-    display: inline-block;
-    margin-top: 0%;
-}
 .na .home-button {
     background: none;
     color: black;
@@ -347,14 +323,7 @@ button:hover {
     font-weight: bold;
 }
 
-.asideContent img {
-    display: inline;
-}
 /* Carrusel */
-
-/* .slide {
-    display: none;
-} */
 
 .active-slide {
     display: block;
@@ -445,6 +414,12 @@ button:hover {
     display: grid;
     grid-template-columns: 0.75fr 1.5fr 0.5fr;
 }
+.post-mainContent {
+    border: 1px solid silver;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+}
 .post-navigator #navigator-list {
     background-color: white;
     width: 70%;
@@ -460,90 +435,66 @@ button:hover {
     padding: 0;
     align-items: center;
 }
-
-.asideContent {
-    display: inline-block;
-    margin-top: 0%;
-}
-.na .home-button {
+.user-menu > button {
     background: none;
-    color: black;
-    padding: 10px;
-    border: none;
-    font-size: x-large;
+}
+.post-avatar {
+    margin: 4rem 0 1rem 0;
+}
+.postText div {
+    margin: 1rem 0;
+}
+.likesANDcomments {
+    display: flex;
+}
+.likesANDcomments svg {
+    margin-right: 5px;
 }
 
-.trends-button {
-    text-decoration: none;
-    color: black;
-    font-size: x-large;
+.post-aside {
+    margin: 5rem 0 0 0;
 }
-
-.post-button::before,
-.trends-button::before {
-    margin-right: 20px;
-}
-
-.post-button:hover,
-.trends-button:hover {
-    background: none;
-    color: rebeccapurple;
-}
-
-.trends-li {
+.post-aside .bottom {
+    margin: rem 0 0 0;
     text-align: center;
+    color: rgb(153, 165, 175);
+}
+.daypost-company {
+    margin: 1rem 0;
+}
+/* ############# ACCOUNT ############# */
+
+.account-mainHomePage {
+    display: grid;
+    grid-template-columns: 0.75fr 1.5fr 0.5fr;
+}
+.accountCard div {
+    margin: 1rem 0;
+}
+
+.account-navigator #navigator-list {
+    background-color: white;
+    width: 70%;
+    margin: auto;
+}
+
+.account-navigator #navigator-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+    margin: 0 0;
+    padding: 0;
+    align-items: center;
 }
 .user-menu > button {
     background: none;
 }
 
-.search-button {
-    color: black;
-    width: fit-content;
-}
-
-.searchArea {
-    margin: 0;
-}
-.search-area form {
-    display: flex;
-}
-
-.create-button {
-    padding: 0 30px;
-    border: none;
-    box-shadow: 1px 5px 4px rgb(151, 150, 150);
-}
-
-.post {
-    border: 1px solid silver;
-    padding: 10px 10px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.post-category p {
-    color: rgb(114, 112, 112);
-    font-size: small;
-    margin: 5px 0;
-}
-
-.post-title {
-    color: black;
-    font-size: small;
-}
-
-.post-image img {
-    margin: 9px 0;
-    border-radius: 20px;
-    max-width: 30vw;
-    min-width: 500px;
-}
-.post-aside {
+.pri {
     margin: 5rem 0 0 0;
 }
-.post-aside .bottom {
+.privacy .bottom {
     margin: rem 0 0 0;
     text-align: center;
     color: rgb(153, 165, 175);

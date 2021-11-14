@@ -69,9 +69,9 @@ function Account() {
           <UserManager></UserManager>
         </div>
       </div> */}
-            <div className='account-pageSearcher'>
+            {/* <div className='account-pageSearcher'>
                 <Searcher />
-            </div>
+            </div> */}
             <div className='account-mainContent'>
                 <AccountCard />
                 <PostManager>
