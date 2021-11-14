@@ -10,12 +10,13 @@ function NavigationBar({
 }) {
     return (
         <nav id='navigator'>
+            <a className='logo'>
+                <Link to='/home'>
+                    <MainTitle />
+                </Link>
+            </a>
+
             <ul id='navigator-list'>
-                <li className='logo-li'>
-                    <Link to='/home'>
-                        <MainTitle />
-                    </Link>
-                </li>
                 <li className='home-li'>
                     <Link to='/home'>
                         <button

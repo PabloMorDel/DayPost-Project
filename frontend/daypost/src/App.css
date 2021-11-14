@@ -44,7 +44,10 @@
     display: flex;
     justify-content: space-around;
 }
-
+.utils * {
+    text-decoration: none;
+    color: rgb(74, 11, 136);
+}
 #demo-customized-button {
     background-color: none;
     color: black;
@@ -146,7 +149,7 @@ button:hover {
     flex-direction: column;
     justify-content: space-around;
     min-height: 100vh;
-    margin: 0;
+    margin: 0 0;
     padding: 0;
     align-items: center;
 }
@@ -198,12 +201,14 @@ input {
     padding: 10px;
     height: 40px;
 }
-.bottom {
+.login-footer,
+.register-footer {
     grid-column-start: 1;
     grid-column-end: span col3-start;
     grid-row-start: 2;
 }
-.bottom footer {
+.login-footer div,
+.register-footer div {
     background-color: rgb(241, 235, 235);
     display: flex;
     justify-content: space-evenly;
@@ -345,12 +350,11 @@ button:hover {
 .asideContent img {
     display: inline;
 }
-
 /* Carrusel */
 
-.slide {
+/* .slide {
     display: none;
-}
+} */
 
 .active-slide {
     display: block;
@@ -411,4 +415,139 @@ button:hover {
 .post-categories li a:hover {
     color: white;
     background-color: rebeccapurple;
+}
+.featuredAccounts {
+    background-color: rgb(216, 201, 228);
+    text-align: center;
+    margin: 3rem 2.5rem;
+    border-radius: 1rem;
+    padding: 2rem 1rem 15rem 1rem;
+}
+.featuredAccounts h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.home-aside {
+    margin: 5rem 0 0 0;
+}
+.home-footer {
+    margin: 5rem 0 0 0;
+    text-align: center;
+    color: rgb(153, 165, 175);
+}
+.daypost-company {
+    margin: 1rem 0;
+}
+
+/* ############# POST #############  */
+
+.post-mainHomePage {
+    display: grid;
+    grid-template-columns: 0.75fr 1.5fr 0.5fr;
+}
+.post-navigator #navigator-list {
+    background-color: white;
+    width: 70%;
+    margin: auto;
+}
+
+.post-navigator #navigator-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+    margin: 0 0;
+    padding: 0;
+    align-items: center;
+}
+
+.asideContent {
+    display: inline-block;
+    margin-top: 0%;
+}
+.na .home-button {
+    background: none;
+    color: black;
+    padding: 10px;
+    border: none;
+    font-size: x-large;
+}
+
+.trends-button {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+
+.post-button::before,
+.trends-button::before {
+    margin-right: 20px;
+}
+
+.post-button:hover,
+.trends-button:hover {
+    background: none;
+    color: rebeccapurple;
+}
+
+.trends-li {
+    text-align: center;
+}
+.user-menu > button {
+    background: none;
+}
+
+.search-button {
+    color: black;
+    width: fit-content;
+}
+
+.searchArea {
+    margin: 0;
+}
+.search-area form {
+    display: flex;
+}
+
+.create-button {
+    padding: 0 30px;
+    border: none;
+    box-shadow: 1px 5px 4px rgb(151, 150, 150);
+}
+
+.post {
+    border: 1px solid silver;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.post-category p {
+    color: rgb(114, 112, 112);
+    font-size: small;
+    margin: 5px 0;
+}
+
+.post-title {
+    color: black;
+    font-size: small;
+}
+
+.post-image img {
+    margin: 9px 0;
+    border-radius: 20px;
+    max-width: 30vw;
+    min-width: 500px;
+}
+.post-aside {
+    margin: 5rem 0 0 0;
+}
+.post-aside .bottom {
+    margin: rem 0 0 0;
+    text-align: center;
+    color: rgb(153, 165, 175);
+}
+.daypost-company {
+    margin: 1rem 0;
 }

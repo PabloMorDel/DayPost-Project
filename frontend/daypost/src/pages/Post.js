@@ -173,8 +173,6 @@ function Post() {
                 )}
             </div>
             <div className='post-aside'>
-                <div className='spotlightAccs'></div>
-                <div className='FAQ'></div>
                 <footer className='privacy'>
                     <OutsideFooter />
                 </footer>
