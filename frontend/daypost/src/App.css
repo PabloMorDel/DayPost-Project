@@ -112,22 +112,7 @@ ul {
   width: 100%;
 }
 .see-post {
-  background: none;
-  color: rgb(74, 11, 136);
-  max-width: fit-content;
-  max-height: fit-content;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font-size: x-large;
-  position: absolute;
-  top: 50%;
-  left: 90%;
-}
-
-.see-post:hover {
-  background: none;
-  color: rgb(187, 133, 241);
+  display: none;
 }
 
 button:hover {
@@ -222,7 +207,7 @@ input {
   display: inline-block;
   margin-top: 0%;
 }
-.na .home-button {
+.home-button {
   background: none;
   color: black;
   padding: 10px;
@@ -280,21 +265,21 @@ input {
   position: relative;
 }
 
-.post-category p {
+.post p {
   color: rgb(114, 112, 112);
   font-size: small;
   margin: 5px 0;
 }
 
-.post-title {
+.post h1 {
   color: black;
-  font-size: small;
+  font-size: large;
 }
 
 .post-image img {
   margin: 9px 0;
   border-radius: 20px;
-  max-width: 30vw;
+  max-width: 100%;
   min-width: 500px;
 }
 
@@ -309,22 +294,197 @@ input {
   margin: auto;
 }
 
-.see-post {
-  background: none;
-  color: black;
-  max-width: fit-content;
-  max-height: fit-content;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font-size: x-large;
-  position: absolute;
-  top: 50%;
-  left: 80%;
+button:hover {
+  background-color: rgb(187, 133, 241);
 }
 
-.see-post:hover {
-  background-color: rgb(187, 133, 241);
+#demo-customized-button {
+  background-color: none;
+  color: black;
+}
+#demo-customized-button:hover {
+  background: none;
+  color: rebeccapurple;
+  font-weight: bold;
+}
+
+.asideContent img {
+  display: inline;
+}
+
+/* Carrusel */
+
+.slide {
+  display: none;
+}
+
+.active-slide {
+  display: block;
+}
+
+.searchArea {
+  display: flex;
+  justify-content: center;
+}
+
+.searchArea form {
+  position: relative;
+  display: flex;
+}
+
+.searchArea form input {
+  border: 1px solid rgb(187, 133, 241);
+  border-radius: 2rem;
+  margin: initial;
+  padding: 0.25rem 1rem;
+  width: 20rem;
+  outline: none;
+}
+
+.searchArea .suggestions {
+  position: absolute;
+  top: 3rem;
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  z-index: 1000;
+  border: 1px solid rgb(187, 133, 241);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.searchArea .suggestions li {
+  margin-bottom: 0.5rem;
+}
+.searchArea .suggestions li a {
+  color: rebeccapurple;
+  text-decoration: none;
+}
+
+.post-categories {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.post-categories li a {
+  display: block;
+  padding: 1rem 2rem;
+  color: rebeccapurple;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.post-categories li a:hover {
+  color: white;
+  background-color: rebeccapurple;
+}
+
+/* #########  ACCOUNT PAGE   ############## */
+
+.account-mainHomePage {
+  display: grid;
+  grid-template-columns: 0.75fr 1.5fr 0.5fr;
+}
+
+.account-navigator .asideContent {
+  display: inline-block;
+  margin-top: 0%;
+}
+.navigator .home-button {
+  background: none;
+  color: black;
+  padding: 10px;
+  border: none;
+  font-size: x-large;
+}
+
+.account-navigator #navigator-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.trends-button {
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+}
+
+.home-button::before,
+.trends-button::before {
+  margin-right: 20px;
+}
+
+.home-button:hover,
+.trends-button:hover {
+  background: none;
+  color: rebeccapurple;
+}
+
+.trends-li {
+  text-align: center;
+}
+.user-menu > button {
+  background: none;
+}
+
+.search-button {
+  color: black;
+  width: fit-content;
+}
+
+.searchArea {
+  margin: 0;
+}
+.search-area form {
+  display: flex;
+}
+
+.create-button {
+  padding: 0 30px;
+  border: none;
+  box-shadow: 1px 5px 4px rgb(151, 150, 150);
+}
+
+.post {
+  border: 1px solid silver;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.post p {
+  color: rgb(114, 112, 112);
+  font-size: small;
+  margin: 5px 0;
+}
+
+.post h1 {
+  color: black;
+  font-size: large;
+}
+
+.post-image img {
+  margin: 9px 0;
+  border-radius: 20px;
+  max-width: 100%;
+  min-width: 500px;
+}
+
+.icon-heart {
+  color: red;
+  margin: 0 9px 0 5px;
+}
+
+.account-navigator #navigator-list {
+  background-color: white;
+  width: 70%;
+  margin: auto;
 }
 
 button:hover {
