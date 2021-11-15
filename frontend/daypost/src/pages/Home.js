@@ -22,6 +22,7 @@ function Home(props) {
   const [token] = useContext(AuthContext);
   const { setWaiting, setError } = useContext(StatusContext);
   const [posts, setPosts] = useState([]);
+  const [ordererPosts, setOrderedPosts] = useState([]);
   const [loggedUserId] = useContext(UserIdContext);
   const [currentUser, setCurrentUser] = useLocalStorage({}, 'currentUser');
   const [creatingPost, setCreatingPost] = useState(false);
@@ -55,7 +56,17 @@ function Home(props) {
   }, [token, setError, setWaiting, topic]);
   const unParsedCurrentUser = localStorage.getItem('currentUser');
   const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
-
+  function onTrendsClick(e) {
+    e.preventDefault();
+    getPost({
+      url: `http://localhost:4001/posts?order=createdAt&direction=DESC`,
+      token,
+      onSuccess: (body) => {
+        setOrderedPosts(body.posts);
+      },
+    });
+    setPosts(ordererPosts);
+  }
   return (
     <div className='home-mainHomePage'>
       <header className='home-navigator'>
@@ -72,12 +83,13 @@ function Home(props) {
             e.preventDefault();
             setCreatingPost(false);
           }}
+          onTrendsClick={onTrendsClick}
         />
       </header>
 
       <div className='home-mainContent'>
         <Searcher postArray={posts} />
-        {/* {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />} */}
+        {creatingPost ? <CreatePost /> : <PostCardChanger postArray={posts} />}
 
         <div className='home-postsNavBar'>
           <PostCategories />
