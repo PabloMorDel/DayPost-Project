@@ -111,9 +111,9 @@ function Home(props) {
         </PostManager>
       </div>
       <div className='home-aside'>
-        <div className='home-spotlightAccs'>
+        {/* <div className='home-spotlightAccs'>
           <FeaturedAccounts postArray={posts} />
-        </div>
+        </div> */}
         <div className='home-FAQ'></div>
         <footer className='home-privacy'>
           <OutsideFooter />

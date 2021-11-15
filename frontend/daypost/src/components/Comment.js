@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '..';
 import getUser from '../api/getUser';
 
-function Comment({ commentContent, idUser, avatar, accName }) {
+function Comment({ commentContent, idUser }) {
   const [token] = useContext(AuthContext);
   const [user, setUser] = useState();
   useEffect(() => {

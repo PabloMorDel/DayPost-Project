@@ -10,24 +10,24 @@ function FeaturedAccounts({ postArray }) {
   const [token] = useContext(AuthContext);
   const [bestProfiles, setBestProfiles] = useState([]);
 
-  useEffect(() => {
-    const posts = postArray;
-    let profiles = [];
-    if (posts.length > 0) {
-      for (let i = 0; i < 4; i++) {
-        getUser({
-          url: `http://localhost:4001/users/${posts[i].idUser}`,
-          token,
-          onSuccess: (body) => {
-            console.log(body);
-            profiles.push(body.message);
-          },
-        });
-      }
-      setBestProfiles(profiles);
-    }
-  }, [postArray]);
-  console.log(bestProfiles, 'bestProfiles');
+  // useEffect(() => {
+  //   const posts = postArray;
+  //   let profiles = [];
+  //   if (posts.length > 0) {
+  //     for (let i = 0; i < 4; i++) {
+  //       getUser({
+  //         url: `http://localhost:4001/users/${posts[i].idUser}`,
+  //         token,
+  //         onSuccess: (body) => {
+  //           console.log(body);
+  //           profiles.push(body.message);
+  //         },
+  //       });
+  //     }
+  //     setBestProfiles(profiles);
+  //   }
+  // }, [postArray]);
+  // console.log(bestProfiles, 'bestProfiles');
   return (
     <div>
       <div>

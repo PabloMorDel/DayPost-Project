@@ -14,7 +14,7 @@ import { post } from '../api/post';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { postComment } from '../api/postComment';
 import getPostComments from '../api/getPostComments';
-import Comment from '../components/Comment';
+import React from 'react';
 
 function SinglePost({
   idOwner,
@@ -129,7 +129,40 @@ function SinglePost({
     </div>
   );
 }
-
+function Comment({ commentContent, idUser }) {
+  const [token] = useContext(AuthContext);
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const url = `http://localhost:4001/users/${idUser}`;
+    setTimeout(() => {
+      getUser({
+        url,
+        token,
+        onSuccess: (body) => {
+          console.log(body);
+          setUser(body.message);
+        },
+      });
+    }, 200);
+  }, []);
+  console.log('user', user);
+  return (
+    <div>
+      <div>
+        {user.accName ? (
+          <React.Fragment>
+            <Avatar src={user.avatar} /> <p>{user.accName}</p>
+          </React.Fragment>
+        ) : (
+          'Loading'
+        )}
+      </div>
+      <div>
+        <p>{commentContent}</p>
+      </div>
+    </div>
+  );
+}
 function Post() {
   const [token] = useContext(AuthContext);
   const { idPost } = useParams();
