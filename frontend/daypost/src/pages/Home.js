@@ -104,6 +104,7 @@ function Home(props) {
                     topic={post.topic}
                     title={post.title}
                     likes={post.likes}
+                    imgSource={post.photo}
                   ></FeedPost>
                 );
               })

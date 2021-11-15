@@ -12,6 +12,7 @@ const authorized = async (req, res, next) => {
     }
     let tokenInfo;
     try {
+      console.log('entras?', authorization);
       tokenInfo = jwt.verify(authorization, process.env.SECRET);
     } catch (_) {
       console.log(authorization);
@@ -20,6 +21,7 @@ const authorized = async (req, res, next) => {
       throw error;
     }
     req.auth = tokenInfo;
+
     next();
   } catch (error) {
     next(error);

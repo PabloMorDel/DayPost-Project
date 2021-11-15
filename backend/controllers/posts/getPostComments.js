@@ -16,7 +16,6 @@ const getPostComments = async (req, res, next) => {
       error.httpStatus = 404;
       throw error;
     }
-    console.log(postComments);
     res.send({
       status: 'ok',
       message: postComments,

@@ -177,10 +177,10 @@ function AccountCard() {
           <p>{currentUser.biography}</p>
         </div>
 
-        <div className='socialAccountInfo'>
+        {/* <div className='socialAccountInfo'>
           <span>Followers</span>
           <span>Followed</span>
-        </div>
+        </div> */}
       </div>
       <div className='accountSettings'>
         <button onClick={handleModalOpen}>Account Settings</button>

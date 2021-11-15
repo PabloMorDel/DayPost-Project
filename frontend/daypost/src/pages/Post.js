@@ -8,7 +8,7 @@ import Searcher from '../components/Searcher';
 import UserManager from '../components/UserManager';
 import getPost from '../api/getPost';
 import getUser from '../api/getUser';
-import { Avatar } from '@mui/material';
+import { Avatar, requirePropFactory } from '@mui/material';
 import { format } from 'date-fns';
 import { post } from '../api/post';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -145,13 +145,17 @@ function Comment({ commentContent, idUser }) {
       });
     }, 200);
   }, []);
-  console.log('user', user);
+  console.log('user', user.avatar);
   return (
     <div>
       <div>
         {user.accName ? (
           <React.Fragment>
-            <Avatar src={user.avatar} /> <p>{user.accName}</p>
+            <img
+              src={`http://localhost:3000/public/${user.avatar}`}
+              alt='avatar'
+            />
+            <p>{user.accName}</p>
           </React.Fragment>
         ) : (
           'Loading'
