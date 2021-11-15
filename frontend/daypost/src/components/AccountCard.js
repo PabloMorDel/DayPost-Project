@@ -185,7 +185,7 @@ function AccountCard() {
           aria-labelledby='modal-modal-title'
           aria-describedby='modal-modal-description'
         >
-          <Box sx={modalBoxStyle}>
+          <Box sx={modalBoxStyle} id='MuiBox-rootid'>
             <div
               className='settings-modal-images'
               style={{

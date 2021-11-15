@@ -20,7 +20,12 @@ function FeedPost({ imgSource, topic, title, likes, id, description }) {
 
       <div className='post-image'>
         <img src={'/image-post-1.jpg'} alt='PostImage' />
-        <p>{description}</p>
+        <p>
+          Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en
+          demostraciones de tipografías o de borradores de diseño para probar
+          Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en
+          demostraciones de tipografías o de borradores de diseño para probar
+        </p>
       </div>
       <footer>
         <div className='post-like'>
