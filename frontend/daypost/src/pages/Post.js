@@ -25,21 +25,14 @@ function SinglePost({
   date,
   likes,
   id,
-<<<<<<< HEAD
   onCommentSubmit,
   onCommentChange,
   comment,
-=======
->>>>>>> origin/dervys
 }) {
   const [token] = useContext(AuthContext);
   const [postOwner, setPostOwner] = useState({});
   const [like, setLike] = useState(false);
 
-<<<<<<< HEAD
-=======
-  console.log(postOwner);
->>>>>>> origin/dervys
   useEffect(() => {
     getUser({
       url: `http://localhost:4001/users/${idOwner}`,
@@ -66,19 +59,11 @@ function SinglePost({
       onSuccess
     );
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/dervys
   console.log(like);
   return (
     <div className='singlePost'>
       <div className='fullUserInfo'>
         <Avatar
-<<<<<<< HEAD
-=======
-          className='post-avatar'
->>>>>>> origin/dervys
           alt='userOwnerAvatar'
           src={postOwner.avatar}
           sx={{ width: 80, height: 80 }}
@@ -127,7 +112,6 @@ function SinglePost({
           )}
           <div>{likes}</div>
         </div>
-<<<<<<< HEAD
         <div className='writeComment'>
           <form onSubmit={onCommentSubmit}>
             <label htmlFor='commentInput' onChange={onCommentChange}>
@@ -178,8 +162,6 @@ function Comment({ commentContent, idUser }) {
       </div>
       <div>
         <p>{commentContent}</p>
-=======
->>>>>>> origin/dervys
       </div>
     </div>
   );
@@ -190,21 +172,12 @@ function Post() {
   const { setWaiting, setError } = useContext(StatusContext);
   const [post, setPost] = useState({});
   const [like, setLike] = useState(false);
-<<<<<<< HEAD
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
   const unParsedCurrentUser = localStorage.getItem('currentUser');
   const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
   // const [postOwner, setPostOwner] = useState({});
   console.log('idPost', idPost);
-=======
-  const unParsedCurrentUser = localStorage.getItem('currentUser');
-  const parsedCurrentUser = JSON.parse(unParsedCurrentUser);
-  console.log(parsedCurrentUser.avatar);
-  console.log('post', post);
-  // const [postOwner, setPostOwner] = useState({});
-
->>>>>>> origin/dervys
   useEffect(() => {
     const urlPost = `http://localhost:4001/posts/${idPost}`;
     getPost({
@@ -219,7 +192,6 @@ function Post() {
         setError(error);
       },
     });
-<<<<<<< HEAD
     getPostComments({
       url: `http://localhost:4001/posts/getComments/${idPost}`,
       token,
@@ -255,11 +227,6 @@ function Post() {
     e.preventDefault();
     setComment(e.target.value);
   };
-=======
-  }, [like]);
-  console.log('postIdUser', post.idUser);
-
->>>>>>> origin/dervys
   return (
     <div className='post-mainHomePage'>
       <div className='post-navigator'>
@@ -286,18 +253,14 @@ function Post() {
             date={post.createdAt}
             id={idPost}
             likes={post.likes}
-<<<<<<< HEAD
             onCommentChange={onCommentChange}
             onCommentSubmit={onCommentSubmit}
             comment={comment}
-=======
->>>>>>> origin/dervys
           />
         ) : (
           'No Data'
         )}
       </div>
-<<<<<<< HEAD
       {commentList.length > 1
         ? commentList.map((comm) => {
             console.log('commMap', comm.content);
@@ -313,9 +276,6 @@ function Post() {
       <div className='post-aside'>
         <div className='spotlightAccs'></div>
         <div className='FAQ'></div>
-=======
-      <div className='post-aside'>
->>>>>>> origin/dervys
         <footer className='privacy'>
           <OutsideFooter />
         </footer>

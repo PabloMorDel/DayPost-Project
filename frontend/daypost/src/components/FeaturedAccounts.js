@@ -7,7 +7,6 @@ import getPost from '../api/getPost';
 import getUser from '../api/getUser';
 
 function FeaturedAccounts({ postArray }) {
-<<<<<<< HEAD
   const [token] = useContext(AuthContext);
   const [bestProfiles, setBestProfiles] = useState([]);
 
@@ -53,52 +52,6 @@ function FeaturedAccounts({ postArray }) {
       </div>
     </div>
   );
-=======
-    const [token] = useContext(AuthContext);
-    const [bestProfiles, setBestProfiles] = useState([]);
-    let profiles = [];
-    let successfulPostArray = postArray.splice(0, 4);
-
-    // for (const post of successfulPostArray) {
-    //   getUser({
-    //     url: `http://localhost:4001/users/${post.idUser}`,
-    //     token,
-    //     onSuccess: (body) => {
-    //       let bbody = {};
-    //       bbody = body.message;
-    //       profiles.push(bbody);
-    //     },
-    //   });
-    // }
-
-    // useEffect(() => {
-    //   setBestProfiles();
-    // }, []);
-    // console.log('profiles', profiles, typeof profiles);
-    // console.log('log', bestProfiles);
-    return (
-        <div className='featuredAccounts'>
-            <div>
-                <h3>Highlighted Accounts</h3>
-            </div>
-            <div>
-                {/* {bestProfiles.map((profile) => {
-          return (
-            <li>
-              <div>
-                <Avatar src={profile.avatar} />
-                <div>
-                  <span>{profile.accName}</span>
-                  <span>@{profile.userName}</span>
-                </div>
-              </div>
-            </li>
-          );
-        })} */}
-            </div>
-        </div>
-    );
->>>>>>> origin/dervys
 }
 
 export default FeaturedAccounts;
