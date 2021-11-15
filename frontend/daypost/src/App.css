@@ -111,7 +111,7 @@ button:hover {
 .home-navigator #navigator-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   min-height: 100vh;
   margin: 0 0;
   padding: 0;
@@ -236,6 +236,38 @@ input {
   padding: 0 30px;
   border: none;
   box-shadow: 1px 5px 4px rgb(151, 150, 150);
+}
+
+.home-mainContent .createPostForm {
+  border: 1px solid rgba(151, 150, 150, 0.3);
+  text-align: center;
+}
+
+.home-mainContent .createPostForm input {
+  border: 1px solid rgb(197, 196, 196);
+}
+
+.home-mainContent .createPostForm textarea {
+  border: 1px solid rgb(197, 196, 196);
+  resize: none;
+  width: 90%;
+  height: 90px;
+  padding: 0.75rem 0 0 0.75rem;
+}
+
+.home-mainContent .createPostForm button {
+  border: 1px solid rgb(197, 196, 196, 0.3);
+  background: rgb(74, 11, 136);
+  color: white;
+  font-weight: 700;
+  display: block;
+  margin: 2rem 5rem;
+  padding: 10px 30px;
+  border-radius: 3rem;
+}
+
+.home-mainContent .createPostForm button:hover {
+  background: rgb(187, 133, 241);
 }
 
 .post {
@@ -432,7 +464,7 @@ button:hover {
 }
 
 .post {
-  border: 1px solid silver;
+  border: 1px solid rgba(226, 226, 226, 0.4);
   padding: 10px 10px 10px 20px;
   display: flex;
   flex-direction: column;
@@ -450,22 +482,24 @@ button:hover {
   font-size: large;
 }
 
+.account-mainContent .post-image {
+  display: flex;
+}
+
+.account-mainContent .post-image p {
+  margin-top: 1.5rem;
+}
+
 .post-image img {
-  margin: 9px 0;
+  margin: 9px 4px;
   border-radius: 20px;
-  max-width: 100%;
-  min-width: 500px;
+  max-width: 80%;
+  min-width: 50px;
 }
 
 .icon-heart {
   color: red;
   margin: 0 9px 0 5px;
-}
-
-.account-navigator #navigator-list {
-  background-color: white;
-  width: 70%;
-  margin: auto;
 }
 
 button:hover {
@@ -627,20 +661,74 @@ button:hover {
   display: grid;
   grid-template-columns: 0.75fr 1.5fr 0.5fr;
 }
-.accountCard div {
-  margin: 1rem 0;
+
+.account-mainContent {
+  display: flex;
+}
+.accountCard {
+  border: 1px solid rgba(226, 226, 226, 0.4);
+  height: 100%;
+  position: relative;
 }
 
-.account-navigator #navigator-list {
-  background-color: white;
-  width: 70%;
-  margin: auto;
+.editableAccountInfo {
+  text-align: center;
+}
+
+.bgPortrait {
+  margin: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 8rem;
+}
+
+.bgPortrait .MuiAvatar-root {
+  border: 3px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 15%;
+  left: 23%;
+}
+
+.userAccName {
+  margin: 3.2rem 1.5rem 0 1.5rem;
+  font-weight: 700;
+}
+
+.userUserName {
+  color: gray;
+}
+
+.userBiography {
+  margin: 3rem 1.5rem 1.5rem 1.5rem;
+}
+
+.accountSettings {
+  text-align: center;
+}
+
+.accountSettings button {
+  border: none;
+
+  width: fit-content;
+  background-color: rgb(74, 11, 136);
+  border-radius: 50px;
+  color: white;
+  font-size: large;
+  padding: 5px 15px;
+  border-radius: 1.5rem;
+  margin: 1rem 1.5rem;
+}
+
+.accountSettings button::before {
+  font-size: large;
+  margin-right: 0.5rem;
 }
 
 .account-navigator #navigator-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   min-height: 100vh;
   margin: 0 0;
   padding: 0;
@@ -650,7 +738,11 @@ button:hover {
   background: none;
 }
 
-.pri {
+.settings-modal-form-container .settings-modal-form {
+  border: 1px solid green;
+}
+
+.privacy {
   margin: 5rem 0 0 0;
 }
 .privacy .bottom {

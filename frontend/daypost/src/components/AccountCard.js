@@ -170,20 +170,15 @@ function AccountCard() {
               sx={{ width: 80, height: 80 }}
             />
           </div>
-          <p>
-            <strong>{currentUser.accName}</strong>
-          </p>
-          <p>{`@${currentUser.userName}`}</p>
-          <p>{currentUser.biography}</p>
-        </div>
-
-        <div className='socialAccountInfo'>
-          <span>Followers</span>
-          <span>Followed</span>
+          <p className='userAccName'>{currentUser.accName}</p>
+          <p className='userUserName'>{`@${currentUser.userName}`}</p>
+          <p className='userBiography'>{currentUser.biography}</p>
         </div>
       </div>
       <div className='accountSettings'>
-        <button onClick={handleModalOpen}>Account Settings</button>
+        <button className='icon icon-cogs' onClick={handleModalOpen}>
+          Edit
+        </button>
         <Modal
           open={openSettingsModal}
           onClose={handleModalClose}

@@ -10,6 +10,7 @@ import PostManager from '../components/PostManager';
 import Searcher from '../components/Searcher';
 import UserManager from '../components/UserManager';
 import useLocalStorage from '../hooks/useLocalStorage';
+import FeaturedAccounts from '../components/FeaturedAccounts';
 
 function Account() {
   const [token] = useContext(AuthContext);
@@ -88,7 +89,9 @@ function Account() {
         </PostManager>
       </div>
       <div className='account-aside'>
-        <div className='spotlightAccs'></div>
+        <div className='spotlightAccs'>
+          <FeaturedAccounts postArray={posts} />
+        </div>
         <div className='FAQ'></div>
         <footer className='privacy'>
           <OutsideFooter />
