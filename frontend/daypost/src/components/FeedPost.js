@@ -1,7 +1,11 @@
 import { Button, Link } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
+<<<<<<< HEAD
 function FeedPost({ imgSource, topic, title, likes, id }) {
+=======
+function FeedPost({ imgSource, topic, title, likes, id, description }) {
+>>>>>>> origin/dervys
   const history = useHistory();
   const routeChanger = () => {
     const path = `/posts/${id}`;
@@ -19,7 +23,17 @@ function FeedPost({ imgSource, topic, title, likes, id }) {
       </header>
 
       <div className='post-image'>
+<<<<<<< HEAD
         <img src={imgSource} alt='PostImage' />
+=======
+        <img src={'/image-post-1.jpg'} alt='PostImage' />
+        <p>
+          Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en
+          demostraciones de tipografías o de borradores de diseño para probar
+          Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en
+          demostraciones de tipografías o de borradores de diseño para probar
+        </p>
+>>>>>>> origin/dervys
       </div>
       <footer>
         <div className='post-like'>

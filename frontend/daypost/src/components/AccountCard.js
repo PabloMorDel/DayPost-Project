@@ -170,6 +170,7 @@ function AccountCard() {
               sx={{ width: 80, height: 80 }}
             />
           </div>
+<<<<<<< HEAD
           <p>
             <strong>{currentUser.accName}</strong>
           </p>
@@ -181,16 +182,24 @@ function AccountCard() {
           <span>Followers</span>
           <span>Followed</span>
         </div> */}
+=======
+          <p className='userAccName'>{currentUser.accName}</p>
+          <p className='userUserName'>{`@${currentUser.userName}`}</p>
+          <p className='userBiography'>{currentUser.biography}</p>
+        </div>
+>>>>>>> origin/dervys
       </div>
       <div className='accountSettings'>
-        <button onClick={handleModalOpen}>Account Settings</button>
+        <button className='icon icon-cogs' onClick={handleModalOpen}>
+          Edit
+        </button>
         <Modal
           open={openSettingsModal}
           onClose={handleModalClose}
           aria-labelledby='modal-modal-title'
           aria-describedby='modal-modal-description'
         >
-          <Box sx={modalBoxStyle}>
+          <Box sx={modalBoxStyle} id='MuiBox-rootid'>
             <div
               className='settings-modal-images'
               style={{

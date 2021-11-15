@@ -95,7 +95,9 @@ function Login(props) {
                 </div>
                 <Utils />
             </div>
-            <OutsideFooter />
+            <footer className='login-footer'>
+                <OutsideFooter />
+            </footer>
         </div>
     );
 }

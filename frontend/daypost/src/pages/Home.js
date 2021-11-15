@@ -116,7 +116,7 @@ function Home(props) {
           <FeaturedAccounts postArray={posts} />
         </div> */}
         <div className='home-FAQ'></div>
-        <footer className='home-privacy'>
+        <footer className='home-footer'>
           <OutsideFooter />
         </footer>
       </div>
