@@ -31,17 +31,30 @@ const listPosts = async (req, res, next) => {
             `,
         [`%${topic}%`, `%${title}%`]
       );
+    } else if (order || direction) {
+      [posts] = await connection.query(
+        `
+        SELECT posts.id, posts.title, posts.description, posts.source, posts.topic, posts.idUser, COUNT(*) AS likes, photos.name AS photo
+        FROM posts
+        LEFT JOIN likes ON (likes.idPost = posts.id)
+        LEFT JOIN photos ON (photos.idPost = posts.id)
+        GROUP BY posts.id, photo
+        ORDER BY posts.${orderBy} ${orderDirection}
+            `
+      );
     } else {
       [posts] = await connection.query(
         `
-        SELECT posts.id, posts.title, posts.description, posts.source, posts.topic, posts.idUser, COUNT(*) AS likes
+        SELECT posts.id, posts.title, posts.description, posts.source, posts.topic, posts.idUser, COUNT(*) AS likes, photos.name AS photo
         FROM posts
         LEFT JOIN likes ON (likes.idPost = posts.id)
-        GROUP BY posts.id
+        LEFT JOIN photos ON (photos.idPost = posts.id)
+        GROUP BY posts.id, photo
         ORDER BY ${orderBy} ${orderDirection}
             `
       );
     }
+    console.log(orderBy, orderDirection);
     res.send({
       status: 'ok',
       posts,
