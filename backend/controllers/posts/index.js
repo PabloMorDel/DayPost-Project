@@ -9,7 +9,8 @@ const getPostPhoto = require('./getPostPhoto');
 const newPost = require('./newPost');
 const listPosts = require('./listPost');
 const likePost = require('./likePost');
-
+const addPostComment = require('./addPostComment');
+const getPostComments = require('./getPostComments');
 module.exports = {
   newPost,
   getPost,
@@ -22,4 +23,6 @@ module.exports = {
   deletePostPhoto,
   listPosts,
   likePost,
+  addPostComment,
+  getPostComments,
 };

@@ -87,6 +87,8 @@ const {
   deletePostPhoto,
   listPosts,
   likePost,
+  addPostComment,
+  getPostComments,
 } = require('./controllers/posts');
 app.post('/posts/new', authorized, newPost);
 app.get('/posts/:idPost', postExists, getPost);
@@ -105,6 +107,8 @@ app.delete('/images/:idPost', authorized, postExists, deletePostPhoto);
 app.get('/posts', listPosts);
 app.get('/search/posts', listPosts);
 app.post('/posts/like/:idPost', authorized, postExists, likePost);
+app.post('/posts/comment/:idPost', authorized, postExists, addPostComment);
+app.get('/posts/getComments/:idPost', authorized, postExists, getPostComments);
 //Errors
 app.use((error, req, res, next) => {
   console.log(error.message);
