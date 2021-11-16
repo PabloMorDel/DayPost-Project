@@ -12,29 +12,29 @@ function NavigationBar({
 }) {
   return (
     <nav id='navigator'>
+      <a className='logo'>
+        <Link to='/home'>
+          <MainTitle />
+        </Link>
+      </a>
+
       <ul id='navigator-list'>
-        <li className='logo-li'>
-          <Link to='/home'>
-            <MainTitle />
-          </Link>
-        </li>
         <li className='home-li'>
           <Link to='/home'>
             <button
-              className='home-button icon icon-home3'
+              className='home-button with-icon'
               onClick={homeButtonOnClick}
             >
+              <span className='icon icon-home3'></span>
               Home
             </button>
           </Link>
         </li>
         <li className='trends-li'>
-          <a
-            className='trends-button icon icon-power'
-            href='/'
-            onClick={onTrendsClick}
-          >
-            Trends
+          <img src='' alt='' />
+          <a className='trends-button with-icon' href='/'>
+            <span className='icon icon-power'></span>
+            <span>Trends</span>
           </a>
         </li>
         <li className='post-li'>

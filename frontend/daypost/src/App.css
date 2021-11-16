@@ -1,308 +1,308 @@
 @import url(./fonts/icons/style.css);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',
-        sans-serif;
-    min-height: 100vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',
+    sans-serif;
+  min-height: 100vh;
 }
 
-a.with-icon {
-    text-decoration: none;
+#navigator-list .home-li a {
+  text-decoration: none;
 }
 
 .with-icon {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .with-icon span {
-    padding-right: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .aside-fixed {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 }
 
 button {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',
-        sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',
+    sans-serif;
 }
 #root > nav {
-    display: none;
+  display: none;
 }
 
 .forms {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .utils {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 .utils * {
-    text-decoration: none;
-    color: rgb(74, 11, 136);
+  text-decoration: none;
+  color: rgb(74, 11, 136);
 }
 #demo-customized-button {
-    background-color: none;
-    color: black;
+  background-color: none;
+  color: black;
 }
 #demo-customized-button:hover {
-    background: none;
-    color: rebeccapurple;
-    font-weight: bold;
+  background: none;
+  color: rebeccapurple;
+  font-weight: bold;
 }
 
 /* ############################# */
 
 .mainHomePage {
-    margin: auto;
-    border: 1px solid silver;
-    /* display: grid;
+  margin: auto;
+  border: 1px solid silver;
+  /* display: grid;
     grid-template-columns: 1fr 2fr 1fr; */
 }
 
 .home-mainContent {
-    margin: 10px;
-    padding-top: 10px;
-    border: 1px solid silver;
+  margin: 10px;
+  padding-top: 10px;
+  border: 1px solid silver;
 }
 
 .searchArea {
-    border-bottom: 1px solid silver;
-    padding-bottom: 0.5rem;
-    display: flex;
+  border-bottom: 1px solid silver;
+  padding-bottom: 0.5rem;
+  display: flex;
 }
 
 .asideContent img {
-    width: 20rem;
+  width: 20rem;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 .home-li button {
-    font-size: x-large;
-    padding: 0;
-    border: none;
-    background: none;
+  font-size: x-large;
+  padding: 0;
+  border: none;
+  background: none;
 }
 .post-li button,
 .formContainer button {
-    width: 180px;
-    height: 40px;
-    background-color: rgb(74, 11, 136);
-    border-radius: 50px;
-    color: white;
-    font-weight: bold;
+  width: 180px;
+  height: 40px;
+  background-color: rgb(74, 11, 136);
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
 }
 .formContainer button {
-    width: 100%;
-    margin: 1rem auto;
+  width: 100%;
+  margin: 1rem auto;
 }
 .extraMessage p {
-    margin: 0.75rem 0;
+  margin: 0.75rem 0;
 }
 .extraMessage a {
-    text-decoration: none;
-    color: rgb(74, 11, 136);
+  text-decoration: none;
+  color: rgb(74, 11, 136);
 }
 .formContainer input {
-    width: 100%;
+  width: 100%;
 }
 .see-post {
-    display: none;
+  display: none;
 }
 
 button:hover {
-    background-color: rgb(187, 133, 241);
+  background-color: rgb(187, 133, 241);
 }
 
 #navigator {
-    display: inline-block;
-    position: fixed;
-    margin-right: 10px;
+  display: inline-block;
+  position: fixed;
+  margin-right: 10px;
 }
 
 .home-navigator #navigator-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 100vh;
-    margin: 0 0;
-    padding: 0;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  margin: 0 0;
+  padding: 0;
+  align-items: center;
 }
 
 .flex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
-    min-height: 100vh;
-    background-color: rgb(219, 218, 218);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  background-color: rgb(219, 218, 218);
 }
 /* .flex .asideContent {
     display: none;
 } */
 .flex .aside {
-    background: url(/src/images/Login.png), linear-gradient(black, black);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background: url(/src/images/Login.png), linear-gradient(black, black);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .main {
-    background-color: rgb(219, 218, 218);
-    margin: auto 0;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
+  background-color: rgb(219, 218, 218);
+  margin: auto 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
 .main .text h2 {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .formContainer {
-    margin: 0;
+  margin: 0;
 }
 .forms {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 .forms form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 input {
-    border-radius: 5px;
-    border: none;
-    margin: 10px 3px;
-    width: 90%;
-    padding: 10px;
-    height: 40px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px 3px;
+  width: 90%;
+  padding: 10px;
+  height: 40px;
 }
 .login-footer,
 .register-footer {
-    grid-column-start: 1;
-    grid-column-end: span col3-start;
-    grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: span col3-start;
+  grid-row-start: 2;
 }
 .login-footer div,
 .register-footer div {
-    background-color: rgb(241, 235, 235);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 3rem;
+  background-color: rgb(241, 235, 235);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
 }
 
 /* ###### HOME ###########  */
 
 .home-mainHomePage {
-    display: grid;
-    grid-template-columns: 0.75fr 1.5fr 0.5fr;
+  display: grid;
+  grid-template-columns: 320px auto 250px;
 }
 
 .na .home-button {
-    background: none;
-    color: black;
-    padding: 10px;
-    border: none;
-    font-size: x-large;
+  background: none;
+  color: black;
+  padding: 10px;
+  border: none;
+  font-size: x-large;
 }
 
 .trends-button {
-    text-decoration: none;
-    color: black;
-    font-size: x-large;
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
 }
 
 .home-button::before,
 .trends-button::before {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .home-button:hover,
 .trends-button:hover {
-    background: none;
-    color: rebeccapurple;
+  background: none;
+  color: rebeccapurple;
 }
 
 .trends-li {
-    text-align: center;
+  text-align: center;
 }
 .user-menu > button {
-    background: none;
+  background: none;
 }
 
 .search-button {
-    color: black;
-    width: fit-content;
+  color: black;
+  width: fit-content;
 }
 
 .searchArea {
-    margin: 0;
+  margin: 0;
 }
 .search-area form {
-    display: flex;
+  display: flex;
 }
 
 .create-button {
-    padding: 0 30px;
-    border: none;
-    box-shadow: 1px 5px 4px rgb(151, 150, 150);
+  padding: 0 30px;
+  border: none;
+  box-shadow: 1px 5px 4px rgb(151, 150, 150);
 }
 
 .home-mainContent .createPostForm {
-    border: 1px solid rgba(151, 150, 150, 0.3);
-    text-align: center;
-    border: 2px solid rgb(74, 11, 136);
+  border: 1px solid rgba(151, 150, 150, 0.3);
+  text-align: center;
+  border: 2px solid rgb(74, 11, 136);
 }
 
 .home-mainContent .createPostForm input {
-    border: 1px solid rgb(197, 196, 196);
-    /* border: 1px solid rgb(74, 11, 136); */
+  border: 1px solid rgb(197, 196, 196);
+  /* border: 1px solid rgb(74, 11, 136); */
 }
 
 .home-mainContent .createPostForm textarea {
-    border: 1px solid rgb(197, 196, 196);
-    resize: none;
-    width: 90%;
-    height: 90px;
-    padding: 0.75rem 0 0 0.75rem;
-    /* border: 1px solid rgb(74, 11, 136); */
+  border: 1px solid rgb(197, 196, 196);
+  resize: none;
+  width: 90%;
+  height: 90px;
+  padding: 0.75rem 0 0 0.75rem;
+  /* border: 1px solid rgb(74, 11, 136); */
 }
 
 .home-mainContent .createPostForm button {
-    border: 1px solid rgb(197, 196, 196, 0.3);
-    background: rgb(74, 11, 136);
-    color: white;
-    font-weight: 700;
-    display: block;
-    margin: 2rem 5rem;
-    padding: 10px 30px;
-    border-radius: 3rem;
+  border: 1px solid rgb(197, 196, 196, 0.3);
+  background: rgb(74, 11, 136);
+  color: white;
+  font-weight: 700;
+  display: block;
+  margin: 2rem 5rem;
+  padding: 10px 30px;
+  border-radius: 3rem;
 }
 
 .home-mainContent .createPostForm button:hover {
-    background: rgb(187, 133, 241);
+  background: rgb(187, 133, 241);
 }
 
 .post {
-    border: 1px solid silver;
-    padding: 10px 10px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  border: 1px solid silver;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 /* .post p {
@@ -312,528 +312,575 @@ input {
 } */
 
 .post h1 {
-    color: black;
-    font-size: large;
+  color: black;
+  font-size: large;
 }
 
 .post-image img {
-    margin: 9px 0;
-    border-radius: 20px;
-    max-width: 100%;
-    min-width: 500px;
+  margin: 9px 0;
+  border-radius: 20px;
+  max-width: 100%;
+  min-width: 500px;
 }
 
 .post-image .post-like {
-    display: block;
+  display: block;
 }
 .home-mainContent .post-image p {
-    margin: 0.75rem 0.25rem;
+  margin: 0.75rem 0.25rem;
 }
 .icon-heart {
-    color: red;
-    margin: 0 9px 0 5px;
+  color: red;
+  margin: 0 9px 0 5px;
 }
 
 .home-navigator #navigator-list {
-    background-color: white;
-    width: 70%;
-    margin: auto;
+  background-color: white;
+  width: 70%;
+  margin: auto;
 }
 
 button:hover {
-    background-color: rgb(187, 133, 241);
+  background-color: rgb(187, 133, 241);
 }
 
 #demo-customized-button {
-    background-color: none;
-    color: black;
+  background-color: none;
+  color: black;
 }
 #demo-customized-button:hover {
-    background: none;
-    color: rebeccapurple;
-    font-weight: bold;
+  background: none;
+  color: rebeccapurple;
+  font-weight: bold;
 }
 
 .asideContent img {
-    display: inline;
+  display: inline;
 }
 
 /* Carrusel */
 
 .slide {
-    display: none;
+  display: none;
 }
 
 .active-slide {
-    display: block;
+  display: block;
 }
 .active-slide img {
-    width: 100%;
+  width: 100%;
 }
 
 .searchArea {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .searchArea form {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
 
 .searchArea form input {
-    border: 1px solid rgb(187, 133, 241);
-    border-radius: 2rem;
-    margin: initial;
-    padding: 0.25rem 1rem;
-    width: 20rem;
-    outline: none;
+  border: 1px solid rgb(187, 133, 241);
+  border-radius: 2rem;
+  margin: initial;
+  padding: 0.25rem 1rem;
+  width: 20rem;
+  outline: none;
 }
 
 .searchArea .suggestions {
-    position: absolute;
-    top: 3rem;
-    background: white;
-    padding: 1rem;
-    width: 100%;
-    z-index: 1000;
-    border: 1px solid rgb(187, 133, 241);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 3rem;
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  z-index: 1000;
+  border: 1px solid rgb(187, 133, 241);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .searchArea .suggestions li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .searchArea .suggestions li a {
-    color: rebeccapurple;
-    text-decoration: none;
+  color: rebeccapurple;
+  text-decoration: none;
 }
 
 .post-categories {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .post-categories li a {
-    display: block;
-    padding: 1rem 2rem;
-    color: rebeccapurple;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
+  display: block;
+  padding: 1rem 2rem;
+  color: rebeccapurple;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .post-categories li a:hover {
-    color: white;
-    background-color: rebeccapurple;
+  color: white;
+  background-color: rebeccapurple;
 }
 
 /* #########  ACCOUNT PAGE   ############## */
 
 .account-mainHomePage {
-    display: grid;
-    grid-template-columns: 0.75fr 1.5fr 0.5fr;
+  display: grid;
+  grid-template-columns: 300px auto 250px;
 }
 
 .account-navigator .asideContent {
-    display: inline-block;
-    margin-top: 0%;
+  display: inline-block;
+  margin-top: 0%;
 }
 .navigator .home-button {
-    background: none;
-    color: black;
-    padding: 10px;
-    border: none;
-    font-size: x-large;
+  background: none;
+  color: black;
+  padding: 10px;
+  border: none;
+  font-size: x-large;
 }
 
 .account-navigator #navigator-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 .trends-button {
-    text-decoration: none;
-    color: black;
-    font-size: x-large;
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
 }
 
 .home-button::before,
 .trends-button::before {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .home-button:hover,
 .trends-button:hover {
-    background: none;
-    color: rebeccapurple;
+  background: none;
+  color: rebeccapurple;
 }
 
 .trends-li {
-    text-align: center;
+  text-align: center;
 }
 .user-menu > button {
-    background: none;
+  background: none;
 }
 
 .search-button {
-    color: black;
-    width: fit-content;
+  color: black;
+  width: fit-content;
 }
 
 .searchArea {
-    margin: 0;
+  margin: 0;
 }
 .search-area form {
-    display: flex;
+  display: flex;
 }
 
 .create-button {
-    padding: 0 30px;
-    border: none;
-    box-shadow: 1px 5px 4px rgb(151, 150, 150);
+  padding: 0 30px;
+  border: none;
+  box-shadow: 1px 5px 4px rgb(151, 150, 150);
 }
 
 .post {
-    border: 1px solid rgba(226, 226, 226, 0.4);
-    padding: 10px 10px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  border: 1px solid rgba(226, 226, 226, 0.4);
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .post p {
-    color: rgb(114, 112, 112);
-    font-size: small;
-    margin: 5px 0;
+  color: rgb(114, 112, 112);
+  font-size: small;
+  margin: 5px 0;
 }
 
 .post h1 {
-    color: black;
-    font-size: large;
+  color: black;
+  font-size: large;
 }
 
 .account-mainContent .post-image {
-    display: flex;
+  display: flex;
 }
 
 .account-mainContent .post-image p {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .post-image img {
-    margin: 1rem 0;
-    border-radius: 20px;
-    max-width: 80%;
-    min-width: 50px;
+  margin: 1rem 0;
+  border-radius: 20px;
+  max-width: 80%;
+  min-width: 50px;
 }
 
 .icon-heart {
-    color: red;
-    margin: 0 0.5rem 0 0.5rem;
+  color: red;
+  margin: 0 0.5rem 0 0.5rem;
 }
 
 button:hover {
-    background-color: rgb(187, 133, 241);
+  background-color: rgb(187, 133, 241);
 }
 
 #demo-customized-button {
-    background-color: none;
-    color: black;
+  background-color: none;
+  color: black;
 }
 #demo-customized-button:hover {
-    background: none;
-    color: rebeccapurple;
-    font-weight: bold;
+  background: none;
+  color: rebeccapurple;
+  font-weight: bold;
 }
 
 .searchArea {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .searchArea form {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
 
 .searchArea form input {
-    border: 1px solid rgb(187, 133, 241);
-    border-radius: 2rem;
-    margin: initial;
-    padding: 0.25rem 1rem;
-    width: 20rem;
-    outline: none;
+  border: 1px solid rgb(187, 133, 241);
+  border-radius: 2rem;
+  margin: initial;
+  padding: 0.25rem 1rem;
+  width: 20rem;
+  outline: none;
 }
 
 .searchArea .suggestions {
-    position: absolute;
-    top: 3rem;
-    background: white;
-    padding: 1rem;
-    width: 100%;
-    z-index: 1000;
-    border: 1px solid rgb(187, 133, 241);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 3rem;
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  z-index: 1000;
+  border: 1px solid rgb(187, 133, 241);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .searchArea .suggestions li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .searchArea .suggestions li a {
-    color: rebeccapurple;
-    text-decoration: none;
+  color: rebeccapurple;
+  text-decoration: none;
 }
 
 .post-categories {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .post-categories li a {
-    display: block;
-    padding: 1rem 2rem;
-    color: rebeccapurple;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
+  display: block;
+  padding: 1rem 2rem;
+  color: rebeccapurple;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .post-categories li a:hover {
-    color: white;
-    background-color: rebeccapurple;
+  color: white;
+  background-color: rebeccapurple;
 }
 .featuredAccounts {
-    background-color: rgb(216, 201, 228);
-    text-align: center;
-    margin: 3rem 2.5rem;
-    border-radius: 1rem;
-    padding: 2rem 1rem 15rem 1rem;
+  background-color: rgb(216, 201, 228);
+  text-align: center;
+  margin: 3rem 2.5rem;
+  border-radius: 1rem;
+  padding: 2rem 1rem 15rem 1rem;
 }
 .featuredAccounts h3 {
-    font-size: 1rem;
-    font-weight: 700;
+  font-size: 1rem;
+  font-weight: 700;
 }
 .home-aside {
-    margin: 5rem 0 0 0;
+  margin: 5rem 0 0 0;
 }
 .home-footer {
-    margin: 5rem 0 0 0;
-    text-align: center;
-    color: rgb(153, 165, 175);
+  margin: 5rem 0 0 0;
+  text-align: center;
+  color: rgb(153, 165, 175);
 }
 .daypost-company {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 /* ############# POST #############  */
-
+/* 
 .post-mainHomePage {
-    display: grid;
-    grid-template-columns: 0.75fr 1.5fr 0.5fr;
-}
+  display: grid;
+  grid-template-columns: 0.75fr 1.5fr 0.5fr;
+} */
 .post-mainContent {
-    border: 1px solid silver;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-bottom: 2rem;
+  border: 1px solid silver;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
 }
-.post-navigator #navigator-list {
-    background-color: white;
-    width: 70%;
-    margin: auto;
+
+.post-navigator {
+  margin-right: 1rem;
+}
+#commentInput {
+  resize: none;
+  padding: 0.5rem;
+  min-width: 100%;
+  height: 80px;
+  margin-top: 1rem;
+}
+
+.writeComment form button {
+  border: none;
+
+  width: fit-content;
+  background-color: rgb(74, 11, 136);
+  border-radius: 50px;
+  color: white;
+  font-size: small;
+  padding: 5px 15px;
+  border-radius: 1.5rem;
+  margin: 0.3rem 0;
+}
+.writeComment form button:hover {
+  background-color: rgb(187, 133, 241);
+}
+
+.userNames {
+  margin-top: 0.5rem;
+}
+
+.commentsComments {
+  margin: 1rem 0;
+  border: 1px solid silver;
+  padding: 0.5rem;
+}
+
+.commentsComments p {
+  margin-top: 0.5rem;
 }
 
 .post-navigator #navigator-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    min-height: 100vh;
-    margin: 0 0;
-    padding: 0;
-    align-items: center;
+  background-color: white;
+  width: 70%;
+  margin: auto;
+}
+
+.post-navigator #navigator-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  margin: 0 0;
+  padding: 0;
+  align-items: center;
 }
 .user-menu > button {
-    background: none;
+  background: none;
 }
 .post-avatar {
-    margin: 4rem 0 1rem 0;
+  margin: 4rem 0 1rem 0;
 }
 .postText div {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 .likesANDcomments {
-    display: flex;
+  display: flex;
 }
 .likesANDcomments svg {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .post-aside {
-    margin: 5rem 0 0 0;
+  margin: 5rem 0 0 0;
 }
 .post-aside .bottom {
-    margin: rem 0 0 0;
-    text-align: center;
-    color: rgb(153, 165, 175);
+  margin: rem 0 0 0;
+  text-align: center;
+  color: rgb(153, 165, 175);
 }
 .daypost-company {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 /* ############# ACCOUNT ############# */
 
-.account-mainHomePage {
-    display: grid;
-    grid-template-columns: 0.75fr 1.5fr 0.5fr;
+.account-mainHomePage,
+.post-mainHomePage {
+  display: grid;
+  grid-template-columns: 320px auto 250px;
 }
 
 .account-mainContent {
-    display: flex;
+  display: flex;
 }
 .accountCard {
-    border: 1px solid rgba(226, 226, 226, 0.4);
-    height: 100%;
-    position: relative;
+  border: 1px solid rgba(226, 226, 226, 0.4);
+  height: 100%;
+  position: relative;
+  width: 400px;
 }
 
 .editableAccountInfo {
-    text-align: center;
+  text-align: center;
 }
 
 .bgPortrait {
-    margin: none;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 8rem;
+  margin: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 8rem;
 }
 
 .bgPortrait .MuiAvatar-root {
-    border: 3px solid rgb(0, 0, 0);
-    position: absolute;
-    top: 15%;
-    left: 23%;
+  border: 3px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 15%;
+  left: 23%;
 }
 
-.userAccName {
-    margin: 3.2rem 1.5rem 0 1.5rem;
-    font-weight: 700;
+.userAccountName {
+  margin: 3.5rem 1.5rem 0 1.5rem;
+  font-weight: 700;
 }
 
 .userUserName {
-    color: gray;
+  color: gray;
 }
 
 .userBiography {
-    margin: 3rem 1.5rem 1.5rem 1.5rem;
+  margin: 3rem 1.5rem 1.5rem 1.5rem;
 }
 
 .post-image p {
-    margin: 1rem 1rem;
-    color: black;
+  margin: 1rem 1rem;
+  color: black;
+}
+.accountInfo .MuiAvatar-root {
+  margin: -40px auto;
 }
 
 .accountSettings {
-    text-align: center;
+  text-align: center;
 }
 
 .accountSettings button {
-    border: none;
+  border: none;
 
-    width: fit-content;
-    background-color: rgb(74, 11, 136);
-    border-radius: 50px;
-    color: white;
-    font-size: large;
-    padding: 5px 15px;
-    border-radius: 1.5rem;
-    margin: 1rem 1.5rem;
+  width: fit-content;
+  background-color: rgb(74, 11, 136);
+  border-radius: 50px;
+  color: white;
+  font-size: large;
+  padding: 5px 15px;
+  border-radius: 1.5rem;
+  margin: 1rem 1.5rem;
 }
 
 .accountSettings button::before {
-    font-size: large;
-    margin-right: 0.5rem;
+  font-size: large;
+  margin-right: 0.5rem;
 }
 
 .account-navigator #navigator-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 100vh;
-    margin: 0 0;
-    padding: 0;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  margin: 0 0;
+  padding: 0;
+  align-items: center;
 }
 .user-menu > button {
-    background: none;
+  background: none;
 }
 
 #MuiBox-rootid {
-    background-color: #0d0d0dab;
-    height: initial;
-    color: white;
-    left: 55%;
+  background-color: #0d0d0dab;
+  height: initial;
+  color: white;
+  left: 55%;
 }
 
 #MuiBox-rootid p {
-    color: white;
-    margin: 4px;
+  color: white;
+  margin: 4px;
 }
 
 .settings-modal-form-container .settings-modal-form {
-    /* border: 1px solid rgba(241, 235, 235, 0.5); */
+  /* border: 1px solid rgba(241, 235, 235, 0.5); */
 }
 
 .settings-modal-images {
-    background-position: center;
+  background-position: center;
 }
 
 .settings-modal-form-container .settings-modal-form button {
-    background-color: rgb(74, 11, 136);
-    border: none;
-    border-radius: 50px;
-    color: white;
-    font-size: large;
-    padding: 5px 15px;
-    border-radius: 1.5rem;
-    margin: 1rem 1.5rem;
+  background-color: rgb(74, 11, 136);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: large;
+  padding: 5px 15px;
+  border-radius: 1.5rem;
+  margin: 1rem 1.5rem;
 }
 
 .settings-modal-form-container .settings-modal-form button:hover,
 #MuiBox-rootid .MuiButton-root:hover {
-    background-color: rgb(187, 133, 241);
+  background-color: rgb(187, 133, 241);
 }
 
 #MuiBox-rootid .MuiButton-root {
-    background-color: rgb(74, 11, 136);
-    border: none;
-    border-radius: 50px;
-    color: white;
-    font-size: small;
-    padding: 5px 15px;
-    border-radius: 1.5rem;
-    margin: 0 auto 1rem auto;
+  background-color: rgb(74, 11, 136);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: small;
+  padding: 5px 15px;
+  border-radius: 1.5rem;
+  margin: 0 auto 1rem auto;
 }
 
 #MuiBox-rootid input {
-    /* border: 1px solid rgb(74, 11, 136); */
-    border-radius: 1rem;
-    padding: 5px 15px;
+  /* border: 1px solid rgb(74, 11, 136); */
+  border-radius: 1rem;
+  padding: 5px 15px;
 }
 
 .privacy {
-    margin: 5rem 0 0 0;
+  margin: 5rem 0 0 0;
 }
 .privacy .bottom {
-    margin: rem 0 0 0;
-    text-align: center;
-    color: rgb(153, 165, 175);
+  margin: rem 0 0 0;
+  text-align: center;
+  color: rgb(153, 165, 175);
 }
 .daypost-company {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }

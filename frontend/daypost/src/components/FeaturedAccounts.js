@@ -30,7 +30,7 @@ function FeaturedAccounts({ postArray }) {
   // console.log(bestProfiles, 'bestProfiles');
   return (
     <div>
-      <div>
+      {/* <div>
         <h3>Highlighted Accounts</h3>
       </div>
       <div>
@@ -49,7 +49,7 @@ function FeaturedAccounts({ postArray }) {
               );
             })
           : 'Loading Data'}
-      </div>
+      </div> */}
     </div>
   );
 }

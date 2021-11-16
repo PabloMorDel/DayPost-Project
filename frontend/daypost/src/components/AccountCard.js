@@ -163,18 +163,17 @@ function AccountCard() {
           <div
             className='bgPortrait'
             style={{ backgroundImage: `url(${portraitPath})` }}
-          >
-            <Avatar
-              alt='avatarImg'
-              src={avatarPath}
-              sx={{ width: 80, height: 80 }}
-            />
-          </div>
-          <p>
+          ></div>
+          <Avatar
+            alt='avatarImg'
+            src={avatarPath}
+            sx={{ width: 80, height: 80 }}
+          />
+          <p className='userAccountName'>
             <strong>{currentUser.accName}</strong>
           </p>
-          <p>{`@${currentUser.userName}`}</p>
-          <p>{currentUser.biography}</p>
+          <p className='userUserName'>{`@${currentUser.userName}`}</p>
+          <p className='userBiography'>{currentUser.biography}</p>
         </div>
 
         {/* <div className='socialAccountInfo'>

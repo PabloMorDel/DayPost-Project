@@ -20,7 +20,7 @@ function Comment({ commentContent, idUser }) {
   }, []);
   console.log(user);
   return (
-    <div>
+    <>
       <div>
         <Avatar src={user.avatar} />
         <p>{user.accName}</p>
@@ -28,7 +28,7 @@ function Comment({ commentContent, idUser }) {
       <div>
         <p>{commentContent}</p>
       </div>
-    </div>
+    </>
   );
 }
 

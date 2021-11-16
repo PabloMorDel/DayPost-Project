@@ -146,7 +146,7 @@ function Comment({ commentContent, idUser }) {
   }, []);
   console.log('user', user.avatar);
   return (
-    <div>
+    <article className='commentsComments'>
       <div>
         {user.accName ? (
           <React.Fragment>
@@ -163,7 +163,7 @@ function Comment({ commentContent, idUser }) {
       <div>
         <p>{commentContent}</p>
       </div>
-    </div>
+    </article>
   );
 }
 function Post() {
@@ -260,19 +260,19 @@ function Post() {
         ) : (
           'No Data'
         )}
+        {commentList.length > 1
+          ? commentList.map((comm) => {
+              console.log('commMap', comm.content);
+              return (
+                <Comment
+                  commentContent={comm.content}
+                  idUser={comm.idUser}
+                  key={comm.id}
+                />
+              );
+            })
+          : 'No one commented yet, be the first one!'}
       </div>
-      {commentList.length > 1
-        ? commentList.map((comm) => {
-            console.log('commMap', comm.content);
-            return (
-              <Comment
-                commentContent={comm.content}
-                idUser={comm.idUser}
-                key={comm.id}
-              />
-            );
-          })
-        : 'No one commented yet, be the first one!'}
       <div className='post-aside'>
         <div className='spotlightAccs'></div>
         <div className='FAQ'></div>
